@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0b0d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Wtracks">
+<title>Wtracks · Rally Copilot</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAQAElEQVR4AexdCZgV1ZU+7/UKNN3Q3UBA9oyjRiWgMomDJMxo1ARRBBIcDRMTJ6OORofEBY2OGs3ihqCRJH4mLpOZBIVGA8huUFSIkpB0EpMIfiiJUSII3f26+/X68ldXd7169Wq5VXXqVr3tO1196y7nnnvu/06de+q+qnjqYgqW/o1SKqkd6dNqTp4dF09K3TyFmS6v7dehXntIB6y6OLF/Un0ccQQhGSNSifo++nRfRl4dyiqosop5RD3dlDjSr0O99pBGT1CySkhzEys4IKUmH0QHaacFkhhaTzHuYSc+oJRes5mqRG8qqVXUY2YVz2cc4FAFwhFSQhD1iEShUbyEqoYzDxqwaD4sxFNVO46YCJWEmtlV8gcOvRAQy66jAiirqqW4P31mK6m1iXq6srPtcjARINTQzw5O3ZPXwWgdQw6Q+47zsEV1Hf+gWg555IlJAaGxNlNIuyRP4EB/6Fgll/3lbfUhNVRazjy6ZBt1tPniqc0Rpsw9I0/gQJfue8qjFmZDGTrCLNdfXsv7/toPtMZ8gXDmEiJuwAHWIPRRJIMGKgZT5WBDnt/T7k6Cw+GXS2Z7FSKZeTZnwuAALMAaZMOsYIuwgmUfu+AixW2/mEfhJsLgEOZYcBVLyggOB7F+ensJ4Q1Wlv3M8PUWxocAOMALBKb97Iv/MjWARQp/4OsI9fZkdsN3hqnEhIKcWAqAA7xATowKtBywQHiDd/AIfHlewQpKggkFOVW2BYcAuJz453s5QqIlpcyDTCaoq4OZpyk7p/m1BodTS9PuCisTKgrCFW3yGvhyq33VeGAUFg2twYGWIItm5tmFljtoKJVXMg+6M0ntLcw87dlZz7IFOKzRZN9RYZXW1POPF96G9Wzxd6dytJhuM3Cgqnz5VClz6Bjc1g35SsB0Y9Kz+s0CByqhala9YoZRA/A2sFQx5vo7R2wDSxV/PBhbZ4GjiAwR7Ya7dUNEQrd1zOY9ExwwG26ZFmZ9xDaisHWDV/lZs58JDt7O8pgboqLso4Mrys7TFUMYj0x86MCBAhS7YleYlXEnpZRv64aqQ/9bN1Q+Po+ZANCBwyffwmke5a0b/mcBNmKASREcA5oQ/J8rWzcEh2NabQAfA+DAeaZJMW1VzCSsYNm1ENDWDW9y6mAwAA5dljeeBdEqt7ZueJ6SATD0gQNmwzOjgmqIRQp/4CvIrRveZgd4ABH1gcMbi0JrBVggvME7asRDQ1/BZo8o1p9VBEe/Ipz/5fTWDefhmdSIEwzIAFJMysPLilbP0FIQrqi0rRsetJnCZaWIDBHF5cfWDZGRqnWAihjAge8EFT9OGsibrRtOA02Xy7YcE6bSCbMYqIx7/1VaJWQi3smfUjInnUb2NPp4PRuHtPrUDYdKRBVDlK79K238Rx27yq7Q53NkZweUc8n9dMvPGWj4mIAEpDMWmYi3ZDN9+Uf0Hz90oPNvdiGV4NaN2deZyONBh8fPdCHbQFW5q5Wu5EC//v5jBeiPgXnryqH0+aXmRSK54tvQIb9IVLSqjs67XqRnhzpYLW/+rkMds2LJ4GDacQ/lmg3Gb95n7/QVHY+XiArQKvbUjfOXKJcVUabW9Z79lnWZdUkMDin8UpL14bIcyvqbW2Z4DOde64tpXPgHLPgqO/ZUPYrOvtqxlqGCySn62vp9k3zHLMUhlbla6Y6w5fjPRx3V5VBB8LIiuHVj/m3E4nevu5e62h0ktyiWe1npjKrPMePz9I8zLFQknC1oOUSeujFyMp11Jfn/tB6lLSs8s4mTzMsKl+XgvazAD130gGcNphuKWA7Bp27Mvz3N1k9q/X3UkfDIIAafgyR+uHwOXod0wR2+/FBNfyIOqcgiBd4PVtQaW8+JZII2LvfcGg3j+JNHXL8PZgQHZuLTi3k04Gg5BJ+6sdDT4iJ7DM/d791s9HGTDA4mn6NPdJ6Dfz9Uk8PR50gIbN0YN4WmX6ix9J6A2diwzHvzvpaSwcG0WuHyOf75YgY/tE+PysEeHLB2WFUq9Wz/Lr7Xtli4cNOD1HZUuLZ5RcngYLIcULT5cKxyzfLhh15yn1mB17zyQXYt8VV2vKoeN5OmnG3HRLCss52wghWsbF1NLji4Viss4Jh3Gw0bba0Z7hKRrRu498TSLYLlvs0GBJELDq7Viv/LCvzQ2V/D+CURAjyOT92YOps+PJ1BHpiNtfcw8CHZS1kmn8O/5WD0Q0XmAd5GzKke1yJl2w8owfNsoNy0HD7BcfpFnH6oftLLzNwOka0bH19I46foOXlPr+MxGxBAMjiYLIefy0r5YF/35aEzGzINdYhs3eAyG5sfpqPv2gjoqkgyOCKwWkFkOjg/NDtICiPnGBX95JcIN1NczZtV5We/aVXiIV8uOLhWK54tB/xQlu0zVprOthwiWzcQv7di6Cr/+UcYzQaRZIcUTrur0VpVxtfRqsg+P2g/NDsOBlfUXqRzrqHasfZVREuf4TQb6DQ3LYc3cHzsc0H5oVCkSobLiuPWjYohNO9/1KZ+jy88RocP+GWS2V4uOEKMc8AP/Xe/9xoyVWd2ZrisOG7dOPdaqmJ6v5O3vYBmg9DyJIODa7WiyS+cwBc0OD9Uk0J/WXHcujGohs67QWvqK/HSj+ngPl8czBpLBkdIqxWsBebcaDZ87jy95XBcpMy5gQbX8EjQcAcPn0wuksHBZDnc+hyXPZI56sDONMvhuHUDV5PPfJVHjp0rgzAbkE0yODzudIWgmeRmV/Q/LaCTzsxsHtiZ5pA6bt3AZY5l/zCGsuYbOARBcsHBNQJxywE/9AsPcnXbz8fmn3pZgXj2K1isXbGCteEjXvRaA73zunh1VzWlg8Px5qSI+NC+SDXUufBWqfflVXA4bt2Yz+ciPH0rRhkQSQcHT5BU7LICP/T8JQEpzpyt6nPYb92AVLO+ZN7cbe6v1gZnNiCLdHCwhDoEmUjzQ6FIlQAORIHtrePnmPYPo8dVt+EQHMkHB9OCxVEl0+fJ80M1YeCQwtuw2boxbgqdvlCr7ivxm4309h5fHJwaywcHU6jDfmDwQy/18rtye67OpbE4YZ1iU4/r1jy6aAhqkQLeKuUpOOZ+XaofquoSR1zvbJzlydNp2mzUYqDfbaN9Oxn42LKQD47gLyvw+C5w8xwVWwW5K+ywtYtc+4chU2CxDfDWiBMcGlO7BL5bdsUcZfL9UE1qm5ewnHw2eXq8jsY7ndi7k/74Yvo0sJR0cPAsZa31cercEPxQTRysVrS0IcH1ayWwDTK2AfYaSQcHVnpa50EkZMZDs+UvLcvOU3JOu5Bt//Bbe+j32xSewf9JB0eglmPBnVQ3LnilWfdQYgEOxkXKSnnulHRwBOdzwA+98BbreZNSYnpZOWMRjXHzFEobSWE2GjfalPMWyQdHYKuVEP1QbU5MLyuMZiPgkKg2DjUhHxy2iz1VKA/HUy8I0w/VBM62HGddybZ/GHdf96zVupKQkA+OYCzHFx6SoCznLgw+R1klzXO4/eHMU6sha5GidSgfHAFYDtwBD9cP1dRpuKycfTXVjNIKfSVgNl5r8MXBfWPp4GBfrcAPnce0u9+9+owt9JeViiE0l89BDv5OinEsJPlHTeifPc4RBT8U41JJbznOu55t//DBfbRrpdqDzGOOW45pcyLhh2ozpvkcVXU0+zot229iNd/OMTeiSAeH/ziHnsMXH3Yz2ODrapeV82/ieWw5RD50gF7+Mf7LJ/ng8L1a0e6JYyEQET9Umzf1slI9ihgfG7T6do295IR8cDCtVmrH0fzQtGY5SarlYBQMZuPFxyy7C7hAPjgELYf1uFXLEbULiiovfA6sns66Qj1jOLI+b8OtPNLBwbCUTdFHP02nzHE7VOf6yRbnOvY1cFlZwLd774N36HlZv9UzG5d0cOjdSTOBnPPiJXRpMH7ohqXk+Lt4e/nGnkgzLrGv4qL0Z992UTmAqjkIDsSkR07iV8WB39DuBmpr8sV59HG+musbtxyiLcF8B/S92Kblg8O3z2E7Hu+Fq/t+OtbuDxzeu89qyf2YnqwOnDPkg4NpteI8NDc1XniUDr2tNPBpORQWHH8wG9t+wMHIFw/54Iie5TjyDm0euKkbEcux9h7P797yBYfMxvLBET3LsVp3366tOVM/YZy1HqXN3n6RxSytdHAwLGVZVdC4gfbvTnOMguVYf28UzAZ0Ih0c7HdlMQjP1NlGmAl989B9DpiNjRIfKKIfe1ZaOji8vsYyS3KOjOfup8ThDEahW46Ny3y+eytjOP5OpIPDn7icrZW9VauMDMMFR9LvK/uMw/F3HgY4oAJ/QvO0VgMbBl7hXlY2Lqc2v+/eMgzIz2kY4PAfQfczYrXtiz8yfwJfiODobKf1rK8VU0fq4xgKOMIOdTQdpG0Wr3cP8bKy6aFImQ2AKhRwSA91YKB6WnM7Wa2o8fXV15SWRr8cr+zjlTcMcFhNDO/IrLg1bqS9r1gVKvmG9YuSFfwfLBnTu7cYZQ0DHCGGOpTAxj0O6gvlyhI9swEthQGOEC3HhqXGwAZ0YCD5PimC5Xzv3jKMxs9pGOAIa7WCwMarTzsrq1367ZUA3obhPEyBGqGAI6TVimlgI1tHki3H1u9TJM0GFBMKOMJYrbz4mHlgAzowkGSfI+y9gIbR609DAYd0y6EENr6nH7ZdWqbl2P5D9ndv2Q3NVVkIv5WFfPJ9DpvABuQxkExwhPHzaMNwbU7DsBySVyu/3eQQ2DCoR9plZceTUTYb0EoY4JBpORDYWHc3xumCpIFjzZ0upAqjaijgkOhzbHzAObBh0Lucy8orPxF1kA3iSTwNBRyyVisIbPziKdfKlBPneOYu14JJb5DX4BAMbBiUjqWNIYf99BerAn2JDpe8oYBDymVlx+Me7fb7b3Ep15LPar6nyFn2wVAQCjiCv6zg2791hRf19HQrL0xpOWTT1m/RL5/NCbOBYYYCjuAth6vABtSgUeIDSqUIRy2HPRHSM5w8jCMUcARsOX63xV1gQ1MbYNHctxm99QMtjznx6+eCfvcWo8BhgCPQIBgCG2u9PrmgtYl6uhTlBmc51uTAIkXRQN9fGOAIdLPPpmWuAxt9ilAOmqsR0Gaw326R8O4tZSBMf2GAIzjLgcCG5+d1Jtuoo61fqwFZDrmPte8fi49/YYAjuPC5t8CGqj79M32CAMfr23PLbEAroYAjmNXKS094DGxADd2dBIcDCZWCcEgjfydFHbr+yAgOPVvbdBCWA4ENPw9JUhcpmtTslmPvTnr9eY19riRCAUcAlsNzYAMT1dtrDGywg6MhnOdTY3B+KBRwcMc5fr/VY2BD1VziCPX2qMn+I+9lRXn31qZ+zjn1Lwxw8K5WENj42be86xyBL20Fq3HhtRyrdE8O0rrIhUQY4OD1OTYt9x7YwAwlE9SVdZljBAdW13vWoZ9cpFDAkTUZnjUH1e/6qefWSsMms3tsjJeVp/jex6OIK/UvDHDgQsA1xglLSAAABzNJREFURj+BDciAWG27xSOtWYwHsLt7DfrJUQoDHFyqeulJ74ENVQZ4GzE1lXVkMR7ON2Cz+o1SRkjgwJXepxaUwIa/5zGqWzesxPBvOQ7uIw+bFK3kCSM/JHD4X7CssX7GhqAeMf1YqlhVRqlVkWB+rt1JyR5WSODAxT5bFvEcn4ENdARYGKKiyNSTT3DAbLzy/3p+uZgOCRzLF9Bd/yJKD8ylRy/LoDW+A464k6Ju3bCaNMQ0xSXMrvmdc60Y51B+SODYt4v+sF2U3vuT8pDh/bvTR/+/HoAraj9L770hKp7pQP72pj37nCgNCRziuhlSQ6Xl4tWFauq3bgg1KNBKkQfH0BH8M6PfusHPPX84RhUcqoYrBlPlYDXJdjRs3WDjm4eMog2OofX8KrdfpPD3l8McIwyOkjKCw0Gsn+ytG6zs84xZhMFRXUcxq+C211nI3rrhlVMhtIsqOACLqlrmCUDgy3EFy9xlbrOLUyqSA6gaTiWlzJLhhk721g3mPvKIXYrixG25GdQDvAbhippu3WAQN29ZRNJyDBpK5ZXMKsfdHKutG8w9hceOt+cYLAdF71MTwAoW3kYEbWT0dJ+WKIqXlbIKqqxKi8iSst+6wdJF/jGJwXLgAk9R+sDbwFKFVyLcf8dShZdn3nOLnOWIlxDWKbx6ByyKUVEPKo1FzXIgthGPE+/HcesGb3d5wy1ylgNRUXblwhVl51kIDGOwHERRiYPhTkppcesG5iMqpNjw9m460BZ3pN7a8VQ/UYTe6Sh15KZW6Kwek2Y4fioNG2NFBzviB5q7RaitfFiaSfkgqp+Y7iJT/sOxKlUMx2NLRa0VE0N+c9kwR25qhSMl1Ya2VqetlfVqE8fj+6nBVkwM+cmqD9lwS3YTPgo44jH6xMvVU1+osaf43Y20fL8IXXbgeHtWWmnvDc+lGd6yna7fYEXLDk2a+n/vilDL7FvTTL5tJ/P6CRdrktgn9p9zR1pOWyU0zrjOnpVW+vKUywV5HvzsUq2VfeJ/h88R5Nlx1UorVgCDAgvqu6xUlNKZ9X0PSgNailTwGgAYyksVLagQoTNHFMGhqKP4Bw18ZlQnjqB+cHyyrkt5OCsyilTgGkilPlXf53GolxVo45hBqUvH9+MFp0UqWA0ABtXl/VHzfssBXSz5h/aKeH8uTotUgBoAAG46tl0beBocIytTV0zke3KG1kMxkTsaAABGVPQbCEidBgdOFk9KVpemy5ATOMUyBODpLtXLw6fAuAwtTS2enDYbGH3G3OBi89+TuZ/mhk5sCHfabEq9FeEGvbeGhd1q8eRkdVmGCjLAgZIrJiZHlEv85gVhOYrgwES6pHGVPZh6QyMjOCpL6MYPZ9gWQwPm0xgzvyI7bxq48dgkpt7Q1ggOFF86oXMWwh5IFakwNIDpvugYk0CGCThwq+XxaYmPVPVHQgpDP4U7Skw0phuTnq0CE3CgEhyTp6e3njhyyNjaao16WpuoTYjqqiq1VpaJ+pqx9TXd7QlKtojQkIoy1HegOkXaro42QTlL4ylL8XQDR53erg5BnqmeLtQXoVhvjyDP7o6kCEPUqSiJi/JsT6D+1FGDMdGYbkx6NpmDA/VGV/buWDiu8fU/NO57S6Vpp3+iduwkEXpy5Sq1id3xjf2Nb+z/yldvqB0zQYS+svhrqO9AexVRn1r9jIiQqPPxGTPtJBwYOOr85b2DqN9HDhqIlZShvgiNm+DASutu16u7RRiizoKFF2mt7BP3Lf8uJvf5C+ow0ZhuU7IEh1J7305asYiKYQNFF/n2F6OUMrl/brQZmC040O611bTy6/hfpDzTwIzuvYTJtR2VEzjQeO13aOlc8v8YLrAqUgQ0gEjoT05NzC5zfmqZADgwnl8+S7d+7EPlxfULdJHbNLayZ+vpzeeMFNq+IwYOKOTdP6488a/Ktg+ki5SbGphZ27V9RsuxVaIRcGFwEA0vT606NfHFcR25qZlCl3rR2I6G0xK1A3s1RNThAhxgV1JC95/U1jC95YSqzFcboaxIUdUAJgtTtvzkNkyfKxndgUNlPau+e8cZzQ+d1Dq6Qmeg1LLiMUoaGF/Z88iUBCYLU+ZBLi/gQDeItl4yrnP3zKY7j2urKS1CBCqJFmFSvnFc26szmxcc04XJ8iacR3ConQ0qo6smd+yZ1fxfE5JlMbm7hFQJiscsDWAirpyYxKRcPblD/YVBVhXRDF/gUDsZVpa66yPtfzqzacXJrXNGdQ4pKaJEVYzcYzJBrzXENz2IifjmCe2YFP/dM4BDFQLSXDS284lTWt/816PdDy2izQ/ToQNU/AStgcN/pi0r6O5z6ct1tGz+iDe3YSK4+mQDhyYQTFnFmzvoiavp2gmKxDdPUwKsP11CW79He9bR23uo+W/F+zWausQSKTryV9q3i3Y9RevvoyeuUVR60yl0eT1dM54ev4oaN1GvyYYMMeaWtf4OAAD//xy2y6YAAAAGSURBVAMAHHW8GzyCAaoAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<style>
+:root{
+  --bg:#0a0b0d;--bg2:#0f1114;--panel:#14171b;--panel2:#1b1f25;--line:#262b33;
+  --txt:#f2f4f7;--mut:#8b95a2;--acc:#ff5a00;--acc2:#ff7a2e;--ok:#22c55e;--warn:#f5b301;--bad:#ef4444;
+  --g1:#22c55e;--g2:#84cc16;--g3:#eab308;--g4:#f59e0b;--g5:#f97316;--g6:#ef4444;--g7:#d946ef;
+  --r:8px;--sh:0 10px 30px rgba(0,0,0,.4);
+  --disp:'Barlow Condensed','Arial Narrow',Inter,sans-serif;
+  --carbon:repeating-linear-gradient(45deg,rgba(255,255,255,.018) 0 2px,transparent 2px 7px);
+  --checker:conic-gradient(#fff 25%,#111 0 50%,#fff 0 75%,#111 0) 0 0/10px 10px;
+}
+[data-theme=light]{
+  --bg:#eef1f4;--bg2:#e4e8ed;--panel:#ffffff;--panel2:#f3f5f8;--line:#d9dfe6;
+  --txt:#111419;--mut:#5d6874;--sh:0 8px 24px rgba(20,30,40,.10);
+  --carbon:repeating-linear-gradient(45deg,rgba(0,0,0,.025) 0 2px,transparent 2px 7px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--txt);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px}
+body{background-image:var(--carbon)}
+button,input,select{font-family:inherit;font-size:inherit;color:inherit}
+.hidden{display:none!important}
+svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.disp{font-family:var(--disp);font-style:italic;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
+.checker{height:10px;background:var(--checker)}
+
+/* top bar */
+#top{position:sticky;top:0;z-index:50;background:var(--bg2);border-bottom:1px solid var(--line)}
+#top .bar{display:flex;align-items:center;gap:8px;padding:10px 14px;padding-top:max(10px,env(safe-area-inset-top))}
+#top .stripe{height:4px;background:linear-gradient(90deg,var(--acc) 0 70%,#fff 70% 74%,var(--acc) 74% 78%,transparent 78%)}
+.brand{display:flex;align-items:center;gap:10px;cursor:pointer}
+.brand img{width:34px;height:34px;border-radius:8px}
+.brand .wm{font-family:var(--disp);font-style:italic;font-weight:900;font-size:24px;letter-spacing:.02em;line-height:1}
+.brand .wm b{color:var(--acc)}
+.brand small{display:block;font-family:Inter;font-style:normal;font-weight:600;font-size:10px;letter-spacing:.14em;color:var(--mut);text-transform:uppercase;margin-top:2px}
+.sp{flex:1}
+.ib{width:38px;height:38px;border-radius:8px;border:1px solid var(--line);background:var(--panel);display:grid;place-items:center;cursor:pointer;color:var(--txt)}
+.ib:hover{border-color:var(--acc)}
+.ib.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.langsel{height:38px;border-radius:8px;border:1px solid var(--line);background:var(--panel);padding:0 8px;font-weight:700;cursor:pointer}
+
+main{max-width:1100px;margin:0 auto;padding:16px 14px 70px}
+.scr{display:none}.scr.act{display:block}
+
+/* ui */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--sh)}
+h1{font-family:var(--disp);font-style:italic;font-weight:900;text-transform:uppercase;font-size:32px;line-height:1;margin:0 0 6px;letter-spacing:.01em}
+h2{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-style:italic;font-size:18px;margin:24px 0 10px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+h2::before{content:"";width:18px;height:8px;background:var(--acc);transform:skewX(-20deg)}
+.mut{color:var(--mut)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 18px;border-radius:7px;border:1px solid var(--line);background:var(--panel2);font-weight:700;cursor:pointer;white-space:nowrap}
+.btn:hover{border-color:var(--acc)}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff;font-family:var(--disp);font-style:italic;font-weight:800;font-size:18px;text-transform:uppercase;letter-spacing:.03em}
+.btn.pri:hover{background:var(--acc2)}
+.btn.bad{color:var(--bad)}
+.btn.sm{height:36px;padding:0 12px;font-size:13px}
+.btn:disabled{opacity:.45;pointer-events:none}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+label.f{display:block;font-size:12px;font-weight:700;color:var(--mut);margin:14px 0 6px;text-transform:uppercase;letter-spacing:.07em}
+.in{width:100%;height:44px;border-radius:7px;border:1px solid var(--line);background:var(--bg2);padding:0 12px;outline:none}
+.in:focus{border-color:var(--acc)}
+.chk{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:14px;color:var(--mut)}
+.chk input{width:18px;height:18px;accent-color:var(--acc)}
+.pill{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:5px;background:var(--panel2);border:1px solid var(--line);font-size:12px;font-weight:700;color:var(--mut)}
+.pill svg{width:15px;height:15px}
+.pill.ok{color:var(--ok)}.pill.warn{color:var(--warn)}.pill.bad{color:var(--bad)}
+.head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.head h1{margin:0;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:28px}
+
+/* landing */
+#scr-landing{max-width:none;margin:-16px -14px 0;padding:0}
+.hero{position:relative;overflow:hidden;min-height:calc(100vh - 0px);display:flex;flex-direction:column;background:
+  linear-gradient(115deg,transparent 0 58%,rgba(255,90,0,.95) 58% 66%,transparent 66% 68%,rgba(255,255,255,.9) 68% 69.5%,transparent 69.5%),
+  radial-gradient(1200px 600px at 80% 20%,rgba(255,90,0,.18),transparent 60%),var(--bg)}
+[data-theme=light] .hero{background:linear-gradient(115deg,transparent 0 58%,rgba(255,90,0,.95) 58% 66%,transparent 66% 68%,rgba(17,17,17,.85) 68% 69.5%,transparent 69.5%),radial-gradient(1200px 600px at 80% 20%,rgba(255,90,0,.15),transparent 60%),var(--bg)}
+.hero .ltop{display:flex;align-items:center;gap:10px;padding:16px 18px;padding-top:max(16px,env(safe-area-inset-top));position:relative;z-index:2}
+.hero .inner{position:relative;z-index:2;flex:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:24px;align-items:center;max-width:1100px;margin:0 auto;padding:10px 20px 30px;width:100%}
+.hero .kick{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc)}
+.hero .kick::before{content:"";width:28px;height:10px;background:var(--checker)}
+.hero .title{font-family:var(--disp);font-style:italic;font-weight:900;font-size:clamp(64px,13vw,132px);line-height:.85;letter-spacing:-.01em;margin:10px 0 6px;text-transform:uppercase}
+.hero .title b{color:var(--acc)}
+.hero .claim{font-family:var(--disp);font-style:italic;font-weight:800;font-size:clamp(24px,4.4vw,38px);text-transform:uppercase;line-height:1;margin-bottom:12px}
+.hero p{color:var(--mut);font-size:16px;line-height:1.55;max-width:520px;margin:0 0 22px}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap}
+.hero .cta .btn.pri{height:54px;padding:0 30px;font-size:22px;transform:skewX(-8deg)}
+.hero .cta .btn.pri span{transform:skewX(8deg);display:inline-flex;gap:8px;align-items:center}
+.feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:26px;max-width:560px}
+.feat{background:rgba(20,23,27,.75);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:6px;padding:12px;backdrop-filter:blur(6px)}
+[data-theme=light] .feat{background:rgba(255,255,255,.85)}
+.feat b{display:flex;align-items:center;gap:8px;font-family:var(--disp);font-style:italic;font-weight:800;font-size:18px;text-transform:uppercase}
+.feat b svg{color:var(--acc)}
+.feat span{font-size:13px;color:var(--mut);line-height:1.4;display:block;margin-top:4px}
+.heroart{width:100%;max-width:520px;justify-self:center;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))}
+.install{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--mut);margin-top:16px}
+.hero .bottom{position:relative;z-index:2;background:var(--bg)}
+.hero .bottom .credit{padding:10px 0 max(14px,env(safe-area-inset-bottom))}
+
+/* login */
+#scr-login{max-width:420px;margin:4vh auto 0}
+.biglogo{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:20px;text-align:center}
+.biglogo img{width:76px;height:76px;border-radius:16px;box-shadow:var(--sh)}
+.biglogo .wm{font-family:var(--disp);font-style:italic;font-weight:900;font-size:42px;line-height:1;text-transform:uppercase}
+.biglogo .wm b{color:var(--acc)}
+.err{color:var(--bad);font-size:13px;min-height:18px;margin-top:10px}
+.credit{text-align:center;color:var(--mut);font-size:12px;margin-top:22px}
+.credit b{color:var(--txt)}
+
+/* home */
+.homehead{position:relative;overflow:hidden;border-radius:var(--r);border:1px solid var(--line);padding:20px 26% 24px 18px;background:linear-gradient(115deg,transparent 0 80%,var(--acc) 80% 86%,transparent 86% 88%,#fff 88% 89.5%,transparent 89.5%),var(--panel)}
+.homehead .checker{position:absolute;left:0;right:0;bottom:0;height:8px;opacity:.9}
+.actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.act-card{position:relative;display:flex;flex-direction:column;gap:10px;align-items:flex-start;text-align:left;padding:16px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel);cursor:pointer;min-width:0;overflow:hidden}
+.act-card:hover{border-color:var(--acc)}
+.act-card .ic{width:42px;height:42px;border-radius:7px;background:rgba(255,90,0,.14);color:var(--acc);display:grid;place-items:center;transform:skewX(-8deg)}
+.act-card .ic svg{transform:skewX(8deg)}
+.act-card .tt{display:flex;flex-direction:column;gap:3px}
+.act-card b{font-family:var(--disp);font-style:italic;font-weight:800;font-size:20px;text-transform:uppercase;line-height:1}
+.act-card span{font-size:12px;color:var(--mut);line-height:1.35}
+.act-card.hl{background:linear-gradient(135deg,var(--acc),#d94800);border-color:var(--acc);color:#fff}
+.act-card.hl .ic{background:rgba(255,255,255,.2);color:#fff}
+.act-card.hl span{color:rgba(255,255,255,.85)}
+.stage{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-left:4px solid var(--acc);background:var(--panel);border-radius:6px;cursor:pointer;margin-bottom:8px}
+.stage:hover{border-color:var(--acc)}
+.stage .ic{width:38px;height:38px;border-radius:7px;background:var(--panel2);display:grid;place-items:center;color:var(--mut);flex:none}
+.stage .t{flex:1;min-width:0}
+.stage .t b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--disp);font-style:italic;font-weight:800;font-size:19px;text-transform:uppercase}
+.stage .t span{font-size:12px;color:var(--mut)}
+.chev svg{transform:rotate(180deg);color:var(--mut)}
+.empty{padding:26px;text-align:center;color:var(--mut);border:1px dashed var(--line);border-radius:var(--r)}
+.note-warn{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--mut);line-height:1.45;margin-top:22px}
+.note-warn svg{color:var(--warn);margin-top:1px}
+
+/* maps */
+.map{position:relative;isolation:isolate;z-index:0;height:52vh;min-height:300px;border-radius:var(--r);border:1px solid var(--line);overflow:hidden;background:#181b20}
+.leaflet-container{font-family:inherit;background:#181b20}
+.wp-ic{width:26px;height:26px;border-radius:50%;background:var(--acc);color:#fff;font-weight:800;font-size:12px;display:grid;place-items:center;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.5)}
+.flag-ic{width:28px;height:28px;border-radius:6px;border:2px solid #fff;background:var(--checker);box-shadow:0 2px 6px rgba(0,0,0,.5)}
+.nm{display:flex;align-items:center;justify-content:center;min-width:28px;height:20px;padding:0 5px;border-radius:4px;color:#111;font-family:var(--disp);font-style:italic;font-weight:900;font-size:14px;border:1.5px solid rgba(0,0,0,.6);box-shadow:0 1px 4px rgba(0,0,0,.5);white-space:nowrap;transform:translate(-50%,-50%)}
+.me-ic{width:18px;height:18px;border-radius:50%;background:#3b82f6;border:3px solid #fff;box-shadow:0 0 0 6px rgba(59,130,246,.25)}
+.searchbar{display:flex;gap:8px;margin-bottom:10px}
+.panelbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.results{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);margin:-4px 0 10px;overflow:hidden}
+.results div{padding:10px 12px;border-bottom:1px solid var(--line);cursor:pointer;font-size:14px}
+.results div:last-child{border-bottom:0}
+.results div:hover{background:var(--panel2)}
+.results small{display:block;color:var(--mut);font-size:12px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:10px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:10px 12px;min-width:0}
+.stat small{display:block;font-size:11px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.stat b{font-family:var(--disp);font-style:italic;font-size:26px;font-weight:900;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* stage notes */
+.layout2{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:14px}
+.notes{max-height:62vh;overflow:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+.nrow{display:grid;grid-template-columns:38px 58px 1fr auto;gap:8px;align-items:center;padding:9px 12px;border-bottom:1px solid var(--line);cursor:pointer}
+.nrow:last-child{border-bottom:0}
+.nrow:hover,.nrow.sel{background:var(--panel2)}
+.nrow .k{font-size:11px;color:var(--mut);font-variant-numeric:tabular-nums}
+.gb{display:inline-flex;align-items:center;justify-content:center;gap:3px;height:30px;min-width:54px;border-radius:5px;font-family:var(--disp);font-style:italic;font-weight:900;color:#111;font-size:20px;transform:skewX(-6deg)}
+.gb svg{width:17px;height:17px;stroke:#111;stroke-width:2.8}
+.nrow .tx{font-weight:700;font-size:14px;min-width:0}
+.nrow .tx span{display:block;font-size:12px;color:var(--mut);font-weight:500}
+.nrow .gp{font-family:var(--disp);font-style:italic;font-weight:900;font-size:19px;color:var(--acc)}
+.c1{background:var(--g1)}.c2{background:var(--g2)}.c3{background:var(--g3)}.c4{background:var(--g4)}.c5{background:var(--g5)}.c6{background:var(--g6)}.c7{background:var(--g7)}
+
+/* sheet / modal */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1500;display:flex;align-items:flex-end;justify-content:center}
+.sheet{width:100%;max-width:520px;background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:14px 14px 0 0;padding:18px 16px;padding-bottom:max(18px,env(safe-area-inset-bottom));max-height:88vh;overflow:auto}
+@media(min-width:700px){.ov{align-items:center}.sheet{border-radius:14px}}
+.sheet h3{margin:0 0 4px;font-family:var(--disp);font-style:italic;font-weight:900;font-size:26px;text-transform:uppercase}
+.seg{display:grid;gap:6px}
+.seg button{height:42px;border-radius:6px;border:1px solid var(--line);background:var(--panel2);font-weight:800;cursor:pointer}
+.seg button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{height:34px;padding:0 12px;border-radius:5px;border:1px solid var(--line);background:var(--panel2);font-weight:600;font-size:13px;cursor:pointer}
+.chip.on{background:rgba(255,90,0,.16);border-color:var(--acc);color:var(--acc)}
+
+/* drive */
+#scr-drive{position:fixed;inset:0;z-index:1000;background:#050608;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0 2px,transparent 2px 7px);color:#fff;display:none;flex-direction:column;padding:12px;padding-top:max(12px,env(safe-area-inset-top));padding-bottom:max(12px,env(safe-area-inset-bottom))}
+#scr-drive.act{display:flex}
+.dtop{display:flex;align-items:center;gap:8px}
+.dtop .ib{background:#11141a;border-color:#232832;color:#fff}
+.dtop .pill{background:#11141a;border-color:#232832}
+.man{display:flex;align-items:center;gap:12px;margin-top:10px;background:#11141a;border:1px solid #232832;border-left:5px solid #3b82f6;border-radius:8px;padding:10px 12px}
+.man .ar{width:46px;height:46px;border-radius:7px;background:#3b82f6;display:grid;place-items:center;flex:none}
+.man .ar svg{width:30px;height:30px;stroke:#fff;stroke-width:2.6}
+.man .d{font-family:var(--disp);font-style:italic;font-weight:900;font-size:30px;line-height:1}
+.man .tx{font-weight:700;font-size:15px;color:#cfd6de;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dnote{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;min-height:0}
+.bignote{position:relative;overflow:hidden;width:100%;max-width:640px;border-radius:14px;padding:18px 20px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;color:#111}
+.bignote::after{content:"";position:absolute;right:-30px;top:0;bottom:0;width:90px;background:rgba(255,255,255,.22);transform:skewX(-18deg)}
+.bignote .arr svg{width:min(26vw,150px);height:min(26vw,150px);stroke:#111;stroke-width:2.6}
+.bignote .gr{font-family:var(--disp);font-style:italic;font-size:min(36vw,200px);font-weight:900;line-height:.82;letter-spacing:-.02em}
+.bignote .gr.h{font-size:min(17vw,96px);letter-spacing:0;line-height:.9}
+.bignote .md{font-family:var(--disp);font-style:italic;font-size:min(7vw,32px);font-weight:900;text-transform:uppercase;margin-top:6px;line-height:1}
+.bignote.idle{background:#14171b;color:#8b95a2;grid-template-columns:1fr;text-align:center}
+.bignote.idle::after{display:none}
+.ddist{font-family:var(--disp);font-style:italic;font-size:min(16vw,84px);font-weight:900;font-variant-numeric:tabular-nums;line-height:1}
+.ddist small{font-size:.45em;color:#8b95a2}
+.dnext{display:flex;align-items:center;gap:10px;color:#cfd6de;font-weight:700;font-size:18px}
+.dnext .pill{background:#11141a;border-color:#232832;color:#fff}
+.dstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}
+.dstats .stat{background:#0f1216;border-color:#20252d;color:#fff}
+.dstats .stat small{color:#8b95a2}
+.dstats .stat b{font-size:clamp(20px,6vw,30px)}
+.prog{height:8px;border-radius:2px;background:#1b1f25;overflow:hidden;margin-top:8px;position:relative}
+.prog i{display:block;height:100%;width:0;background:var(--acc)}
+#mapDr{height:22vh;min-height:130px;margin-top:8px;border-color:#20252d}
+.simbar{display:flex;gap:10px;align-items:center;margin-top:8px;color:#cfd6de;font-size:13px;font-weight:700}
+.simbar input{flex:1;accent-color:var(--acc)}
+.dbtns{display:flex;gap:8px;margin-top:8px}
+.dbtns .btn{flex:1;height:52px}
+.offroute{background:var(--bad);color:#fff;font-family:var(--disp);font-style:italic;font-weight:900;font-size:22px;text-transform:uppercase;text-align:center;border-radius:6px;padding:6px;margin-top:8px}
+
+/* admin */
+.tabs{display:flex;gap:6px;margin-bottom:14px}
+.tab{height:38px;padding:0 14px;border-radius:6px;border:1px solid var(--line);background:var(--panel);font-weight:700;cursor:pointer}
+.tab.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.urow{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.urow:last-child{border-bottom:0}
+.urow .ic{width:38px;height:38px;border-radius:7px;background:var(--panel2);display:grid;place-items:center;color:var(--mut)}
+.urow .t{flex:1;min-width:150px}
+.urow .t b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.urow .t span{font-size:12px;color:var(--mut)}
+.form2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 10px}
+
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:2000;display:flex;flex-direction:column;gap:6px;align-items:center;pointer-events:none}
+#toast div{background:#1b1f25;color:#fff;border:1px solid #2d333c;border-left:4px solid var(--acc);padding:10px 16px;border-radius:6px;font-weight:600;font-size:14px;box-shadow:var(--sh);max-width:90vw}
+#toast div.ok{border-left-color:var(--ok)}#toast div.bad{border-left-color:var(--bad)}
+.localbar{background:rgba(245,179,1,.12);border:1px solid rgba(245,179,1,.4);color:var(--warn);padding:8px 12px;border-radius:6px;font-size:13px;font-weight:600;margin-bottom:14px}
+footer.cr{position:fixed;left:10px;bottom:8px;z-index:40;font-size:11px;color:var(--mut);background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
+footer.cr b{color:var(--txt)}
+
+@media(max-width:900px){.actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+  .layout2{grid-template-columns:1fr}
+  .actions{grid-template-columns:1fr}
+  .act-card{flex-direction:row;align-items:center}
+  .map{height:46vh}
+  .notes{max-height:none}
+  .form2{grid-template-columns:1fr}
+  .brand small{display:none}
+  .hero .inner{grid-template-columns:1fr;gap:6px;padding-top:0}
+  .heroart{order:-1;max-width:380px;margin:-6px auto -10px}
+  .feats{grid-template-columns:1fr 1fr}
+  .hero{background:linear-gradient(160deg,transparent 0 58%,rgba(255,90,0,.9) 58% 66%,transparent 66% 69%,rgba(255,255,255,.85) 69% 71%,transparent 71%) top/100% 380px no-repeat,radial-gradient(800px 400px at 70% 10%,rgba(255,90,0,.2),transparent 60%),var(--bg)}
+  [data-theme=light] .hero{background:linear-gradient(160deg,transparent 0 58%,rgba(255,90,0,.9) 58% 66%,transparent 66% 69%,rgba(17,17,17,.8) 69% 71%,transparent 71%) top/100% 380px no-repeat,var(--bg)}
+}
+</style>
+</head>
+<body>
+<div id="toast"></div>
+
+<header id="top" class="hidden">
+  <div class="bar">
+    <div class="brand" id="brandHome"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAQAElEQVR4AexdCZgV1ZU+7/UKNN3Q3UBA9oyjRiWgMomDJMxo1ARRBBIcDRMTJ6OORofEBY2OGs3ihqCRJH4mLpOZBIVGA8huUFSIkpB0EpMIfiiJUSII3f26+/X68ldXd7169Wq5VXXqVr3tO1196y7nnnvu/06de+q+qnjqYgqW/o1SKqkd6dNqTp4dF09K3TyFmS6v7dehXntIB6y6OLF/Un0ccQQhGSNSifo++nRfRl4dyiqosop5RD3dlDjSr0O99pBGT1CySkhzEys4IKUmH0QHaacFkhhaTzHuYSc+oJRes5mqRG8qqVXUY2YVz2cc4FAFwhFSQhD1iEShUbyEqoYzDxqwaD4sxFNVO46YCJWEmtlV8gcOvRAQy66jAiirqqW4P31mK6m1iXq6srPtcjARINTQzw5O3ZPXwWgdQw6Q+47zsEV1Hf+gWg555IlJAaGxNlNIuyRP4EB/6Fgll/3lbfUhNVRazjy6ZBt1tPniqc0Rpsw9I0/gQJfue8qjFmZDGTrCLNdfXsv7/toPtMZ8gXDmEiJuwAHWIPRRJIMGKgZT5WBDnt/T7k6Cw+GXS2Z7FSKZeTZnwuAALMAaZMOsYIuwgmUfu+AixW2/mEfhJsLgEOZYcBVLyggOB7F+ensJ4Q1Wlv3M8PUWxocAOMALBKb97Iv/MjWARQp/4OsI9fZkdsN3hqnEhIKcWAqAA7xATowKtBywQHiDd/AIfHlewQpKggkFOVW2BYcAuJz453s5QqIlpcyDTCaoq4OZpyk7p/m1BodTS9PuCisTKgrCFW3yGvhyq33VeGAUFg2twYGWIItm5tmFljtoKJVXMg+6M0ntLcw87dlZz7IFOKzRZN9RYZXW1POPF96G9Wzxd6dytJhuM3Cgqnz5VClz6Bjc1g35SsB0Y9Kz+s0CByqhala9YoZRA/A2sFQx5vo7R2wDSxV/PBhbZ4GjiAwR7Ya7dUNEQrd1zOY9ExwwG26ZFmZ9xDaisHWDV/lZs58JDt7O8pgboqLso4Mrys7TFUMYj0x86MCBAhS7YleYlXEnpZRv64aqQ/9bN1Q+Po+ZANCBwyffwmke5a0b/mcBNmKASREcA5oQ/J8rWzcEh2NabQAfA+DAeaZJMW1VzCSsYNm1ENDWDW9y6mAwAA5dljeeBdEqt7ZueJ6SATD0gQNmwzOjgmqIRQp/4CvIrRveZgd4ABH1gcMbi0JrBVggvME7asRDQ1/BZo8o1p9VBEe/Ipz/5fTWDefhmdSIEwzIAFJMysPLilbP0FIQrqi0rRsetJnCZaWIDBHF5cfWDZGRqnWAihjAge8EFT9OGsibrRtOA02Xy7YcE6bSCbMYqIx7/1VaJWQi3smfUjInnUb2NPp4PRuHtPrUDYdKRBVDlK79K238Rx27yq7Q53NkZweUc8n9dMvPGWj4mIAEpDMWmYi3ZDN9+Uf0Hz90oPNvdiGV4NaN2deZyONBh8fPdCHbQFW5q5Wu5EC//v5jBeiPgXnryqH0+aXmRSK54tvQIb9IVLSqjs67XqRnhzpYLW/+rkMds2LJ4GDacQ/lmg3Gb95n7/QVHY+XiArQKvbUjfOXKJcVUabW9Z79lnWZdUkMDin8UpL14bIcyvqbW2Z4DOde64tpXPgHLPgqO/ZUPYrOvtqxlqGCySn62vp9k3zHLMUhlbla6Y6w5fjPRx3V5VBB8LIiuHVj/m3E4nevu5e62h0ktyiWe1npjKrPMePz9I8zLFQknC1oOUSeujFyMp11Jfn/tB6lLSs8s4mTzMsKl+XgvazAD130gGcNphuKWA7Bp27Mvz3N1k9q/X3UkfDIIAafgyR+uHwOXod0wR2+/FBNfyIOqcgiBd4PVtQaW8+JZII2LvfcGg3j+JNHXL8PZgQHZuLTi3k04Gg5BJ+6sdDT4iJ7DM/d791s9HGTDA4mn6NPdJ6Dfz9Uk8PR50gIbN0YN4WmX6ix9J6A2diwzHvzvpaSwcG0WuHyOf75YgY/tE+PysEeHLB2WFUq9Wz/Lr7Xtli4cNOD1HZUuLZ5RcngYLIcULT5cKxyzfLhh15yn1mB17zyQXYt8VV2vKoeN5OmnG3HRLCss52wghWsbF1NLji4Viss4Jh3Gw0bba0Z7hKRrRu498TSLYLlvs0GBJELDq7Viv/LCvzQ2V/D+CURAjyOT92YOps+PJ1BHpiNtfcw8CHZS1kmn8O/5WD0Q0XmAd5GzKke1yJl2w8owfNsoNy0HD7BcfpFnH6oftLLzNwOka0bH19I46foOXlPr+MxGxBAMjiYLIefy0r5YF/35aEzGzINdYhs3eAyG5sfpqPv2gjoqkgyOCKwWkFkOjg/NDtICiPnGBX95JcIN1NczZtV5We/aVXiIV8uOLhWK54tB/xQlu0zVprOthwiWzcQv7di6Cr/+UcYzQaRZIcUTrur0VpVxtfRqsg+P2g/NDsOBlfUXqRzrqHasfZVREuf4TQb6DQ3LYc3cHzsc0H5oVCkSobLiuPWjYohNO9/1KZ+jy88RocP+GWS2V4uOEKMc8AP/Xe/9xoyVWd2ZrisOG7dOPdaqmJ6v5O3vYBmg9DyJIODa7WiyS+cwBc0OD9Uk0J/WXHcujGohs67QWvqK/HSj+ngPl8czBpLBkdIqxWsBebcaDZ87jy95XBcpMy5gQbX8EjQcAcPn0wuksHBZDnc+hyXPZI56sDONMvhuHUDV5PPfJVHjp0rgzAbkE0yODzudIWgmeRmV/Q/LaCTzsxsHtiZ5pA6bt3AZY5l/zCGsuYbOARBcsHBNQJxywE/9AsPcnXbz8fmn3pZgXj2K1isXbGCteEjXvRaA73zunh1VzWlg8Px5qSI+NC+SDXUufBWqfflVXA4bt2Yz+ciPH0rRhkQSQcHT5BU7LICP/T8JQEpzpyt6nPYb92AVLO+ZN7cbe6v1gZnNiCLdHCwhDoEmUjzQ6FIlQAORIHtrePnmPYPo8dVt+EQHMkHB9OCxVEl0+fJ80M1YeCQwtuw2boxbgqdvlCr7ivxm4309h5fHJwaywcHU6jDfmDwQy/18rtye67OpbE4YZ1iU4/r1jy6aAhqkQLeKuUpOOZ+XaofquoSR1zvbJzlydNp2mzUYqDfbaN9Oxn42LKQD47gLyvw+C5w8xwVWwW5K+ywtYtc+4chU2CxDfDWiBMcGlO7BL5bdsUcZfL9UE1qm5ewnHw2eXq8jsY7ndi7k/74Yvo0sJR0cPAsZa31cercEPxQTRysVrS0IcH1ayWwDTK2AfYaSQcHVnpa50EkZMZDs+UvLcvOU3JOu5Bt//Bbe+j32xSewf9JB0eglmPBnVQ3LnilWfdQYgEOxkXKSnnulHRwBOdzwA+98BbreZNSYnpZOWMRjXHzFEobSWE2GjfalPMWyQdHYKuVEP1QbU5MLyuMZiPgkKg2DjUhHxy2iz1VKA/HUy8I0w/VBM62HGddybZ/GHdf96zVupKQkA+OYCzHFx6SoCznLgw+R1klzXO4/eHMU6sha5GidSgfHAFYDtwBD9cP1dRpuKycfTXVjNIKfSVgNl5r8MXBfWPp4GBfrcAPnce0u9+9+owt9JeViiE0l89BDv5OinEsJPlHTeifPc4RBT8U41JJbznOu55t//DBfbRrpdqDzGOOW45pcyLhh2ozpvkcVXU0+zot229iNd/OMTeiSAeH/ziHnsMXH3Yz2ODrapeV82/ieWw5RD50gF7+Mf7LJ/ng8L1a0e6JYyEQET9Umzf1slI9ihgfG7T6do295IR8cDCtVmrH0fzQtGY5SarlYBQMZuPFxyy7C7hAPjgELYf1uFXLEbULiiovfA6sns66Qj1jOLI+b8OtPNLBwbCUTdFHP02nzHE7VOf6yRbnOvY1cFlZwLd774N36HlZv9UzG5d0cOjdSTOBnPPiJXRpMH7ohqXk+Lt4e/nGnkgzLrGv4qL0Z992UTmAqjkIDsSkR07iV8WB39DuBmpr8sV59HG+musbtxyiLcF8B/S92Kblg8O3z2E7Hu+Fq/t+OtbuDxzeu89qyf2YnqwOnDPkg4NpteI8NDc1XniUDr2tNPBpORQWHH8wG9t+wMHIFw/54Iie5TjyDm0euKkbEcux9h7P797yBYfMxvLBET3LsVp3366tOVM/YZy1HqXN3n6RxSytdHAwLGVZVdC4gfbvTnOMguVYf28UzAZ0Ih0c7HdlMQjP1NlGmAl989B9DpiNjRIfKKIfe1ZaOji8vsYyS3KOjOfup8ThDEahW46Ny3y+eytjOP5OpIPDn7icrZW9VauMDMMFR9LvK/uMw/F3HgY4oAJ/QvO0VgMbBl7hXlY2Lqc2v+/eMgzIz2kY4PAfQfczYrXtiz8yfwJfiODobKf1rK8VU0fq4xgKOMIOdTQdpG0Wr3cP8bKy6aFImQ2AKhRwSA91YKB6WnM7Wa2o8fXV15SWRr8cr+zjlTcMcFhNDO/IrLg1bqS9r1gVKvmG9YuSFfwfLBnTu7cYZQ0DHCGGOpTAxj0O6gvlyhI9swEthQGOEC3HhqXGwAZ0YCD5PimC5Xzv3jKMxs9pGOAIa7WCwMarTzsrq1367ZUA3obhPEyBGqGAI6TVimlgI1tHki3H1u9TJM0GFBMKOMJYrbz4mHlgAzowkGSfI+y9gIbR609DAYd0y6EENr6nH7ZdWqbl2P5D9ndv2Q3NVVkIv5WFfPJ9DpvABuQxkExwhPHzaMNwbU7DsBySVyu/3eQQ2DCoR9plZceTUTYb0EoY4JBpORDYWHc3xumCpIFjzZ0upAqjaijgkOhzbHzAObBh0Lucy8orPxF1kA3iSTwNBRyyVisIbPziKdfKlBPneOYu14JJb5DX4BAMbBiUjqWNIYf99BerAn2JDpe8oYBDymVlx+Me7fb7b3Ep15LPar6nyFn2wVAQCjiCv6zg2791hRf19HQrL0xpOWTT1m/RL5/NCbOBYYYCjuAth6vABtSgUeIDSqUIRy2HPRHSM5w8jCMUcARsOX63xV1gQ1MbYNHctxm99QMtjznx6+eCfvcWo8BhgCPQIBgCG2u9PrmgtYl6uhTlBmc51uTAIkXRQN9fGOAIdLPPpmWuAxt9ilAOmqsR0Gaw326R8O4tZSBMf2GAIzjLgcCG5+d1Jtuoo61fqwFZDrmPte8fi49/YYAjuPC5t8CGqj79M32CAMfr23PLbEAroYAjmNXKS094DGxADd2dBIcDCZWCcEgjfydFHbr+yAgOPVvbdBCWA4ENPw9JUhcpmtTslmPvTnr9eY19riRCAUcAlsNzYAMT1dtrDGywg6MhnOdTY3B+KBRwcMc5fr/VY2BD1VziCPX2qMn+I+9lRXn31qZ+zjn1Lwxw8K5WENj42be86xyBL20Fq3HhtRyrdE8O0rrIhUQY4OD1OTYt9x7YwAwlE9SVdZljBAdW13vWoZ9cpFDAkTUZnjUH1e/6qefWSsMms3tsjJeVp/jex6OIK/UvDHDgQsA1xglLSAAABzNJREFURj+BDciAWG27xSOtWYwHsLt7DfrJUQoDHFyqeulJ74ENVQZ4GzE1lXVkMR7ON2Cz+o1SRkjgwJXepxaUwIa/5zGqWzesxPBvOQ7uIw+bFK3kCSM/JHD4X7CssX7GhqAeMf1YqlhVRqlVkWB+rt1JyR5WSODAxT5bFvEcn4ENdARYGKKiyNSTT3DAbLzy/3p+uZgOCRzLF9Bd/yJKD8ylRy/LoDW+A464k6Ju3bCaNMQ0xSXMrvmdc60Y51B+SODYt4v+sF2U3vuT8pDh/bvTR/+/HoAraj9L770hKp7pQP72pj37nCgNCRziuhlSQ6Xl4tWFauq3bgg1KNBKkQfH0BH8M6PfusHPPX84RhUcqoYrBlPlYDXJdjRs3WDjm4eMog2OofX8KrdfpPD3l8McIwyOkjKCw0Gsn+ytG6zs84xZhMFRXUcxq+C211nI3rrhlVMhtIsqOACLqlrmCUDgy3EFy9xlbrOLUyqSA6gaTiWlzJLhhk721g3mPvKIXYrixG25GdQDvAbhippu3WAQN29ZRNJyDBpK5ZXMKsfdHKutG8w9hceOt+cYLAdF71MTwAoW3kYEbWT0dJ+WKIqXlbIKqqxKi8iSst+6wdJF/jGJwXLgAk9R+sDbwFKFVyLcf8dShZdn3nOLnOWIlxDWKbx6ByyKUVEPKo1FzXIgthGPE+/HcesGb3d5wy1ylgNRUXblwhVl51kIDGOwHERRiYPhTkppcesG5iMqpNjw9m460BZ3pN7a8VQ/UYTe6Sh15KZW6Kwek2Y4fioNG2NFBzviB5q7RaitfFiaSfkgqp+Y7iJT/sOxKlUMx2NLRa0VE0N+c9kwR25qhSMl1Ya2VqetlfVqE8fj+6nBVkwM+cmqD9lwS3YTPgo44jH6xMvVU1+osaf43Y20fL8IXXbgeHtWWmnvDc+lGd6yna7fYEXLDk2a+n/vilDL7FvTTL5tJ/P6CRdrktgn9p9zR1pOWyU0zrjOnpVW+vKUywV5HvzsUq2VfeJ/h88R5Nlx1UorVgCDAgvqu6xUlNKZ9X0PSgNailTwGgAYyksVLagQoTNHFMGhqKP4Bw18ZlQnjqB+cHyyrkt5OCsyilTgGkilPlXf53GolxVo45hBqUvH9+MFp0UqWA0ABtXl/VHzfssBXSz5h/aKeH8uTotUgBoAAG46tl0beBocIytTV0zke3KG1kMxkTsaAABGVPQbCEidBgdOFk9KVpemy5ATOMUyBODpLtXLw6fAuAwtTS2enDYbGH3G3OBi89+TuZ/mhk5sCHfabEq9FeEGvbeGhd1q8eRkdVmGCjLAgZIrJiZHlEv85gVhOYrgwES6pHGVPZh6QyMjOCpL6MYPZ9gWQwPm0xgzvyI7bxq48dgkpt7Q1ggOFF86oXMWwh5IFakwNIDpvugYk0CGCThwq+XxaYmPVPVHQgpDP4U7Skw0phuTnq0CE3CgEhyTp6e3njhyyNjaao16WpuoTYjqqiq1VpaJ+pqx9TXd7QlKtojQkIoy1HegOkXaro42QTlL4ylL8XQDR53erg5BnqmeLtQXoVhvjyDP7o6kCEPUqSiJi/JsT6D+1FGDMdGYbkx6NpmDA/VGV/buWDiu8fU/NO57S6Vpp3+iduwkEXpy5Sq1id3xjf2Nb+z/yldvqB0zQYS+svhrqO9AexVRn1r9jIiQqPPxGTPtJBwYOOr85b2DqN9HDhqIlZShvgiNm+DASutu16u7RRiizoKFF2mt7BP3Lf8uJvf5C+ow0ZhuU7IEh1J7305asYiKYQNFF/n2F6OUMrl/brQZmC040O611bTy6/hfpDzTwIzuvYTJtR2VEzjQeO13aOlc8v8YLrAqUgQ0gEjoT05NzC5zfmqZADgwnl8+S7d+7EPlxfULdJHbNLayZ+vpzeeMFNq+IwYOKOTdP6488a/Ktg+ki5SbGphZ27V9RsuxVaIRcGFwEA0vT606NfHFcR25qZlCl3rR2I6G0xK1A3s1RNThAhxgV1JC95/U1jC95YSqzFcboaxIUdUAJgtTtvzkNkyfKxndgUNlPau+e8cZzQ+d1Dq6Qmeg1LLiMUoaGF/Z88iUBCYLU+ZBLi/gQDeItl4yrnP3zKY7j2urKS1CBCqJFmFSvnFc26szmxcc04XJ8iacR3ConQ0qo6smd+yZ1fxfE5JlMbm7hFQJiscsDWAirpyYxKRcPblD/YVBVhXRDF/gUDsZVpa66yPtfzqzacXJrXNGdQ4pKaJEVYzcYzJBrzXENz2IifjmCe2YFP/dM4BDFQLSXDS284lTWt/816PdDy2izQ/ToQNU/AStgcN/pi0r6O5z6ct1tGz+iDe3YSK4+mQDhyYQTFnFmzvoiavp2gmKxDdPUwKsP11CW79He9bR23uo+W/F+zWausQSKTryV9q3i3Y9RevvoyeuUVR60yl0eT1dM54ev4oaN1GvyYYMMeaWtf4OAAD//xy2y6YAAAAGSURBVAMAHHW8GzyCAaoAAAAASUVORK5CYII=" alt=""><div><div class="wm">W<b>TRACKS</b></div><small data-t="sub">Rally copilot</small></div></div>
+    <div class="sp"></div>
+    <button class="ib hidden" id="btnAdmin" data-ti="admin" data-i="users"></button>
+    <button class="ib" id="btnSettings" data-ti="settings" data-i="gear"></button>
+    <button class="ib" id="btnTheme" data-ti="theme" data-i="moon"></button>
+    <button class="ib hidden" id="btnLogout" data-ti="logout" data-i="logout"></button>
+  </div>
+  <div class="stripe"></div>
+</header>
+
+<main>
+<!-- LANDING -->
+<section id="scr-landing" class="scr">
+  <div class="hero">
+    <div class="ltop">
+      <div class="brand"><img src="data:image/png;base64,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" alt=""><div><div class="wm">W<b>TRACKS</b></div></div></div>
+      <div class="sp"></div>
+      <select class="langsel" data-lang></select>
+      <button class="ib" data-themebtn data-i="moon"></button>
+    </div>
+    <div class="inner">
+      <div>
+        <div class="kick" data-t="kick">Rally copilot</div>
+        <div class="title">W<b>TRACKS</b></div>
+        <div class="claim" data-t="claim">Tu copiloto de rally, por voz</div>
+        <p data-t="heroSub"></p>
+        <div class="cta"><button class="btn pri" id="lnGo"><span><span data-i="flag"></span><span data-t="enter">Entrar</span></span></button></div>
+        <div class="feats">
+          <div class="feat"><b><span data-i="wand"></span><span data-t="f1t"></span></b><span data-t="f1d"></span></div>
+          <div class="feat"><b><span data-i="nav"></span><span data-t="f2t"></span></b><span data-t="f2d"></span></div>
+          <div class="feat"><b><span data-i="route"></span><span data-t="f3t"></span></b><span data-t="f3d"></span></div>
+          <div class="feat"><b><span data-i="globe"></span><span data-t="f4t"></span></b><span data-t="f4d"></span></div>
+        </div>
+        <div class="install"><span data-i="phone"></span><span data-t="install"></span></div>
+      </div>
+      <svg class="heroart" viewBox="0 0 520 440" aria-hidden="true">
+        <defs>
+          <pattern id="chk" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#fff"/><rect width="8" height="8" fill="#111"/><rect x="8" y="8" width="8" height="8" fill="#111"/></pattern>
+          <linearGradient id="rd" x1="0" x2="1"><stop offset="0" stop-color="#2a2f37"/><stop offset="1" stop-color="#1c2027"/></linearGradient>
+        </defs>
+        <path d="M40 420 C 60 330, 170 330, 190 270 S 120 170, 210 120 S 400 150, 430 80 S 470 30, 500 20" fill="none" stroke="#000" stroke-opacity=".35" stroke-width="64" stroke-linecap="round" transform="translate(6 8)"/>
+        <path d="M40 420 C 60 330, 170 330, 190 270 S 120 170, 210 120 S 400 150, 430 80 S 470 30, 500 20" fill="none" stroke="url(#rd)" stroke-width="64" stroke-linecap="round"/>
+        <path d="M40 420 C 60 330, 170 330, 190 270 S 120 170, 210 120 S 400 150, 430 80 S 470 30, 500 20" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="14 14" opacity=".7"/>
+        <path d="M40 420 C 60 330, 170 330, 190 270 S 120 170, 210 120 S 400 150, 430 80 S 470 30, 500 20" fill="none" stroke="#ff5a00" stroke-width="6" stroke-dasharray="1 0" opacity=".0"/>
+        <g font-family="Barlow Condensed, Arial Narrow, sans-serif" font-style="italic" font-weight="900" font-size="30">
+          <g transform="translate(150 318) skewX(-8)"><rect x="-36" y="-22" width="72" height="40" rx="6" fill="#eab308" stroke="#111" stroke-width="2.5"/><text x="0" y="10" text-anchor="middle" fill="#111">R3</text></g>
+          <g transform="translate(120 205) skewX(-8)"><rect x="-36" y="-22" width="72" height="40" rx="6" fill="#ef4444" stroke="#111" stroke-width="2.5"/><text x="0" y="10" text-anchor="middle" fill="#111">L6</text></g>
+          <g transform="translate(330 140) skewX(-8)"><rect x="-36" y="-22" width="72" height="40" rx="6" fill="#22c55e" stroke="#111" stroke-width="2.5"/><text x="0" y="10" text-anchor="middle" fill="#111">R1</text></g>
+          <g transform="translate(445 60) skewX(-8)"><rect x="-30" y="-22" width="60" height="40" rx="6" fill="#d946ef" stroke="#111" stroke-width="2.5"/><text x="0" y="10" text-anchor="middle" fill="#111">H</text></g>
+        </g>
+        <g transform="translate(60 384) rotate(-62)"><rect x="-13" y="-22" width="26" height="44" rx="7" fill="#ff5a00" stroke="#fff" stroke-width="3"/><rect x="-9" y="-12" width="18" height="10" rx="2" fill="#111"/></g>
+        <g transform="translate(470 150)"><rect x="0" y="0" width="4" height="90" fill="#ddd"/><path d="M4 2 h60 v40 h-60z" fill="url(#chk)" stroke="#111" stroke-width="1.5"/></g>
+        <g font-family="Inter, sans-serif" font-weight="800" font-size="14" fill="#fff"><g transform="translate(230 210)"><rect x="-44" y="-16" width="88" height="28" rx="5" fill="#111" stroke="#ff5a00" stroke-width="2"/><text x="0" y="3" text-anchor="middle">150 m</text></g></g>
+      </svg>
+    </div>
+    <div class="bottom"><div class="checker"></div><div class="credit"><span data-t="devBy">Programa desarrollado por</span> <b>Sergio Aranda</b></div></div>
+  </div>
+</section>
+
+<!-- LOGIN -->
+<section id="scr-login" class="scr">
+  <div class="biglogo"><img src="data:image/png;base64,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" alt=""><div class="wm">W<b>TRACKS</b></div><span class="mut" data-t="claim"></span></div>
+  <div class="card">
+    <div class="row"><div class="sp"></div><select class="langsel" data-lang></select></div>
+    <label class="f" data-t="email">Email</label><input class="in" id="lgEmail" type="email" autocomplete="username">
+    <label class="f" data-t="pass">Contraseña</label><input class="in" id="lgPass" type="password" autocomplete="current-password">
+    <label class="chk"><input type="checkbox" id="lgRemember" checked> <span data-t="remember"></span></label>
+    <button class="btn pri" id="lgBtn" style="width:100%;margin-top:16px" data-t="login">Entrar</button>
+    <div class="err" id="lgErr"></div>
+    <button class="btn sm" id="lgReset" style="width:100%" data-t="forgot"></button>
+  </div>
+  <div class="credit"><span data-t="devBy"></span> <b>Sergio Aranda</b></div>
+</section>
+
+<!-- HOME -->
+<section id="scr-home" class="scr">
+  <div id="localBar" class="localbar hidden" data-t="localBar"></div>
+  <div class="homehead"><h1 id="hello"></h1><div class="mut" data-t="homeSub"></div><div class="checker"></div></div>
+  <h2 data-t="newStage">Nuevo</h2>
+  <div class="actions">
+    <button class="act-card hl" id="newNav"><div class="ic" data-i="nav"></div><div class="tt"><b data-t="navT"></b><span data-t="navD"></span></div></button>
+    <button class="act-card" id="newMap"><div class="ic" data-i="map"></div><div class="tt"><b data-t="mapT"></b><span data-t="mapD"></span></div></button>
+    <button class="act-card" id="newGpx"><div class="ic" data-i="upload"></div><div class="tt"><b data-t="gpxT"></b><span data-t="gpxD"></span></div></button>
+    <button class="act-card" id="newRec"><div class="ic" data-i="rec"></div><div class="tt"><b data-t="recT"></b><span data-t="recD"></span></div></button>
+  </div>
+  <input type="file" id="gpxFile" accept=".gpx,application/gpx+xml,application/xml,text/xml" class="hidden">
+  <h2 data-t="mine"></h2>
+  <div id="stageList"></div>
+  <div class="note-warn"><span data-i="alert"></span><div data-t="safety"></div></div>
+  <div class="credit"><span data-t="devBy"></span> <b>Sergio Aranda</b></div>
+</section>
+
+<!-- NAV SETUP -->
+<section id="scr-nav" class="scr">
+  <div class="head"><button class="ib" data-back data-i="back"></button><h1 data-t="navT"></h1></div>
+  <div class="searchbar"><input class="in" id="nvSearch" data-tp="destPh"><button class="btn" id="nvSearchBtn" data-i="search"></button><button class="btn" id="nvLocate" data-ti="myLoc" data-i="target"></button></div>
+  <div class="results hidden" id="nvResults"></div>
+  <div class="map" id="mapNav"></div>
+  <div class="panelbar">
+    <span class="pill" id="nvInfo"></span>
+    <div class="sp"></div>
+    <button class="btn sm" id="nvSave" disabled><span data-i="save"></span><span data-t="saveAsStage"></span></button>
+    <button class="btn" id="nvSim" disabled><span data-i="sim"></span><span data-t="sim"></span></button>
+    <button class="btn pri" id="nvGo" disabled><span data-i="nav"></span><span data-t="startNav"></span></button>
+  </div>
+</section>
+
+<!-- EDITOR (MAP) -->
+<section id="scr-editor" class="scr">
+  <div class="head"><button class="ib" data-back data-i="back"></button><h1 data-t="edTitle"></h1></div>
+  <div class="searchbar"><input class="in" id="edSearch" data-tp="searchPh"><button class="btn" id="edSearchBtn" data-i="search"></button><button class="btn" id="edLocate" data-ti="myLoc" data-i="target"></button></div>
+  <div class="map" id="mapEd"></div>
+  <div class="panelbar">
+    <span class="pill" id="edInfo"></span>
+    <div class="sp"></div>
+    <button class="btn sm" id="edUndo"><span data-i="undo"></span><span data-t="undo"></span></button>
+    <button class="btn sm" id="edClear"><span data-i="trash"></span><span data-t="clear"></span></button>
+    <button class="btn pri" id="edGen" disabled><span data-i="wand"></span><span data-t="gen"></span></button>
+  </div>
+</section>
+
+<!-- RECORD -->
+<section id="scr-record" class="scr">
+  <div class="head"><button class="ib" data-back data-i="back"></button><h1 data-t="recT"></h1></div>
+  <div class="stats">
+    <div class="stat"><small>GPS</small><b id="rcGps">—</b></div>
+    <div class="stat"><small data-t="acc"></small><b id="rcAcc">—</b></div>
+    <div class="stat"><small data-t="hz"></small><b id="rcHz">—</b></div>
+    <div class="stat"><small data-t="pts"></small><b id="rcPts">0</b></div>
+    <div class="stat"><small data-t="dist"></small><b id="rcDist">0 m</b></div>
+    <div class="stat"><small data-t="time"></small><b id="rcTime">0:00</b></div>
+  </div>
+  <div class="map" id="mapRec"></div>
+  <div class="panelbar">
+    <span class="pill" id="rcState"></span>
+    <div class="sp"></div>
+    <button class="btn pri" id="rcStart"><span data-i="rec"></span><span id="rcStartT"></span></button>
+    <button class="btn hidden" id="rcPause"><span data-i="pause"></span><span data-t="pause"></span></button>
+    <button class="btn hidden" id="rcStop"><span data-i="check"></span><span data-t="finishRec"></span></button>
+  </div>
+</section>
+
+<!-- STAGE -->
+<section id="scr-stage" class="scr">
+  <div class="head"><button class="ib" data-back data-i="back"></button><input class="in" id="stName" style="flex:1;font-family:var(--disp);font-style:italic;font-weight:900;font-size:22px;text-transform:uppercase"><button class="btn pri" id="stSave"><span data-i="save"></span><span data-t="save"></span></button></div>
+  <div class="row" style="margin-bottom:10px" id="stPills"></div>
+  <div class="layout2">
+    <div>
+      <div class="map" id="mapSt"></div>
+      <div class="panelbar">
+        <button class="btn pri" id="stDrive"><span data-i="play"></span><span data-t="drive"></span></button>
+        <button class="btn" id="stSim"><span data-i="sim"></span><span data-t="sim"></span></button>
+        <button class="btn sm" id="stRegen"><span data-i="wand"></span><span data-t="regen"></span></button>
+        <button class="btn sm" id="stGpx"><span data-i="download"></span>GPX</button>
+        <button class="btn sm bad" id="stDel"><span data-i="trash"></span><span data-t="del"></span></button>
+      </div>
+    </div>
+    <div>
+      <div class="notes" id="stNotes"></div>
+      <div class="mut" style="font-size:12px;margin-top:8px" data-t="tapHint"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMIN -->
+<section id="scr-admin" class="scr">
+  <div class="head"><button class="ib" data-back data-i="back"></button><h1 data-t="admin"></h1></div>
+  <div class="tabs"><button class="tab on" data-tab="users" data-t="users"></button><button class="tab" data-tab="stages" data-t="allStages"></button></div>
+  <div id="admUsers">
+    <div class="card" style="margin-bottom:14px">
+      <b data-t="createUser"></b>
+      <div class="form2">
+        <div><label class="f" data-t="name"></label><input class="in" id="nuName"></div>
+        <div><label class="f" data-t="email"></label><input class="in" id="nuEmail" type="email"></div>
+        <div><label class="f" data-t="passMin"></label><input class="in" id="nuPass" type="text"></div>
+        <div><label class="f" data-t="role"></label><select class="in" id="nuRole"><option value="user" data-t="pilot"></option><option value="admin" data-t="adminR"></option></select></div>
+      </div>
+      <button class="btn pri" id="nuBtn" style="margin-top:14px"><span data-i="plus"></span><span data-t="createUser"></span></button>
+    </div>
+    <div class="card" style="padding:0" id="admUserList"></div>
+  </div>
+  <div id="admStages" class="hidden"><div id="admStageList"></div></div>
+</section>
+</main>
+
+<!-- DRIVE -->
+<section id="scr-drive">
+  <div class="dtop">
+    <button class="ib" id="drExit" data-i="close"></button>
+    <span class="pill" id="drMode">GPS</span>
+    <span class="pill" id="drGps"></span>
+    <div class="sp"></div>
+    <button class="ib" id="drRepeat" data-ti="repeat" data-i="repeat"></button>
+    <button class="ib" id="drMute" data-i="vol"></button>
+  </div>
+  <div class="man hidden" id="drMan"><div class="ar" id="drManAr"></div><div style="min-width:0"><div class="d" id="drManD"></div><div class="tx" id="drManT"></div></div></div>
+  <div class="dnote">
+    <div class="ddist" id="drDist">—</div>
+    <div class="bignote idle" id="drNote"></div>
+    <div class="dnext" id="drNext"></div>
+  </div>
+  <div id="drOff" class="offroute hidden" data-t="offroute"></div>
+  <div class="dstats">
+    <div class="stat"><small data-t="speed"></small><b id="drSpd">0</b></div>
+    <div class="stat"><small id="drLeftL" data-t="toFinish"></small><b id="drLeft">—</b></div>
+    <div class="stat"><small data-t="curve"></small><b id="drIdx">—</b></div>
+  </div>
+  <div class="prog"><i id="drProg"></i></div>
+  <div class="simbar hidden" id="drSimBar"><span data-t="simulation"></span><input type="range" id="drSimSpd" min="20" max="160" step="5" value="80"><b id="drSimVal">80 km/h</b></div>
+  <div class="map" id="mapDr"></div>
+  <div class="dbtns"><button class="btn pri" id="drGo"></button></div>
+</section>
+
+<!-- NOTE SHEET -->
+<div class="ov hidden" id="ovNote"><div class="sheet">
+  <h3 id="nsTitle"></h3><div class="mut" id="nsSub" style="font-size:13px"></div>
+  <label class="f" data-t="dir"></label>
+  <div class="seg" style="grid-template-columns:1fr 1fr" id="nsDir"><button data-v="L" data-t="dirL"></button><button data-v="R" data-t="dirR"></button></div>
+  <label class="f" data-t="grade"></label>
+  <div class="seg" style="grid-template-columns:repeat(7,1fr)" id="nsGrade"></div>
+  <label class="f" data-t="details"></label>
+  <div class="chips" id="nsMods"></div>
+  <div class="row" style="margin-top:18px">
+    <button class="btn" id="nsSay"><span data-i="vol"></span><span data-t="listen"></span></button>
+    <button class="btn bad" id="nsDel"><span data-i="trash"></span><span data-t="remove"></span></button>
+    <div class="sp"></div>
+    <button class="btn pri" id="nsOk" data-t="done"></button>
+  </div>
+</div></div>
+
+<!-- SETTINGS -->
+<div class="ov hidden" id="ovSet"><div class="sheet">
+  <h3 data-t="settings"></h3>
+  <label class="f" data-t="lang"></label>
+  <select class="in" data-lang></select>
+  <label class="f" data-t="scale"></label>
+  <div class="seg" style="grid-template-columns:1fr 1fr" id="setScale"><button data-v="1fast" data-t="s1"></button><button data-v="6fast" data-t="s6"></button></div>
+  <label class="f" data-t="calib"></label>
+  <div class="seg" style="grid-template-columns:repeat(3,1fr)" id="setCalib"><button data-v="1.2" data-t="prud"></button><button data-v="1" data-t="norm"></button><button data-v="0.85" data-t="bold"></button></div>
+  <label class="f"><span data-t="lead"></span>: <span id="setLeadV"></span></label>
+  <input type="range" id="setLead" min="3" max="9" step="0.5" style="width:100%;accent-color:var(--acc)">
+  <label class="f"><span data-t="rate"></span>: <span id="setRateV"></span></label>
+  <input type="range" id="setRate" min="0.8" max="1.6" step="0.05" style="width:100%;accent-color:var(--acc)">
+  <label class="f" data-t="voice"></label>
+  <select class="in" id="setVoice"></select>
+  <div class="row" style="margin-top:18px"><button class="btn" id="setTest"><span data-i="vol"></span><span data-t="test"></span></button><div class="sp"></div><button class="btn pri" id="setOk" data-t="done"></button></div>
+</div></div>
+
+
+
+<script>
+/* =========================================================
+   CONFIGURACIÓN
+   1) Pega aquí la configuración de tu proyecto Firebase
+      (Consola Firebase → Configuración del proyecto → Tus apps → Web).
+      Si lo dejas en null la app funciona en "modo local" (sin usuarios).
+   2) Pon en ADMIN_EMAILS el email del administrador.
+   ========================================================= */
+const FIREBASE_CONFIG = null;
+const ADMIN_EMAILS = ['TU_EMAIL@gmail.com'];
+
+/* =========================================================
+   IDIOMAS
+   ========================================================= */
+const LANGS={es:'Español',en:'English',fr:'Français',it:'Italiano',de:'Deutsch'};
+const VLANG={es:'es-ES',en:'en-GB',fr:'fr-FR',it:'it-IT',de:'de-DE'};
+const I18N={
+es:{sub:'Rally copilot',kick:'Copiloto de rally',claim:'Tu copiloto de rally, por voz',heroSub:'Notas de ritmo automáticas para cada curva y navegador con indicaciones. Conduce solo, como si llevaras copiloto.',enter:'Entrar',start:'Empezar',
+f1t:'Notas automáticas',f1d:'Cada curva del 1 al 6, horquillas, cierra y abre.',f2t:'Navegador',f2d:'Elige destino: indicaciones y notas de curvas en ruta.',f3t:'Tus tramos',f3d:'En el mapa, con GPX o grabando un reconocimiento.',f4t:'5 idiomas',f4d:'Español, English, Français, Italiano, Deutsch.',
+install:'En iPhone: Compartir → «Añadir a pantalla de inicio» para usarla como app.',devBy:'Programa desarrollado por',
+email:'Email',pass:'Contraseña',remember:'Recordarme en este dispositivo',login:'Entrar',forgot:'He olvidado mi contraseña',
+localBar:'Modo local: los tramos se guardan solo en este dispositivo (Firebase sin configurar).',hello:'Hola, {n}',myStages:'Tus tramos',homeSub:'Navega a un destino o crea un tramo y Wtracks cantará cada curva.',
+newStage:'Nuevo',navT:'Navegar',navD:'Elige destino y conduce con indicaciones y notas.',mapT:'Tramo en mapa',mapD:'Marca salida, pasos y meta.',gpxT:'Importar GPX',gpxD:'Carga el track de un tramo.',recT:'Grabar tramo',recD:'Recórrelo despacio y la app lo graba.',
+mine:'Mis tramos',loading:'Cargando…',empty:'Aún no tienes tramos. Crea el primero arriba.',curves:'curvas',
+safety:'Usa la app en tramos cerrados, circuitos o como ayuda en carretera respetando siempre las normas de tráfico. Configura todo antes de salir y no manipules el móvil conduciendo.',
+edTitle:'Tramo en mapa',searchPh:'Buscar lugar o carretera…',myLoc:'Mi ubicación',edInfo0:'Toca el mapa para marcar la salida',edInfo1:'Ahora marca la meta (puedes añadir pasos)',edRoute:'Ruta: {d} · {n} puntos',calc:'Calculando ruta…',noRoute:'Sin ruta',undo:'Deshacer',clear:'Limpiar',gen:'Generar notas',
+acc:'Precisión',hz:'Frecuencia',pts:'Puntos',dist:'Distancia',time:'Tiempo',recReady:'Listo para grabar',recOn:'● Grabando — conduce despacio',paused:'En pausa',startB:'Iniciar',resume:'Continuar',pause:'Pausar',finishRec:'Terminar y crear tramo',good:'Bueno',fair:'Regular',bad:'Malo',err:'Error',tooShort:'El recorrido es demasiado corto para crear un tramo',
+save:'Guardar',drive:'Copilotar',sim:'Simular',regen:'Regenerar',del:'Eliminar',tapHint:'Toca una nota para ajustarla. A la derecha, la distancia hasta la siguiente curva.',srcmap:'Mapa',srcgpx:'GPX',srcrec:'Grabado',srcnav:'Navegador',hairpin1:'horquilla',hairpinN:'horquillas',unsaved:'Sin guardar',detected:'{n} curvas detectadas',noCurves:'No se detectaron curvas',confirmRegen:'¿Regenerar todas las notas? Se perderán los cambios manuales.',saved:'Tramo guardado',delQ:'¿Eliminar el tramo «{n}»?',deleted:'Tramo eliminado',saveErr:'Error al guardar: ',stageName:'Tramo',recName:'Reconocimiento',
+curveN:'Curva {i}',dir:'Dirección',dirL:'Izquierda',dirR:'Derecha',grade:'Grado',details:'Detalles',listen:'Escuchar',remove:'Borrar',done:'Listo',noteSub:'A {d} de la salida · radio aprox. {r} m · giro {a}°',
+simMode:'SIMULACIÓN',navMode:'NAVEGADOR',seekGps:'Buscando GPS…',noGps:'Sin GPS',ready:'LISTO',speed:'Velocidad',toFinish:'A meta',toDest:'Destino',curve:'Curva',offroute:'Fuera de ruta',inCurve:'EN CURVA',finishW:'META',go:'Salida',pauseB:'Pausa',resumeB:'Continuar',repeat:'Repetir',simulation:'Simulación',rerouting:'Recalculando…',mute:'Silenciar',
+destPh:'Buscar destino…',navInfo0:'Busca o toca el mapa para elegir destino',navInfo:'{d} · {t}',startNav:'Iniciar',saveAsStage:'Guardar tramo',locFail:'No se pudo obtener tu ubicación',
+settings:'Ajustes',theme:'Día / noche',logout:'Salir',lang:'Idioma',scale:'Escala de curvas',s1:'1 = más rápida',s6:'6 = más rápida',calib:'Cálculo de curvas',prud:'Prudente',norm:'Normal',bold:'Atrevido',lead:'Antelación de la voz',rate:'Velocidad de la voz',voice:'Voz',autoVoice:'Automática',test:'Probar voz',
+admin:'Administración',users:'Usuarios',allStages:'Todos los tramos',createUser:'Crear usuario',name:'Nombre',passMin:'Contraseña (mín. 6)',role:'Rol',pilot:'Piloto',adminR:'Administrador',makePilot:'Hacer piloto',makeAdmin:'Hacer admin',deact:'Desactivar',activate:'Activar',disabled:'Desactivado',userCreated:'Usuario {n} creado',fillAll:'Rellena nombre, email y una contraseña de 6 caracteres o más',emailUsed:'Ese email ya está registrado',resetSent:'Email para cambiar la contraseña enviado a {e}',noUsers:'Sin usuarios',noStages:'No hay tramos',
+needCreds:'Escribe tu email y contraseña',badCreds:'Email o contraseña incorrectos',userOff:'Tu usuario está desactivado. Contacta con el administrador.',writeEmail:'Escribe tu email arriba',resetMail:'Te hemos enviado un email para cambiar la contraseña',logoutQ:'¿Cerrar sesión?',
+mapFail:'No se pudo cargar el mapa',gpxBad:'El GPX no tiene un track válido',shortRoute:'Ruta demasiado corta',notFound:'No se encontró ese lugar',searchErr:'Error en la búsqueda',routeErr:'No se encontró carretera entre esos puntos',noNotes:'Este tramo no tiene notas',
+mods:{long:'larga',vlong:'muy larga',tightens:'cierra',opens:'abre',dontcut:'no cortar',cut:'corta',crest:'cresta',jump:'salto',bump:'bache',caution:'cuidado'},
+sp:{nums:['','uno','dos','tres','cuatro','cinco','seis'],hp:'horquilla',L:'izquierda',R:'derecha',and:'y',start:'Salida',finish:'meta',done:'Meta. Tramo completado.',off:'Fuera de ruta',reroute:'Recalculando ruta',arrived:'Has llegado a tu destino',inD:'En {d} metros, {m}',test:'Derecha tres larga, cien, izquierda horquilla, y derecha cinco cierra',navStart:'Iniciando navegación'},
+man:{right:'gira a la derecha',left:'gira a la izquierda','slight right':'mantente a la derecha','slight left':'mantente a la izquierda','sharp right':'gira fuerte a la derecha','sharp left':'gira fuerte a la izquierda',uturn:'cambia de sentido',straight:'sigue recto',round:'en la rotonda, toma la salida {n}',arrive:'llegas a tu destino',onto:' por {s}'}},
+en:{sub:'Rally copilot',kick:'Rally copilot',claim:'Your rally co-driver, by voice',heroSub:'Automatic pace notes for every corner plus turn-by-turn navigation. Drive solo as if you had a co-driver.',enter:'Enter',start:'Start',
+f1t:'Auto pace notes',f1d:'Every corner graded 1 to 6, hairpins, tightens and opens.',f2t:'Navigation',f2d:'Pick a destination: directions and pace notes on the way.',f3t:'Your stages',f3d:'On the map, from GPX or by recording a recce.',f4t:'5 languages',f4d:'Español, English, Français, Italiano, Deutsch.',
+install:'On iPhone: Share → “Add to Home Screen” to use it as an app.',devBy:'Developed by',
+email:'Email',pass:'Password',remember:'Remember me on this device',login:'Sign in',forgot:'I forgot my password',
+localBar:'Local mode: stages are saved on this device only (Firebase not configured).',hello:'Hi, {n}',myStages:'Your stages',homeSub:'Navigate to a destination or create a stage and Wtracks will call every corner.',
+newStage:'New',navT:'Navigate',navD:'Pick a destination and drive with directions and notes.',mapT:'Stage on map',mapD:'Mark start, waypoints and finish.',gpxT:'Import GPX',gpxD:'Load a stage track.',recT:'Record stage',recD:'Drive it slowly and the app records it.',
+mine:'My stages',loading:'Loading…',empty:'No stages yet. Create your first one above.',curves:'corners',
+safety:'Use the app on closed stages, circuits or as an aid on the road, always obeying traffic rules. Set everything up before leaving and do not handle your phone while driving.',
+edTitle:'Stage on map',searchPh:'Search place or road…',myLoc:'My location',edInfo0:'Tap the map to set the start',edInfo1:'Now set the finish (you can add waypoints)',edRoute:'Route: {d} · {n} points',calc:'Calculating route…',noRoute:'No route',undo:'Undo',clear:'Clear',gen:'Generate notes',
+acc:'Accuracy',hz:'Rate',pts:'Points',dist:'Distance',time:'Time',recReady:'Ready to record',recOn:'● Recording — drive slowly',paused:'Paused',startB:'Start',resume:'Resume',pause:'Pause',finishRec:'Finish and create stage',good:'Good',fair:'Fair',bad:'Poor',err:'Error',tooShort:'The drive is too short to create a stage',
+save:'Save',drive:'Co-drive',sim:'Simulate',regen:'Regenerate',del:'Delete',tapHint:'Tap a note to adjust it. On the right, the distance to the next corner.',srcmap:'Map',srcgpx:'GPX',srcrec:'Recorded',srcnav:'Navigation',hairpin1:'hairpin',hairpinN:'hairpins',unsaved:'Unsaved',detected:'{n} corners detected',noCurves:'No corners detected',confirmRegen:'Regenerate all notes? Manual changes will be lost.',saved:'Stage saved',delQ:'Delete stage “{n}”?',deleted:'Stage deleted',saveErr:'Save error: ',stageName:'Stage',recName:'Recce',
+curveN:'Corner {i}',dir:'Direction',dirL:'Left',dirR:'Right',grade:'Grade',details:'Details',listen:'Listen',remove:'Delete',done:'Done',noteSub:'{d} from start · radius approx. {r} m · turn {a}°',
+simMode:'SIMULATION',navMode:'NAVIGATION',seekGps:'Searching GPS…',noGps:'No GPS',ready:'READY',speed:'Speed',toFinish:'To finish',toDest:'Destination',curve:'Corner',offroute:'Off route',inCurve:'IN CORNER',finishW:'FINISH',go:'Start',pauseB:'Pause',resumeB:'Resume',repeat:'Repeat',simulation:'Simulation',rerouting:'Rerouting…',mute:'Mute',
+destPh:'Search destination…',navInfo0:'Search or tap the map to choose a destination',navInfo:'{d} · {t}',startNav:'Start',saveAsStage:'Save stage',locFail:'Could not get your location',
+settings:'Settings',theme:'Day / night',logout:'Sign out',lang:'Language',scale:'Corner scale',s1:'1 = fastest',s6:'6 = fastest',calib:'Corner calculation',prud:'Cautious',norm:'Normal',bold:'Bold',lead:'Voice lead time',rate:'Voice speed',voice:'Voice',autoVoice:'Automatic',test:'Test voice',
+admin:'Administration',users:'Users',allStages:'All stages',createUser:'Create user',name:'Name',passMin:'Password (min. 6)',role:'Role',pilot:'Driver',adminR:'Administrator',makePilot:'Make driver',makeAdmin:'Make admin',deact:'Deactivate',activate:'Activate',disabled:'Disabled',userCreated:'User {n} created',fillAll:'Enter name, email and a password of 6+ characters',emailUsed:'That email is already registered',resetSent:'Password reset email sent to {e}',noUsers:'No users',noStages:'No stages',
+needCreds:'Enter your email and password',badCreds:'Wrong email or password',userOff:'Your user is disabled. Contact the administrator.',writeEmail:'Enter your email above',resetMail:'We sent you a password reset email',logoutQ:'Sign out?',
+mapFail:'Could not load the map',gpxBad:'The GPX has no valid track',shortRoute:'Route too short',notFound:'Place not found',searchErr:'Search error',routeErr:'No road found between those points',noNotes:'This stage has no notes',
+mods:{long:'long',vlong:'very long',tightens:'tightens',opens:'opens',dontcut:"don't cut",cut:'cut',crest:'crest',jump:'jump',bump:'bump',caution:'caution'},
+sp:{nums:['','one','two','three','four','five','six'],hp:'hairpin',L:'left',R:'right',and:'into',start:'Start',finish:'finish',done:'Finish. Stage complete.',off:'Off route',reroute:'Rerouting',arrived:'You have arrived',inD:'In {d} metres, {m}',test:'Right three long, one hundred, left hairpin, into right five tightens',navStart:'Starting navigation'},
+man:{right:'turn right',left:'turn left','slight right':'keep right','slight left':'keep left','sharp right':'turn sharp right','sharp left':'turn sharp left',uturn:'make a U-turn',straight:'continue straight',round:'at the roundabout, take exit {n}',arrive:'you arrive at your destination',onto:' onto {s}'}},
+fr:{sub:'Copilote rallye',kick:'Copilote rallye',claim:'Votre copilote de rallye, à la voix',heroSub:'Notes automatiques pour chaque virage et navigation guidée. Roulez seul comme avec un copilote.',enter:'Entrer',start:'Commencer',
+f1t:'Notes automatiques',f1d:'Chaque virage de 1 à 6, épingles, serre et ouvre.',f2t:'Navigation',f2d:'Choisissez une destination : guidage et notes en route.',f3t:'Vos spéciales',f3d:'Sur la carte, en GPX ou en enregistrant une reco.',f4t:'5 langues',f4d:'Español, English, Français, Italiano, Deutsch.',
+install:'Sur iPhone : Partager → « Sur l’écran d’accueil » pour l’utiliser comme une app.',devBy:'Programme développé par',
+email:'Email',pass:'Mot de passe',remember:'Se souvenir de moi sur cet appareil',login:'Se connecter',forgot:'Mot de passe oublié',
+localBar:'Mode local : les spéciales sont enregistrées sur cet appareil uniquement (Firebase non configuré).',hello:'Bonjour, {n}',myStages:'Vos spéciales',homeSub:'Naviguez vers une destination ou créez une spéciale et Wtracks annoncera chaque virage.',
+newStage:'Nouveau',navT:'Naviguer',navD:'Choisissez une destination et roulez avec guidage et notes.',mapT:'Spéciale sur carte',mapD:'Placez départ, étapes et arrivée.',gpxT:'Importer GPX',gpxD:'Chargez la trace d’une spéciale.',recT:'Enregistrer',recD:'Roulez doucement et l’app l’enregistre.',
+mine:'Mes spéciales',loading:'Chargement…',empty:'Aucune spéciale. Créez la première ci-dessus.',curves:'virages',
+safety:'Utilisez l’app sur routes fermées, circuits ou comme aide sur route, en respectant toujours le code de la route. Réglez tout avant de partir et ne manipulez pas le téléphone en conduisant.',
+edTitle:'Spéciale sur carte',searchPh:'Chercher un lieu ou une route…',myLoc:'Ma position',edInfo0:'Touchez la carte pour placer le départ',edInfo1:'Placez maintenant l’arrivée (vous pouvez ajouter des étapes)',edRoute:'Itinéraire : {d} · {n} points',calc:'Calcul de l’itinéraire…',noRoute:'Pas d’itinéraire',undo:'Annuler',clear:'Effacer',gen:'Générer les notes',
+acc:'Précision',hz:'Fréquence',pts:'Points',dist:'Distance',time:'Temps',recReady:'Prêt à enregistrer',recOn:'● Enregistrement — roulez doucement',paused:'En pause',startB:'Démarrer',resume:'Reprendre',pause:'Pause',finishRec:'Terminer et créer la spéciale',good:'Bon',fair:'Moyen',bad:'Mauvais',err:'Erreur',tooShort:'Le parcours est trop court pour créer une spéciale',
+save:'Enregistrer',drive:'Copiloter',sim:'Simuler',regen:'Régénérer',del:'Supprimer',tapHint:'Touchez une note pour l’ajuster. À droite, la distance jusqu’au virage suivant.',srcmap:'Carte',srcgpx:'GPX',srcrec:'Enregistré',srcnav:'Navigation',hairpin1:'épingle',hairpinN:'épingles',unsaved:'Non enregistré',detected:'{n} virages détectés',noCurves:'Aucun virage détecté',confirmRegen:'Régénérer toutes les notes ? Les modifications manuelles seront perdues.',saved:'Spéciale enregistrée',delQ:'Supprimer la spéciale « {n} » ?',deleted:'Spéciale supprimée',saveErr:'Erreur d’enregistrement : ',stageName:'Spéciale',recName:'Reco',
+curveN:'Virage {i}',dir:'Direction',dirL:'Gauche',dirR:'Droite',grade:'Degré',details:'Détails',listen:'Écouter',remove:'Supprimer',done:'OK',noteSub:'À {d} du départ · rayon env. {r} m · angle {a}°',
+simMode:'SIMULATION',navMode:'NAVIGATION',seekGps:'Recherche GPS…',noGps:'Pas de GPS',ready:'PRÊT',speed:'Vitesse',toFinish:'Arrivée',toDest:'Destination',curve:'Virage',offroute:'Hors itinéraire',inCurve:'DANS LE VIRAGE',finishW:'ARRIVÉE',go:'Départ',pauseB:'Pause',resumeB:'Reprendre',repeat:'Répéter',simulation:'Simulation',rerouting:'Recalcul…',mute:'Muet',
+destPh:'Chercher une destination…',navInfo0:'Cherchez ou touchez la carte pour choisir la destination',navInfo:'{d} · {t}',startNav:'Démarrer',saveAsStage:'Enregistrer',locFail:'Impossible d’obtenir votre position',
+settings:'Réglages',theme:'Jour / nuit',logout:'Déconnexion',lang:'Langue',scale:'Échelle des virages',s1:'1 = le plus rapide',s6:'6 = le plus rapide',calib:'Calcul des virages',prud:'Prudent',norm:'Normal',bold:'Audacieux',lead:'Anticipation de la voix',rate:'Vitesse de la voix',voice:'Voix',autoVoice:'Automatique',test:'Tester la voix',
+admin:'Administration',users:'Utilisateurs',allStages:'Toutes les spéciales',createUser:'Créer un utilisateur',name:'Nom',passMin:'Mot de passe (min. 6)',role:'Rôle',pilot:'Pilote',adminR:'Administrateur',makePilot:'Passer pilote',makeAdmin:'Passer admin',deact:'Désactiver',activate:'Activer',disabled:'Désactivé',userCreated:'Utilisateur {n} créé',fillAll:'Saisissez nom, email et un mot de passe de 6 caractères minimum',emailUsed:'Cet email est déjà enregistré',resetSent:'Email de réinitialisation envoyé à {e}',noUsers:'Aucun utilisateur',noStages:'Aucune spéciale',
+needCreds:'Saisissez votre email et mot de passe',badCreds:'Email ou mot de passe incorrect',userOff:'Votre utilisateur est désactivé. Contactez l’administrateur.',writeEmail:'Saisissez votre email ci-dessus',resetMail:'Nous vous avons envoyé un email de réinitialisation',logoutQ:'Se déconnecter ?',
+mapFail:'Impossible de charger la carte',gpxBad:'Le GPX n’a pas de trace valide',shortRoute:'Itinéraire trop court',notFound:'Lieu introuvable',searchErr:'Erreur de recherche',routeErr:'Aucune route trouvée entre ces points',noNotes:'Cette spéciale n’a pas de notes',
+mods:{long:'long',vlong:'très long',tightens:'serre',opens:'ouvre',dontcut:'ne coupe pas',cut:'coupe',crest:'sommet',jump:'saut',bump:'bosse',caution:'attention'},
+sp:{nums:['','un','deux','trois','quatre','cinq','six'],hp:'épingle',L:'gauche',R:'droite',and:'et',start:'Départ',finish:'arrivée',done:'Arrivée. Spéciale terminée.',off:'Hors itinéraire',reroute:'Recalcul de l’itinéraire',arrived:'Vous êtes arrivé',inD:'Dans {d} mètres, {m}',test:'Droite trois long, cent, gauche épingle, et droite cinq serre',navStart:'Démarrage de la navigation'},
+man:{right:'tournez à droite',left:'tournez à gauche','slight right':'restez à droite','slight left':'restez à gauche','sharp right':'tournez franchement à droite','sharp left':'tournez franchement à gauche',uturn:'faites demi-tour',straight:'continuez tout droit',round:'au rond-point, prenez la sortie {n}',arrive:'vous arrivez à destination',onto:' sur {s}'}},
+it:{sub:'Navigatore rally',kick:'Navigatore rally',claim:'Il tuo navigatore da rally, a voce',heroSub:'Note automatiche per ogni curva e navigazione con indicazioni. Guida da solo come con un navigatore a fianco.',enter:'Entra',start:'Inizia',
+f1t:'Note automatiche',f1d:'Ogni curva da 1 a 6, tornanti, stringe e apre.',f2t:'Navigatore',f2d:'Scegli la destinazione: indicazioni e note lungo il percorso.',f3t:'Le tue prove',f3d:'Sulla mappa, da GPX o registrando una ricognizione.',f4t:'5 lingue',f4d:'Español, English, Français, Italiano, Deutsch.',
+install:'Su iPhone: Condividi → «Aggiungi alla schermata Home» per usarla come app.',devBy:'Programma sviluppato da',
+email:'Email',pass:'Password',remember:'Ricordami su questo dispositivo',login:'Accedi',forgot:'Ho dimenticato la password',
+localBar:'Modalità locale: le prove sono salvate solo su questo dispositivo (Firebase non configurato).',hello:'Ciao, {n}',myStages:'Le tue prove',homeSub:'Naviga verso una destinazione o crea una prova e Wtracks chiamerà ogni curva.',
+newStage:'Nuovo',navT:'Naviga',navD:'Scegli la destinazione e guida con indicazioni e note.',mapT:'Prova su mappa',mapD:'Segna partenza, tappe e arrivo.',gpxT:'Importa GPX',gpxD:'Carica la traccia di una prova.',recT:'Registra prova',recD:'Percorrila piano e l’app la registra.',
+mine:'Le mie prove',loading:'Caricamento…',empty:'Ancora nessuna prova. Crea la prima qui sopra.',curves:'curve',
+safety:'Usa l’app su strade chiuse, circuiti o come aiuto su strada rispettando sempre il codice della strada. Imposta tutto prima di partire e non usare il telefono mentre guidi.',
+edTitle:'Prova su mappa',searchPh:'Cerca luogo o strada…',myLoc:'La mia posizione',edInfo0:'Tocca la mappa per segnare la partenza',edInfo1:'Ora segna l’arrivo (puoi aggiungere tappe)',edRoute:'Percorso: {d} · {n} punti',calc:'Calcolo del percorso…',noRoute:'Nessun percorso',undo:'Annulla',clear:'Cancella',gen:'Genera note',
+acc:'Precisione',hz:'Frequenza',pts:'Punti',dist:'Distanza',time:'Tempo',recReady:'Pronto a registrare',recOn:'● Registrazione — guida piano',paused:'In pausa',startB:'Avvia',resume:'Riprendi',pause:'Pausa',finishRec:'Termina e crea prova',good:'Buono',fair:'Medio',bad:'Scarso',err:'Errore',tooShort:'Il percorso è troppo corto per creare una prova',
+save:'Salva',drive:'Navigatore',sim:'Simula',regen:'Rigenera',del:'Elimina',tapHint:'Tocca una nota per modificarla. A destra, la distanza dalla curva successiva.',srcmap:'Mappa',srcgpx:'GPX',srcrec:'Registrata',srcnav:'Navigazione',hairpin1:'tornante',hairpinN:'tornanti',unsaved:'Non salvata',detected:'{n} curve rilevate',noCurves:'Nessuna curva rilevata',confirmRegen:'Rigenerare tutte le note? Le modifiche manuali andranno perse.',saved:'Prova salvata',delQ:'Eliminare la prova «{n}»?',deleted:'Prova eliminata',saveErr:'Errore di salvataggio: ',stageName:'Prova',recName:'Ricognizione',
+curveN:'Curva {i}',dir:'Direzione',dirL:'Sinistra',dirR:'Destra',grade:'Grado',details:'Dettagli',listen:'Ascolta',remove:'Elimina',done:'Fatto',noteSub:'A {d} dalla partenza · raggio circa {r} m · angolo {a}°',
+simMode:'SIMULAZIONE',navMode:'NAVIGAZIONE',seekGps:'Ricerca GPS…',noGps:'Nessun GPS',ready:'PRONTO',speed:'Velocità',toFinish:'All’arrivo',toDest:'Destinazione',curve:'Curva',offroute:'Fuori percorso',inCurve:'IN CURVA',finishW:'ARRIVO',go:'Partenza',pauseB:'Pausa',resumeB:'Riprendi',repeat:'Ripeti',simulation:'Simulazione',rerouting:'Ricalcolo…',mute:'Silenzia',
+destPh:'Cerca destinazione…',navInfo0:'Cerca o tocca la mappa per scegliere la destinazione',navInfo:'{d} · {t}',startNav:'Avvia',saveAsStage:'Salva prova',locFail:'Impossibile ottenere la tua posizione',
+settings:'Impostazioni',theme:'Giorno / notte',logout:'Esci',lang:'Lingua',scale:'Scala delle curve',s1:'1 = più veloce',s6:'6 = più veloce',calib:'Calcolo delle curve',prud:'Prudente',norm:'Normale',bold:'Audace',lead:'Anticipo della voce',rate:'Velocità della voce',voice:'Voce',autoVoice:'Automatica',test:'Prova voce',
+admin:'Amministrazione',users:'Utenti',allStages:'Tutte le prove',createUser:'Crea utente',name:'Nome',passMin:'Password (min. 6)',role:'Ruolo',pilot:'Pilota',adminR:'Amministratore',makePilot:'Rendi pilota',makeAdmin:'Rendi admin',deact:'Disattiva',activate:'Attiva',disabled:'Disattivato',userCreated:'Utente {n} creato',fillAll:'Inserisci nome, email e una password di almeno 6 caratteri',emailUsed:'Questa email è già registrata',resetSent:'Email per cambiare password inviata a {e}',noUsers:'Nessun utente',noStages:'Nessuna prova',
+needCreds:'Inserisci email e password',badCreds:'Email o password errati',userOff:'Il tuo utente è disattivato. Contatta l’amministratore.',writeEmail:'Inserisci la tua email sopra',resetMail:'Ti abbiamo inviato un’email per cambiare la password',logoutQ:'Uscire?',
+mapFail:'Impossibile caricare la mappa',gpxBad:'Il GPX non contiene una traccia valida',shortRoute:'Percorso troppo corto',notFound:'Luogo non trovato',searchErr:'Errore di ricerca',routeErr:'Nessuna strada trovata tra quei punti',noNotes:'Questa prova non ha note',
+mods:{long:'lunga',vlong:'molto lunga',tightens:'stringe',opens:'apre',dontcut:'non tagliare',cut:'taglia',crest:'dosso',jump:'salto',bump:'cunetta',caution:'attenzione'},
+sp:{nums:['','uno','due','tre','quattro','cinque','sei'],hp:'tornante',L:'sinistra',R:'destra',and:'e',start:'Partenza',finish:'arrivo',done:'Arrivo. Prova completata.',off:'Fuori percorso',reroute:'Ricalcolo del percorso',arrived:'Sei arrivato a destinazione',inD:'Tra {d} metri, {m}',test:'Destra tre lunga, cento, sinistra tornante, e destra cinque stringe',navStart:'Avvio navigazione'},
+man:{right:'svolta a destra',left:'svolta a sinistra','slight right':'mantieni la destra','slight left':'mantieni la sinistra','sharp right':'svolta decisamente a destra','sharp left':'svolta decisamente a sinistra',uturn:'fai inversione',straight:'prosegui dritto',round:'alla rotonda, prendi l’uscita {n}',arrive:'arrivi a destinazione',onto:' su {s}'}},
+de:{sub:'Rallye-Beifahrer',kick:'Rallye-Beifahrer',claim:'Dein Rallye-Beifahrer, per Sprache',heroSub:'Automatischer Aufschrieb für jede Kurve plus Navigation mit Abbiegehinweisen. Fahr allein, als hättest du einen Beifahrer.',enter:'Los geht’s',start:'Starten',
+f1t:'Auto-Aufschrieb',f1d:'Jede Kurve von 1 bis 6, Kehren, zu und auf.',f2t:'Navigation',f2d:'Ziel wählen: Hinweise und Kurvenansagen unterwegs.',f3t:'Deine Prüfungen',f3d:'Auf der Karte, per GPX oder durch Aufzeichnen.',f4t:'5 Sprachen',f4d:'Español, English, Français, Italiano, Deutsch.',
+install:'Auf dem iPhone: Teilen → „Zum Home-Bildschirm“, um sie als App zu nutzen.',devBy:'Programm entwickelt von',
+email:'E-Mail',pass:'Passwort',remember:'Auf diesem Gerät angemeldet bleiben',login:'Anmelden',forgot:'Passwort vergessen',
+localBar:'Lokaler Modus: Prüfungen werden nur auf diesem Gerät gespeichert (Firebase nicht eingerichtet).',hello:'Hallo, {n}',myStages:'Deine Prüfungen',homeSub:'Navigiere zu einem Ziel oder erstelle eine Prüfung – Wtracks sagt jede Kurve an.',
+newStage:'Neu',navT:'Navigieren',navD:'Ziel wählen und mit Hinweisen und Ansagen fahren.',mapT:'Prüfung auf Karte',mapD:'Start, Wegpunkte und Ziel setzen.',gpxT:'GPX importieren',gpxD:'Track einer Prüfung laden.',recT:'Prüfung aufzeichnen',recD:'Langsam abfahren, die App zeichnet auf.',
+mine:'Meine Prüfungen',loading:'Laden…',empty:'Noch keine Prüfungen. Erstelle oben die erste.',curves:'Kurven',
+safety:'Nutze die App auf gesperrten Strecken, Rennstrecken oder als Hilfe im Straßenverkehr und halte dich immer an die Verkehrsregeln. Richte alles vor der Fahrt ein und bediene das Handy nicht während der Fahrt.',
+edTitle:'Prüfung auf Karte',searchPh:'Ort oder Straße suchen…',myLoc:'Mein Standort',edInfo0:'Tippe auf die Karte, um den Start zu setzen',edInfo1:'Setze jetzt das Ziel (Wegpunkte möglich)',edRoute:'Route: {d} · {n} Punkte',calc:'Route wird berechnet…',noRoute:'Keine Route',undo:'Rückgängig',clear:'Löschen',gen:'Aufschrieb erzeugen',
+acc:'Genauigkeit',hz:'Frequenz',pts:'Punkte',dist:'Distanz',time:'Zeit',recReady:'Bereit zur Aufzeichnung',recOn:'● Aufzeichnung — langsam fahren',paused:'Pausiert',startB:'Start',resume:'Weiter',pause:'Pause',finishRec:'Beenden und Prüfung erstellen',good:'Gut',fair:'Mittel',bad:'Schlecht',err:'Fehler',tooShort:'Die Strecke ist zu kurz für eine Prüfung',
+save:'Speichern',drive:'Beifahrer',sim:'Simulieren',regen:'Neu erzeugen',del:'Löschen',tapHint:'Tippe auf eine Ansage, um sie anzupassen. Rechts die Distanz zur nächsten Kurve.',srcmap:'Karte',srcgpx:'GPX',srcrec:'Aufgezeichnet',srcnav:'Navigation',hairpin1:'Kehre',hairpinN:'Kehren',unsaved:'Nicht gespeichert',detected:'{n} Kurven erkannt',noCurves:'Keine Kurven erkannt',confirmRegen:'Alle Ansagen neu erzeugen? Manuelle Änderungen gehen verloren.',saved:'Prüfung gespeichert',delQ:'Prüfung „{n}“ löschen?',deleted:'Prüfung gelöscht',saveErr:'Fehler beim Speichern: ',stageName:'Prüfung',recName:'Aufzeichnung',
+curveN:'Kurve {i}',dir:'Richtung',dirL:'Links',dirR:'Rechts',grade:'Grad',details:'Details',listen:'Anhören',remove:'Löschen',done:'Fertig',noteSub:'{d} ab Start · Radius ca. {r} m · Winkel {a}°',
+simMode:'SIMULATION',navMode:'NAVIGATION',seekGps:'GPS wird gesucht…',noGps:'Kein GPS',ready:'BEREIT',speed:'Tempo',toFinish:'Bis Ziel',toDest:'Ziel',curve:'Kurve',offroute:'Abseits der Route',inCurve:'IN DER KURVE',finishW:'ZIEL',go:'Start',pauseB:'Pause',resumeB:'Weiter',repeat:'Wiederholen',simulation:'Simulation',rerouting:'Neuberechnung…',mute:'Stumm',
+destPh:'Ziel suchen…',navInfo0:'Suche oder tippe auf die Karte, um das Ziel zu wählen',navInfo:'{d} · {t}',startNav:'Starten',saveAsStage:'Prüfung speichern',locFail:'Standort konnte nicht ermittelt werden',
+settings:'Einstellungen',theme:'Tag / Nacht',logout:'Abmelden',lang:'Sprache',scale:'Kurvenskala',s1:'1 = am schnellsten',s6:'6 = am schnellsten',calib:'Kurvenberechnung',prud:'Vorsichtig',norm:'Normal',bold:'Mutig',lead:'Vorlaufzeit der Ansage',rate:'Sprechtempo',voice:'Stimme',autoVoice:'Automatisch',test:'Stimme testen',
+admin:'Verwaltung',users:'Benutzer',allStages:'Alle Prüfungen',createUser:'Benutzer anlegen',name:'Name',passMin:'Passwort (mind. 6)',role:'Rolle',pilot:'Fahrer',adminR:'Administrator',makePilot:'Zum Fahrer machen',makeAdmin:'Zum Admin machen',deact:'Deaktivieren',activate:'Aktivieren',disabled:'Deaktiviert',userCreated:'Benutzer {n} angelegt',fillAll:'Name, E-Mail und ein Passwort mit mind. 6 Zeichen eingeben',emailUsed:'Diese E-Mail ist bereits registriert',resetSent:'E-Mail zum Zurücksetzen an {e} gesendet',noUsers:'Keine Benutzer',noStages:'Keine Prüfungen',
+needCreds:'E-Mail und Passwort eingeben',badCreds:'E-Mail oder Passwort falsch',userOff:'Dein Benutzer ist deaktiviert. Wende dich an den Administrator.',writeEmail:'Gib oben deine E-Mail ein',resetMail:'Wir haben dir eine E-Mail zum Zurücksetzen gesendet',logoutQ:'Abmelden?',
+mapFail:'Karte konnte nicht geladen werden',gpxBad:'Die GPX-Datei hat keinen gültigen Track',shortRoute:'Route zu kurz',notFound:'Ort nicht gefunden',searchErr:'Fehler bei der Suche',routeErr:'Keine Straße zwischen diesen Punkten gefunden',noNotes:'Diese Prüfung hat keine Ansagen',
+mods:{long:'lang',vlong:'sehr lang',tightens:'zu',opens:'auf',dontcut:'nicht schneiden',cut:'schneiden',crest:'Kuppe',jump:'Sprung',bump:'Bodenwelle',caution:'Achtung'},
+sp:{nums:['','eins','zwei','drei','vier','fünf','sechs'],hp:'Kehre',L:'links',R:'rechts',and:'und',start:'Start',finish:'Ziel',done:'Ziel. Prüfung beendet.',off:'Abseits der Route',reroute:'Route wird neu berechnet',arrived:'Sie haben Ihr Ziel erreicht',inD:'In {d} Metern {m}',test:'Rechts drei lang, hundert, links Kehre, und rechts fünf zu',navStart:'Navigation startet'},
+man:{right:'rechts abbiegen',left:'links abbiegen','slight right':'rechts halten','slight left':'links halten','sharp right':'scharf rechts abbiegen','sharp left':'scharf links abbiegen',uturn:'wenden',straight:'geradeaus weiter',round:'im Kreisverkehr die {n}. Ausfahrt nehmen',arrive:'Sie erreichen Ihr Ziel',onto:' auf {s}'}}
+};
+const MODK=['long','vlong','tightens','opens','dontcut','cut','crest','jump','bump','caution'];
+const MOD_ES={'larga':'long','muy larga':'vlong','cierra':'tightens','abre':'opens','no cortar':'dontcut','corta':'cut','cresta':'crest','salto':'jump','bache':'bump','cuidado':'caution'};
+const fmt=(s,v={})=>String(s).replace(/\{(\w+)\}/g,(_,k)=>v[k]??'');
+const L_=()=>I18N[cfg.lang]||I18N.es;
+const t=(k,v)=>fmt(L_()[k]??I18N.es[k]??k,v);
+
+/* ---------- iconos ---------- */
+const ICONS={
+flag:'<path d="M4 22V4"/><path d="M4 4h13l-2 4 2 4H4"/>',
+users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18.5 14.8c1.6.8 2.7 2.6 3 5.2"/>',
+gear:'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',
+moon:'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',
+sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+logout:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/>',
+map:'<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/>',
+nav:'<path d="M3 11 21 3l-8 18-2-8-8-2z"/>',
+globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+phone:'<rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/>',
+mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+upload:'<path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/>',
+download:'<path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/>',
+rec:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor"/>',
+alert:'<path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/>',
+back:'<path d="m15 18-6-6 6-6"/>',
+search:'<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',
+target:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3"/>',
+undo:'<path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/>',
+trash:'<path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/>',
+wand:'<path d="m15 4 5 5L9 20H4v-5L15 4z"/>',
+pause:'<path d="M8 5v14M16 5v14"/>',
+check:'<path d="M20 6 9 17l-5-5"/>',
+save:'<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/>',
+play:'<path d="M6 4l14 8-14 8V4z"/>',
+sim:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+close:'<path d="M18 6 6 18M6 6l12 12"/>',
+repeat:'<path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/>',
+vol:'<path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/>',
+mute:'<path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/>',
+plus:'<path d="M12 5v14M5 12h14"/>',
+route:'<circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H17a3.5 3.5 0 0 0 0-7H7a3.5 3.5 0 0 1 0-7h8.5"/>',
+R:'<path d="M7 20V11a5 5 0 0 1 5-5h6"/><path d="m14 2 4 4-4 4"/>',
+L:'<path d="M17 20V11a5 5 0 0 0-5-5H6"/><path d="M10 2 6 6l4 4"/>',
+HR:'<path d="M6 20V9a5 5 0 0 1 10 0v6"/><path d="m12 11 4 4 4-4"/>',
+HL:'<path d="M18 20V9A5 5 0 0 0 8 9v6"/><path d="m4 11 4 4 4-4"/>',
+ST:'<path d="M12 21V4"/><path d="m6 10 6-6 6 6"/>',
+SR:'<path d="M8 21v-7a6 6 0 0 1 6-6h2"/><path d="m13 4 4 4-4 4"/>',
+SL:'<path d="M16 21v-7a6 6 0 0 0-6-6H8"/><path d="m11 4-4 4 4 4"/>',
+UT:'<path d="M8 21V9a4 4 0 0 1 8 0v4"/><path d="m12 10 4 4 4-4"/>',
+RB:'<circle cx="12" cy="10" r="4"/><path d="M12 21v-7"/><path d="M15 7l4-4"/><path d="M15 3h4v4"/>',
+FIN:'<path d="M5 21V4"/><path d="M5 4h14v9H5"/><path d="M9.7 4v9M14.3 4v9M5 8.5h14"/>'
+};
+const ic=(n,cls='i')=>`<svg class="${cls}" viewBox="0 0 24 24">${ICONS[n]||''}</svg>`;
+function paintIcons(root=document){root.querySelectorAll('[data-i]').forEach(el=>{if(el.dataset.done)return;el.dataset.done=1;el.insertAdjacentHTML('afterbegin',ic(el.dataset.i));});}
+
+/* ---------- utilidades ---------- */
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function toast(m,ty=''){const d=document.createElement('div');d.className=ty;d.textContent=m;$('#toast').appendChild(d);setTimeout(()=>d.remove(),3200);}
+const RE=6371000, D2R=Math.PI/180;
+function hav(a,b){const dl=(b[0]-a[0])*D2R,dn=(b[1]-a[1])*D2R;const x=Math.sin(dl/2)**2+Math.cos(a[0]*D2R)*Math.cos(b[0]*D2R)*Math.sin(dn/2)**2;return 2*RE*Math.asin(Math.sqrt(x));}
+const fmtKm=m=>m>=1000?(m/1000).toFixed(m>=10000?1:2).replace('.',cfg.lang==='en'?'.':',')+' km':Math.round(m)+' m';
+const fmtMin=s=>s>=3600?`${Math.floor(s/3600)} h ${Math.round(s%3600/60)} min`:`${Math.max(1,Math.round(s/60))} min`;
+const fmtDate=ts=>ts?new Date(ts).toLocaleDateString(VLANG[cfg.lang],{day:'2-digit',month:'short',year:'numeric'}):'';
+function encNum(v){v=v<0?~(v<<1):(v<<1);let s='';while(v>=0x20){s+=String.fromCharCode((0x20|(v&0x1f))+63);v>>=5;}return s+String.fromCharCode(v+63);}
+function encodePoly(pts){let o='',pa=0,po=0;for(const [a,b] of pts){const A=Math.round(a*1e5),B=Math.round(b*1e5);o+=encNum(A-pa)+encNum(B-po);pa=A;po=B;}return o;}
+function decodePoly(s){const pts=[];let i=0,a=0,b=0;while(i<s.length){for(let k=0;k<2;k++){let r=0,sh=0,c;do{c=s.charCodeAt(i++)-63;r|=(c&0x1f)<<sh;sh+=5;}while(c>=0x20);const d=(r&1)?~(r>>1):(r>>1);if(k===0)a+=d;else b+=d;}pts.push([a/1e5,b/1e5]);}return pts;}
+
+/* ---------- ajustes ---------- */
+const guessLang=()=>{const l=(navigator.language||'es').slice(0,2);return I18N[l]?l:'es';};
+const CFG_DEF={scale:'1fast',calib:1,lead:5,rate:1.1,voice:'',theme:'dark',lang:guessLang()};
+let cfg=Object.assign({},CFG_DEF,JSON.parse(localStorage.getItem('wt_cfg')||'{}'));
+const saveCfg=()=>localStorage.setItem('wt_cfg',JSON.stringify(cfg));
+
+/* =========================================================
+   MOTOR DE NOTAS
+   Escala interna: 1 = más rápida … 6 = más lenta, 7 = horquilla
+   ========================================================= */
+const STEP=5;
+function buildRoute(rawPts,source){
+  const pts=[rawPts[0]];
+  for(const p of rawPts) if(hav(pts[pts.length-1],p)>0.8) pts.push(p);
+  if(pts.length<2) throw new Error(t('shortRoute'));
+  const lat0=pts.reduce((a,p)=>a+p[0],0)/pts.length, lon0=pts.reduce((a,p)=>a+p[1],0)/pts.length, c0=Math.cos(lat0*D2R);
+  const toXY=(la,lo)=>[(lo-lon0)*D2R*RE*c0,(la-lat0)*D2R*RE];
+  const toLL=(x,y)=>[lat0+y/(RE*D2R),lon0+x/(RE*D2R*c0)];
+  const P=pts.map(p=>toXY(p[0],p[1]));
+  const X=[P[0][0]],Y=[P[0][1]];let carry=0;
+  for(let i=1;i<P.length;i++){
+    const [ax,ay]=P[i-1],[bx,by]=P[i];const Ls=Math.hypot(bx-ax,by-ay);if(Ls<1e-6)continue;
+    let u=STEP-carry;while(u<=Ls){X.push(ax+(bx-ax)*u/Ls);Y.push(ay+(by-ay)*u/Ls);u+=STEP;}
+    carry=Ls-(u-STEP);
+  }
+  const last=P[P.length-1];if(carry>STEP*0.4){X.push(last[0]);Y.push(last[1]);}
+  const n=X.length;
+  const w=(source==='map'||source==='nav')?1:2;
+  let Xs=X.slice(),Ys=Y.slice();
+  for(let pass=0;pass<2;pass++){
+    const nx=[],ny=[];
+    for(let i=0;i<n;i++){let sx=0,sy=0,c=0;for(let j=Math.max(0,i-w);j<=Math.min(n-1,i+w);j++){sx+=Xs[j];sy+=Ys[j];c++;}nx.push(sx/c);ny.push(sy/c);}
+    nx[0]=X[0];ny[0]=Y[0];nx[n-1]=X[n-1];ny[n-1]=Y[n-1];Xs=nx;Ys=ny;
+  }
+  const H=[];for(let i=0;i<n-1;i++)H.push(Math.atan2(Ys[i+1]-Ys[i],Xs[i+1]-Xs[i]));
+  for(let i=1;i<H.length;i++){while(H[i]-H[i-1]>Math.PI)H[i]-=2*Math.PI;while(H[i]-H[i-1]<-Math.PI)H[i]+=2*Math.PI;}
+  const W=2,K=new Array(n).fill(0);
+  for(let i=0;i<n;i++){const a=Math.max(0,i-W),b=Math.min(H.length-1,i+W-1);if(b>a)K[i]=(H[b]-H[a])/((b-a)*STEP);}
+  return {pts,source,X,Y,K,n,total:(n-1)*STEP,toXY,toLL};
+}
+function posAt(rt,s){const f=Math.max(0,Math.min(rt.n-1.000001,s/STEP)),i=Math.floor(f),u=f-i,j=Math.min(rt.n-1,i+1);return rt.toLL(rt.X[i]+(rt.X[j]-rt.X[i])*u,rt.Y[i]+(rt.Y[j]-rt.Y[i])*u);}
+function radiusAt(rt,s){const i=Math.max(0,Math.min(rt.n-1,Math.round(s/STEP)));return 1/Math.max(Math.abs(rt.K[i]),1e-5);}
+function nearestS(rt,lat,lon){const [x,y]=rt.toXY(lat,lon);let best=1e18,bs=0;for(let i=0;i<rt.n-1;i++){const ax=rt.X[i],ay=rt.Y[i],dx=rt.X[i+1]-ax,dy=rt.Y[i+1]-ay,L2=dx*dx+dy*dy||1;let u=((x-ax)*dx+(y-ay)*dy)/L2;u=Math.max(0,Math.min(1,u));const ex=ax+dx*u-x,ey=ay+dy*u-y,d=ex*ex+ey*ey;if(d<best){best=d;bs=(i+u)*STEP;}}return bs;}
+
+function computeNotes(rt){
+  const K=rt.K,n=rt.n,thr=1/350,cal=+cfg.calib||1;
+  const groups=[];let cur=null;
+  for(let i=0;i<n;i++){
+    const sg=K[i]>thr?1:K[i]<-thr?-1:0;if(!sg)continue;
+    if(cur&&cur.sg===sg&&i-cur.e<=3)cur.e=i;else{if(cur)groups.push(cur);cur={sg,s:i,e:i};}
+  }
+  if(cur)groups.push(cur);
+  const T=[175,110,70,45,25,13].map(v=>v*cal);
+  const notes=[];
+  for(const g of groups){
+    let sum=0,mx=0,ap=g.s;
+    for(let i=g.s;i<=g.e;i++){sum+=K[i];if(Math.abs(K[i])>mx){mx=Math.abs(K[i]);ap=i;}}
+    const ang=Math.abs(sum)*STEP/D2R, R=1/mx;
+    if(ang<15)continue;
+    let gr=R>=T[0]?1:R>=T[1]?2:R>=T[2]?3:R>=T[3]?4:R>=T[4]?5:R>=T[5]?6:7;
+    if(ang>=150&&R<25*cal)gr=7;
+    if(gr===1&&ang<22)continue;
+    const Lg=(g.e-g.s)*STEP,mods=[];
+    if(Lg>=200)mods.push('vlong');else if(Lg>=100)mods.push('long');
+    if(Lg>=40&&gr<7){
+      const th=Math.max(1,Math.floor((g.e-g.s+1)/3));let a=0,b=0;
+      for(let i=0;i<th;i++){a+=Math.abs(K[g.s+i]);b+=Math.abs(K[g.e-i]);}
+      if(b>a*1.6)mods.push('tightens');else if(a>b*1.6)mods.push('opens');
+    }
+    notes.push({s:g.s*STEP,e:g.e*STEP,a:ap*STEP,dir:g.sg>0?'L':'R',g:gr,R:Math.round(R),ang:Math.round(ang),mods});
+  }
+  return linkNotes(notes,rt.total);
+}
+function roundDist(d){if(d<=500){const Ls=[30,50,70,100,150,200,250,300,350,400,500];return Ls.reduce((a,b)=>Math.abs(b-d)<Math.abs(a-d)?b:a);}return Math.round(d/100)*100;}
+function linkNotes(notes,total){
+  notes.forEach(n=>{n.mods=(n.mods||[]).map(m=>MOD_ES[m]||m).filter(m=>MODK.includes(m));});
+  notes.sort((a,b)=>a.s-b.s);
+  notes.forEach((nt,i)=>{const nx=notes[i+1];const gap=(nx?nx.s:total)-nt.e;nt.gap=Math.max(0,Math.round(gap));nt.gw=nx?(gap<20?'y':String(roundDist(gap))):'meta';});
+  return notes;
+}
+/* textos de notas */
+const gLabel=g=>g===7?'H':String(cfg.scale==='1fast'?g:7-g);
+const gWord=g=>g===7?L_().sp.hp:L_().sp.nums[cfg.scale==='1fast'?g:7-g];
+const modTxt=m=>L_().mods[m]||m;
+function noteTitle(nt){return `${t(nt.dir==='L'?'dirL':'dirR')} ${nt.g===7?L_().sp.hp:gLabel(nt.g)}`;}
+function noteSpeech(nt){const m=nt.mods||[],S=L_().sp;const pre=m.includes('caution')?modTxt('caution')+', ':'';const rest=m.filter(x=>x!=='caution').map(modTxt);return pre+S[nt.dir]+' '+gWord(nt.g)+(rest.length?' '+rest.join(' '):'');}
+const gapTxt=nt=>nt.gw==='y'?L_().sp.and.toUpperCase():nt.gw==='meta'?t('finishW'):nt.gw;
+const gapSpeech=nt=>nt.gw==='y'?L_().sp.and:nt.gw==='meta'?L_().sp.finish:nt.gw;
+function arrowIcon(nt,cls){return ic(nt.g===7?(nt.dir==='L'?'HL':'HR'):nt.dir,cls||'i');}
+
+/* ---------- voz ---------- */
+const Voice={muted:false,voices:[],last:'',
+  load(){if(!('speechSynthesis'in window))return;try{this.all=speechSynthesis.getVoices();}catch(e){this.all=[];}this.filter();},
+  filter(){const p=cfg.lang;this.voices=(this.all||[]).filter(v=>(v.lang||'').toLowerCase().startsWith(p));fillVoices();},
+  pick(){const V=VLANG[cfg.lang];return this.voices.find(v=>v.voiceURI===cfg.voice)||this.voices.find(v=>(v.lang||'').replace('_','-')===V)||this.voices[0]||null;},
+  say(txt,flush){Voice.last=txt;if(this.muted||!('speechSynthesis'in window)||!txt)return;try{const u=new SpeechSynthesisUtterance(txt);u.lang=VLANG[cfg.lang];const v=this.pick();if(v)u.voice=v;u.rate=+cfg.rate||1.1;if(flush)speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}},
+  unlock(){try{const u=new SpeechSynthesisUtterance(' ');u.volume=0;speechSynthesis.speak(u);}catch(e){}}
+};
+if('speechSynthesis'in window){Voice.load();try{speechSynthesis.onvoiceschanged=()=>Voice.load();}catch(e){}}
+
+/* =========================================================
+   ALMACENAMIENTO (Firebase o local)
+   ========================================================= */
+let db=null,me=null;
+const useFb=!!(FIREBASE_CONFIG&&window.firebase);
+const LS_KEY='wt_stages';
+const Store={
+  async list(all){
+    if(!useFb)return JSON.parse(localStorage.getItem(LS_KEY)||'[]');
+    const q=all?db.collection('stages'):db.collection('stages').where('uid','==',me.uid);
+    const snap=await q.get();return snap.docs.map(d=>({id:d.id,...d.data()}));
+  },
+  async save(st){
+    st.updatedAt=Date.now();if(!st.createdAt)st.createdAt=st.updatedAt;
+    if(!useFb){const arr=JSON.parse(localStorage.getItem(LS_KEY)||'[]');if(!st.id)st.id='l'+Date.now();const i=arr.findIndex(x=>x.id===st.id);if(i>=0)arr[i]=st;else arr.push(st);localStorage.setItem(LS_KEY,JSON.stringify(arr));return st.id;}
+    const data={...st};delete data.id;
+    if(st.id){await db.collection('stages').doc(st.id).set(data);return st.id;}
+    data.uid=me.uid;data.owner=me.name||me.email;st.uid=data.uid;st.owner=data.owner;
+    const r=await db.collection('stages').add(data);return r.id;
+  },
+  async del(id){
+    if(!useFb){localStorage.setItem(LS_KEY,JSON.stringify(JSON.parse(localStorage.getItem(LS_KEY)||'[]').filter(x=>x.id!==id)));return;}
+    await db.collection('stages').doc(id).delete();
+  }
+};
+
+/* =========================================================
+   IDIOMA EN PANTALLA / NAVEGACIÓN / TEMA
+   ========================================================= */
+function applyLang(){
+  document.documentElement.lang=cfg.lang;
+  $$('[data-t]').forEach(el=>{el.textContent=t(el.dataset.t);});
+  $$('[data-tp]').forEach(el=>el.placeholder=t(el.dataset.tp));
+  $$('[data-ti]').forEach(el=>el.title=t(el.dataset.ti));
+  $$('select[data-lang]').forEach(s=>{s.innerHTML=Object.entries(LANGS).map(([k,v])=>`<option value="${k}"${k===cfg.lang?' selected':''}>${k.toUpperCase()} · ${v}</option>`).join('');});
+  $('#lnGo [data-t]').textContent=useFb?t('enter'):t('start');
+  $('#drMute').title=t('mute');
+  Voice.filter();
+  if(curScr==='scr-home')renderHome();
+  if(curScr==='scr-stage'&&ST)renderStage(false);
+  if(curScr==='scr-editor')Ed.info();
+  if(curScr==='scr-nav')Nav.info();
+  if(curScr==='scr-record')Rec.ui();
+  if(curScr==='scr-admin')renderAdmin();
+  if(Drive.on)Drive.update();
+}
+document.addEventListener('change',e=>{if(e.target.matches('select[data-lang]')){cfg.lang=e.target.value;cfg.voice='';saveCfg();applyLang();}});
+
+let curScr='';
+function show(id){
+  $$('main .scr').forEach(s=>s.classList.toggle('act',s.id===id));curScr=id;
+  $('#top').classList.toggle('hidden',id==='scr-login'||id==='scr-landing');
+  window.scrollTo(0,0);
+  setTimeout(()=>Object.values(maps).forEach(m=>m&&m.invalidateSize()),60);
+  if(id==='scr-home')renderHome();
+}
+function applyTheme(){
+  document.documentElement.dataset.theme=cfg.theme;
+  $$('#btnTheme,[data-themebtn]').forEach(b=>{b.innerHTML=ic(cfg.theme==='dark'?'sun':'moon');});
+  Object.values(maps).forEach(m=>{if(m&&m._base){const want=cfg.theme==='light'?m._base.osm:m._base.dark;if(!m.hasLayer(m._base.sat)&&!m.hasLayer(want)){m.eachLayer(l=>{if(l===m._base.osm||l===m._base.dark)m.removeLayer(l);});want.addTo(m);}}});
+}
+document.addEventListener('click',e=>{
+  if(e.target.closest('#btnTheme,[data-themebtn]')){cfg.theme=cfg.theme==='dark'?'light':'dark';saveCfg();applyTheme();}
+  if(e.target.closest('[data-back]')){leaveScreen();show('scr-home');}
+});
+$('#brandHome').onclick=()=>{leaveScreen();show('scr-home');};
+function leaveScreen(){if(curScr==='scr-record')Rec.stop(true);}
+
+/* =========================================================
+   MAPAS
+   ========================================================= */
+const maps={};
+function makeMap(id){
+  if(maps[id])return maps[id];
+  if(!window.L){$('#'+id).innerHTML=`<div class="empty">${t('mapFail')}</div>`;return null;}
+  const m=L.map(id,{zoomControl:true,attributionControl:true}).setView([40.4,-3.7],6);
+  const dark=L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:20,attribution:'© OpenStreetMap © CARTO'});
+  const osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'});
+  const sat=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,attribution:'© Esri'});
+  (cfg.theme==='light'?osm:dark).addTo(m);
+  m._base={dark,osm,sat};
+  L.control.layers({'Dark':dark,'Map':osm,'Satellite':sat},null,{position:'topright'}).addTo(m);
+  maps[id]=m;return m;
+}
+const flagIcon=()=>L.divIcon({className:'',html:'<div class="flag-ic"></div>',iconSize:[28,28],iconAnchor:[14,14]});
+const startIcon=()=>L.divIcon({className:'',html:'<div class="wp-ic">S</div>',iconSize:[26,26],iconAnchor:[13,13]});
+const meIcon=()=>L.divIcon({className:'',html:'<div class="me-ic"></div>',iconSize:[18,18],iconAnchor:[9,9]});
+async function geocode(q){const r=await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=5&accept-language=${cfg.lang}&q=`+encodeURIComponent(q));return r.json();}
+function getPos(){return new Promise((res,rej)=>{if(!navigator.geolocation)return rej(new Error(t('noGps')));navigator.geolocation.getCurrentPosition(p=>res([p.coords.latitude,p.coords.longitude]),()=>rej(new Error(t('locFail'))),{enableHighAccuracy:true,timeout:10000,maximumAge:5000});});}
+async function osrm(pts,steps){
+  const q=pts.map(p=>`${p[1].toFixed(6)},${p[0].toFixed(6)}`).join(';');
+  const r=await fetch(`https://router.project-osrm.org/route/v1/driving/${q}?overview=full&geometries=geojson${steps?'&steps=true':''}`);
+  const j=await r.json();if(j.code!=='Ok'||!j.routes?.length)throw new Error(t('routeErr'));
+  const rt=j.routes[0];
+  const mans=[];if(steps)for(const lg of rt.legs)for(const s of lg.steps){const m=s.maneuver;mans.push({ll:[m.location[1],m.location[0]],type:m.type,mod:m.modifier||'',exit:m.exit||0,name:s.name||s.ref||''});}
+  return {pts:rt.geometry.coordinates.map(c=>[c[1],c[0]]),dist:rt.distance,dur:rt.duration,mans};
+}
+
+/* =========================================================
+   HOME
+   ========================================================= */
+let stagesCache=[];
+async function renderHome(){
+  $('#hello').textContent=me&&me.name&&useFb?t('hello',{n:me.name.split(' ')[0]}):t('myStages');
+  const box=$('#stageList');box.innerHTML=`<div class="empty">${t('loading')}</div>`;
+  try{stagesCache=(await Store.list(false)).sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0));}
+  catch(e){box.innerHTML=`<div class="empty">${esc(e.message)}</div>`;return;}
+  if(!stagesCache.length){box.innerHTML=`<div class="empty">${t('empty')}</div>`;return;}
+  box.innerHTML=stagesCache.map(s=>`<div class="stage" data-id="${s.id}"><div class="ic">${ic(s.source==='rec'?'rec':s.source==='gpx'?'upload':s.source==='nav'?'nav':'route')}</div><div class="t"><b>${esc(s.name)}</b><span>${fmtKm(s.total||0)} · ${(s.notes||[]).length} ${t('curves')} · ${fmtDate(s.updatedAt)}</span></div><span class="chev">${ic('back')}</span></div>`).join('');
+  $$('.stage',box).forEach(el=>el.onclick=()=>openStage(stagesCache.find(s=>s.id===el.dataset.id)));
+}
+$('#newNav').onclick=()=>{show('scr-nav');Nav.init();};
+$('#newMap').onclick=()=>{show('scr-editor');Ed.init();};
+$('#newGpx').onclick=()=>$('#gpxFile').click();
+$('#newRec').onclick=()=>{show('scr-record');Rec.init();};
+$('#gpxFile').onchange=async e=>{
+  const f=e.target.files[0];e.target.value='';if(!f)return;
+  try{
+    const xml=new DOMParser().parseFromString(await f.text(),'application/xml');
+    let nodes=[...xml.getElementsByTagName('trkpt')];if(!nodes.length)nodes=[...xml.getElementsByTagName('rtept')];
+    const pts=nodes.map(n=>[+n.getAttribute('lat'),+n.getAttribute('lon')]).filter(p=>isFinite(p[0])&&isFinite(p[1]));
+    if(pts.length<5)throw new Error(t('gpxBad'));
+    const nm=(xml.getElementsByTagName('name')[0]?.textContent||f.name.replace(/\.gpx$/i,'')).trim();
+    newStage(nm,'gpx',pts);
+  }catch(err){toast(err.message,'bad');}
+};
+
+/* =========================================================
+   NAVEGADOR — configuración del destino
+   ========================================================= */
+const Nav={dest:null,res:null,layers:[],seq:0,busy:false,
+  init(){
+    const m=makeMap('mapNav');if(!m)return;
+    if(!this.bound){this.bound=1;m.on('click',e=>this.setDest([e.latlng.lat,e.latlng.lng]));}
+    this.clear();
+    getPos().then(p=>{this.here=p;m.setView(p,14);this.drawMe();}).catch(()=>{});
+  },
+  clear(){this.dest=null;this.res=null;this.layers.forEach(l=>l.remove());this.layers=[];$('#nvResults').classList.add('hidden');this.info();},
+  drawMe(){if(this.meMk)this.meMk.remove();if(this.here&&maps.mapNav)this.meMk=L.marker(this.here,{icon:meIcon()}).addTo(maps.mapNav);},
+  async setDest(p,label){
+    this.dest=p;this.label=label||'';this.layers.forEach(l=>l.remove());this.layers=[L.marker(p,{icon:flagIcon()}).addTo(maps.mapNav)];
+    this.busy=true;this.info();const seq=++this.seq;
+    try{
+      if(!this.here)this.here=await getPos();this.drawMe();
+      const r=await osrm([this.here,p],true);if(seq!==this.seq)return;
+      this.res=r;this.layers.push(L.polyline(r.pts,{color:'#ff5a00',weight:6,opacity:.9}).addTo(maps.mapNav));
+      maps.mapNav.fitBounds(this.layers[1].getBounds(),{padding:[30,30]});
+    }catch(e){if(seq===this.seq){this.res=null;toast(e.message,'bad');}}
+    if(seq===this.seq){this.busy=false;this.info();}
+  },
+  info(){
+    $('#nvInfo').textContent=this.busy?t('calc'):this.res?t('navInfo',{d:fmtKm(this.res.dist),t:fmtMin(this.res.dur)}):t('navInfo0');
+    ['#nvGo','#nvSim','#nvSave'].forEach(s=>$(s).disabled=!this.res||this.busy);
+  },
+  data(){const rt=buildRoute(this.res.pts,'nav');const notes=computeNotes(rt);return {rt,pts:rt.pts,notes,mans:prepMans(rt,this.res.mans,notes),dest:this.dest,name:this.label};},
+  async reroute(lat,lon){
+    if(this.rerouting)return;this.rerouting=true;Voice.say(L_().sp.reroute,true);$('#drGps').textContent=t('rerouting');
+    try{const r=await osrm([[lat,lon],Drive.d.dest],true);this.res=r;const d=this.data();Drive.load(d,true);}
+    catch(e){toast(e.message,'bad');}
+    this.rerouting=false;
+  }
+};
+function prepMans(rt,mans,notes){
+  const out=[];
+  for(const m of mans){
+    if(m.type==='depart')continue;
+    if((m.type==='new name'||m.type==='continue'||m.type==='notification')&&(!m.mod||m.mod==='straight'))continue;
+    const s=m.type==='arrive'?rt.total:nearestS(rt,m.ll[0],m.ll[1]);
+    out.push({...m,s,far:false,near:false});
+  }
+  // las notas que coinciden con un cruce/rotonda las sustituye la indicación
+  for(const m of out){if(m.type==='arrive')continue;notes.forEach(n=>{if(n.e>=m.s-25&&n.s<=m.s+25)n.nav=true;});}
+  return out.sort((a,b)=>a.s-b.s);
+}
+function manText(m){
+  const M=L_().man;
+  if(m.type==='arrive')return M.arrive;
+  let base;
+  if(m.type==='roundabout'||m.type==='rotary'||m.type==='roundabout turn')base=fmt(M.round,{n:m.exit||1});
+  else base=M[m.mod]||M.straight;
+  return base+(m.name&&m.type!=='roundabout'&&m.type!=='rotary'?fmt(M.onto,{s:m.name}):'');
+}
+function manIcon(m){
+  if(m.type==='arrive')return 'FIN';
+  if(/round|rotary/.test(m.type))return 'RB';
+  return {right:'R',left:'L','sharp right':'R','sharp left':'L','slight right':'SR','slight left':'SL',uturn:'UT'}[m.mod]||'ST';
+}
+async function navSearch(){
+  const q=$('#nvSearch').value.trim();if(!q)return;
+  try{const j=await geocode(q);const box=$('#nvResults');
+    if(!j.length){box.classList.add('hidden');return toast(t('notFound'));}
+    box.innerHTML=j.map((r,i)=>`<div data-i="${i}"><b>${esc(r.display_name.split(',')[0])}</b><small>${esc(r.display_name.split(',').slice(1,4).join(','))}</small></div>`).join('');
+    box.classList.remove('hidden');
+    $$('div',box).forEach(el=>el.onclick=()=>{const r=j[+el.dataset.i];box.classList.add('hidden');Nav.setDest([+r.lat,+r.lon],r.display_name.split(',')[0]);});
+  }catch(e){toast(t('searchErr'),'bad');}
+}
+$('#nvSearchBtn').onclick=navSearch;$('#nvSearch').onkeydown=e=>{if(e.key==='Enter')navSearch();};
+$('#nvLocate').onclick=()=>getPos().then(p=>{Nav.here=p;Nav.drawMe();maps.mapNav.setView(p,15);}).catch(e=>toast(e.message,'bad'));
+$('#nvGo').onclick=()=>{if(Nav.res)Drive.open('nav',Nav.data());};
+$('#nvSim').onclick=()=>{if(Nav.res)Drive.open('navsim',Nav.data());};
+$('#nvSave').onclick=()=>{if(Nav.res)newStage(Nav.label||t('stageName')+' '+new Date().toLocaleDateString(VLANG[cfg.lang]),'map',Nav.res.pts);};
+
+/* =========================================================
+   EDITOR EN MAPA
+   ========================================================= */
+const Ed={wps:[],markers:[],line:null,geom:null,busy:false,seq:0,
+  init(){
+    const m=makeMap('mapEd');if(!m)return;
+    if(!this.bound){this.bound=1;m.on('click',e=>this.add([e.latlng.lat,e.latlng.lng]));}
+    this.clear();getPos().then(p=>m.setView(p,13)).catch(()=>{});
+  },
+  add(p){this.wps.push(p);this.draw();this.route();},
+  undo(){this.wps.pop();this.draw();this.route();},
+  clear(){this.wps=[];this.geom=null;this.draw();},
+  draw(){
+    const m=maps.mapEd;if(!m)return;
+    this.markers.forEach(x=>x.remove());this.markers=[];
+    this.wps.forEach((p,i)=>{const fin=i===this.wps.length-1&&i>0;
+      const mk=L.marker(p,{draggable:true,icon:fin?flagIcon():L.divIcon({className:'',html:`<div class="wp-ic">${i===0?'S':i}</div>`,iconSize:[26,26],iconAnchor:[13,13]})}).addTo(m);
+      mk.on('dragend',()=>{const ll=mk.getLatLng();this.wps[i]=[ll.lat,ll.lng];this.route();});this.markers.push(mk);});
+    if(this.line&&this.wps.length<2){this.line.remove();this.line=null;}
+    this.info();
+  },
+  info(){
+    const n=this.wps.length;
+    $('#edInfo').textContent=this.busy?t('calc'):n===0?t('edInfo0'):n===1?t('edInfo1'):this.geom?t('edRoute',{d:fmtKm(this.geom.dist),n}):t('noRoute');
+    $('#edGen').disabled=!this.geom||this.busy;
+  },
+  async route(){
+    if(this.wps.length<2){this.geom=null;this.info();return;}
+    this.busy=true;this.info();const seq=++this.seq;
+    try{const r=await osrm(this.wps,false);if(seq!==this.seq)return;this.geom=r;
+      if(this.line)this.line.remove();this.line=L.polyline(r.pts,{color:'#ff5a00',weight:5,opacity:.9}).addTo(maps.mapEd);}
+    catch(e){if(seq===this.seq){this.geom=null;toast(e.message,'bad');}}
+    if(seq===this.seq){this.busy=false;this.info();}
+  }
+};
+$('#edUndo').onclick=()=>Ed.undo();
+$('#edClear').onclick=()=>Ed.clear();
+$('#edGen').onclick=()=>{if(Ed.geom)newStage(t('stageName')+' '+new Date().toLocaleDateString(VLANG[cfg.lang]),'map',Ed.geom.pts);};
+$('#edLocate').onclick=()=>getPos().then(p=>maps.mapEd.setView(p,15)).catch(e=>toast(e.message,'bad'));
+async function edSearch(){const q=$('#edSearch').value.trim();if(!q)return;try{const j=await geocode(q);if(!j.length)return toast(t('notFound'));maps.mapEd.setView([+j[0].lat,+j[0].lon],14);}catch(e){toast(t('searchErr'),'bad');}}
+$('#edSearchBtn').onclick=edSearch;$('#edSearch').onkeydown=e=>{if(e.key==='Enter')edSearch();};
+
+/* =========================================================
+   GRABACIÓN DE RECONOCIMIENTO
+   ========================================================= */
+const Rec={pts:[],watch:null,state:'idle',t0:0,elapsed:0,times:[],line:null,me:null,timer:null,
+  init(){const m=makeMap('mapRec');this.reset();if(m)getPos().then(p=>m.setView(p,16)).catch(()=>{});this.startWatch();},
+  reset(){this.pts=[];this.state='idle';this.elapsed=0;this.times=[];if(this.line){this.line.remove();this.line=null;}this.ui();},
+  startWatch(){
+    if(!navigator.geolocation){$('#rcGps').textContent=t('noGps');return;}
+    if(this.watch!==null)return;
+    this.watch=navigator.geolocation.watchPosition(p=>this.fix(p),e=>{$('#rcGps').textContent=t('err');$('#rcState').textContent='GPS: '+e.message;},{enableHighAccuracy:true,maximumAge:0,timeout:15000});
+  },
+  fix(p){
+    const now=Date.now();this.times.push(now);this.times=this.times.filter(x=>now-x<5000);
+    const acc=p.coords.accuracy,ll=[p.coords.latitude,p.coords.longitude];
+    $('#rcGps').textContent=t(acc<=15?'good':acc<=30?'fair':'bad');$('#rcGps').style.color=acc<=15?'var(--ok)':acc<=30?'var(--warn)':'var(--bad)';
+    $('#rcAcc').textContent=Math.round(acc)+' m';$('#rcHz').textContent=(this.times.length/5).toFixed(1)+' Hz';
+    const m=maps.mapRec;
+    if(m){if(!this.me)this.me=L.marker(ll,{icon:meIcon()}).addTo(m);else this.me.setLatLng(ll);}
+    if(this.state!=='rec'||acc>30)return;
+    const last=this.pts[this.pts.length-1];if(last&&hav(last,ll)<3)return;
+    this.pts.push(ll);
+    if(m){if(!this.line)this.line=L.polyline(this.pts,{color:'#ff5a00',weight:5}).addTo(m);else this.line.setLatLngs(this.pts);m.panTo(ll,{animate:false});}
+    this.ui();
+  },
+  dist(){let d=0;for(let i=1;i<this.pts.length;i++)d+=hav(this.pts[i-1],this.pts[i]);return d;},
+  ui(){
+    $('#rcPts').textContent=this.pts.length;$('#rcDist').textContent=fmtKm(this.dist());
+    const el=this.elapsed+(this.state==='rec'?Date.now()-this.t0:0),s=Math.floor(el/1000);$('#rcTime').textContent=`${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;
+    $('#rcStart').classList.toggle('hidden',this.state==='rec');
+    $('#rcStartT').textContent=this.state==='paused'?t('resume'):t('startB');
+    $('#rcPause').classList.toggle('hidden',this.state!=='rec');
+    $('#rcStop').classList.toggle('hidden',this.state==='idle');
+    $('#rcState').textContent=this.state==='rec'?t('recOn'):this.state==='paused'?t('paused'):t('recReady');
+  },
+  start(){this.startWatch();this.state='rec';this.t0=Date.now();clearInterval(this.timer);this.timer=setInterval(()=>this.ui(),1000);this.ui();},
+  pause(){this.elapsed+=Date.now()-this.t0;this.state='paused';clearInterval(this.timer);this.ui();},
+  stop(silent){
+    if(this.state==='rec')this.elapsed+=Date.now()-this.t0;
+    clearInterval(this.timer);if(this.watch!==null){navigator.geolocation.clearWatch(this.watch);this.watch=null;}
+    if(this.me){this.me.remove();this.me=null;}
+    const pts=this.pts.slice(),dist=this.dist();this.state='idle';
+    if(silent)return;
+    if(pts.length<10||dist<100)return toast(t('tooShort'),'bad');
+    newStage(t('recName')+' '+new Date().toLocaleDateString(VLANG[cfg.lang]),'rec',pts);
+  }
+};
+$('#rcStart').onclick=()=>Rec.start();
+$('#rcPause').onclick=()=>Rec.pause();
+$('#rcStop').onclick=()=>Rec.stop(false);
+
+/* =========================================================
+   PANTALLA DE TRAMO
+   ========================================================= */
+let ST=null,stLayers=[],selNote=-1;
+function newStage(name,source,pts){
+  try{const rt=buildRoute(pts,source);ST={name,source,pts:rt.pts,rt,notes:computeNotes(rt),dirty:true};selNote=-1;show('scr-stage');renderStage(true);toast(t('detected',{n:ST.notes.length}),'ok');}
+  catch(e){toast(e.message,'bad');}
+}
+function openStage(s){
+  const pts=decodePoly(s.poly);const rt=buildRoute(pts,s.source);
+  ST={id:s.id,uid:s.uid,owner:s.owner,createdAt:s.createdAt,name:s.name,source:s.source,pts,rt,notes:linkNotes(s.notes||[],rt.total),dirty:false};
+  selNote=-1;show('scr-stage');renderStage(true);
+}
+function renderStage(fit){
+  $('#stName').value=ST.name;
+  const cnt=[0,0,0,0,0,0,0,0];ST.notes.forEach(n=>cnt[n.g]++);
+  $('#stPills').innerHTML=`<span class="pill">${ic('route')}${fmtKm(ST.rt.total)}</span><span class="pill">${ST.notes.length} ${t('curves')}</span><span class="pill">${t('src'+ST.source)}</span>${cnt[7]?`<span class="pill warn">${cnt[7]} ${t(cnt[7]===1?'hairpin1':'hairpinN')}</span>`:''}${ST.dirty?`<span class="pill warn">${t('unsaved')}</span>`:''}`;
+  $('#stDel').classList.toggle('hidden',!ST.id);
+  $('#stNotes').innerHTML=ST.notes.length?ST.notes.map((n,i)=>`<div class="nrow${i===selNote?' sel':''}" data-i="${i}"><div class="k">${i+1}<br>${fmtKm(n.s)}</div><div class="gb c${n.g}">${arrowIcon(n)}${gLabel(n.g)}</div><div class="tx">${esc(noteTitle(n))}<span>${esc(n.mods.map(modTxt).join(' · ')||'—')}</span></div><div class="gp">${esc(gapTxt(n))}</div></div>`).join(''):`<div class="empty" style="border:0">${t('noCurves')}</div>`;
+  $$('#stNotes .nrow').forEach(el=>el.onclick=()=>{selNote=+el.dataset.i;focusNote(selNote);openNoteSheet(selNote);});
+  const m=makeMap('mapSt');if(!m)return;
+  stLayers.forEach(l=>l.remove());stLayers=[];
+  const line=L.polyline(ST.pts,{color:'#ff5a00',weight:5,opacity:.9}).addTo(m);stLayers.push(line);
+  stLayers.push(L.marker(ST.pts[0],{icon:startIcon()}).addTo(m));
+  stLayers.push(L.marker(ST.pts[ST.pts.length-1],{icon:flagIcon()}).addTo(m));
+  const dl=t('dirL')[0],dr=t('dirR')[0];
+  ST.notes.forEach((n,i)=>{
+    const mk=L.marker(posAt(ST.rt,n.a??(n.s+n.e)/2),{icon:L.divIcon({className:'',html:`<div class="nm c${n.g}">${n.dir==='L'?dl:dr}${gLabel(n.g)}</div>`,iconSize:[0,0]})}).addTo(m);
+    mk.on('click',()=>{selNote=i;openNoteSheet(i);});stLayers.push(mk);
+  });
+  if(fit)setTimeout(()=>{m.invalidateSize();m.fitBounds(line.getBounds(),{padding:[20,20]});},80);
+}
+function focusNote(i){const n=ST.notes[i];if(n&&maps.mapSt)maps.mapSt.setView(posAt(ST.rt,n.a??n.s),17);$$('#stNotes .nrow').forEach(el=>el.classList.toggle('sel',+el.dataset.i===i));}
+function markDirty(){ST.dirty=true;linkNotes(ST.notes,ST.rt.total);renderStage(false);}
+$('#stName').oninput=()=>{ST.name=$('#stName').value;ST.dirty=true;};
+$('#stRegen').onclick=()=>{if(!confirm(t('confirmRegen')))return;ST.notes=computeNotes(ST.rt);markDirty();toast(t('detected',{n:ST.notes.length}),'ok');};
+$('#stSave').onclick=async()=>{
+  const name=$('#stName').value.trim()||t('stageName');ST.name=name;
+  const doc={id:ST.id,name,source:ST.source,poly:encodePoly(ST.pts),total:Math.round(ST.rt.total),notes:ST.notes.map(n=>({s:n.s,e:n.e,a:n.a??n.s,dir:n.dir,g:n.g,R:n.R??0,ang:n.ang??0,mods:n.mods||[]})),createdAt:ST.createdAt||null};
+  if(ST.uid){doc.uid=ST.uid;doc.owner=ST.owner;}
+  $('#stSave').disabled=true;
+  try{ST.id=await Store.save(doc);ST.uid=doc.uid;ST.owner=doc.owner;ST.createdAt=doc.createdAt;ST.dirty=false;renderStage(false);toast(t('saved'),'ok');}
+  catch(e){toast(t('saveErr')+e.message,'bad');}
+  $('#stSave').disabled=false;
+};
+$('#stDel').onclick=async()=>{if(!ST.id||!confirm(t('delQ',{n:ST.name})))return;try{await Store.del(ST.id);toast(t('deleted'),'ok');show('scr-home');}catch(e){toast(e.message,'bad');}};
+$('#stGpx').onclick=()=>{
+  const wpt=ST.notes.map((n,i)=>{const p=posAt(ST.rt,n.s);return `<wpt lat="${p[0].toFixed(6)}" lon="${p[1].toFixed(6)}"><name>${i+1} ${esc(noteTitle(n))}</name><desc>${esc(n.mods.map(modTxt).join(' '))} · ${esc(gapTxt(n))}</desc></wpt>`;}).join('\n');
+  const trk=ST.pts.map(p=>`<trkpt lat="${p[0].toFixed(6)}" lon="${p[1].toFixed(6)}"/>`).join('');
+  const gpx=`<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="Wtracks" xmlns="http://www.topografix.com/GPX/1/1">\n<metadata><name>${esc(ST.name)}</name></metadata>\n${wpt}\n<trk><name>${esc(ST.name)}</name><trkseg>${trk}</trkseg></trk>\n</gpx>`;
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([gpx],{type:'application/gpx+xml'}));a.download=(ST.name||'wtracks').replace(/[^\w\- ]+/g,'')+'.gpx';a.click();
+};
+const stData=()=>({rt:ST.rt,pts:ST.pts,notes:ST.notes,mans:[],name:ST.name});
+$('#stDrive').onclick=()=>Drive.open('gps',stData());
+$('#stSim').onclick=()=>Drive.open('sim',stData());
+
+/* hoja de nota */
+let nsIdx=-1;
+function openNoteSheet(i){
+  nsIdx=i;const n=ST.notes[i];
+  $('#nsTitle').textContent=`${t('curveN',{i:i+1})} · ${noteTitle(n)}`;
+  $('#nsSub').textContent=t('noteSub',{d:fmtKm(n.s),r:n.R||'?',a:n.ang||'?'});
+  $$('#nsDir button').forEach(b=>b.classList.toggle('on',b.dataset.v===n.dir));
+  const order=cfg.scale==='1fast'?[1,2,3,4,5,6,7]:[6,5,4,3,2,1,7];
+  $('#nsGrade').innerHTML=order.map(g=>`<button data-v="${g}" class="${n.g===g?'on':''}">${gLabel(g)}</button>`).join('');
+  $$('#nsGrade button').forEach(b=>b.onclick=()=>{n.g=+b.dataset.v;markDirty();openNoteSheet(i);});
+  $('#nsMods').innerHTML=MODK.map(m=>`<button class="chip${n.mods.includes(m)?' on':''}" data-m="${m}">${esc(modTxt(m))}</button>`).join('');
+  const EXCL={long:'vlong',vlong:'long',tightens:'opens',opens:'tightens',cut:'dontcut',dontcut:'cut'};
+  $$('#nsMods .chip').forEach(b=>b.onclick=()=>{const m=b.dataset.m;if(n.mods.includes(m))n.mods=n.mods.filter(x=>x!==m);else{n.mods.push(m);if(EXCL[m])n.mods=n.mods.filter(x=>x!==EXCL[m]);}n.mods.sort((a,b)=>MODK.indexOf(a)-MODK.indexOf(b));markDirty();openNoteSheet(i);});
+  $('#ovNote').classList.remove('hidden');
+}
+$$('#nsDir button').forEach(b=>b.onclick=()=>{ST.notes[nsIdx].dir=b.dataset.v;markDirty();openNoteSheet(nsIdx);});
+$('#nsSay').onclick=()=>{const n=ST.notes[nsIdx];Voice.say(noteSpeech(n)+', '+gapSpeech(n),true);};
+$('#nsDel').onclick=()=>{ST.notes.splice(nsIdx,1);$('#ovNote').classList.add('hidden');selNote=-1;markDirty();};
+$('#nsOk').onclick=()=>$('#ovNote').classList.add('hidden');
+$('#ovNote').onclick=e=>{if(e.target.id==='ovNote')$('#ovNote').classList.add('hidden');};
+
+/* =========================================================
+   MODO COPILOTO / NAVEGADOR (GPS o simulación)
+   modos: gps · sim · nav · navsim
+   ========================================================= */
+const Drive={
+  open(mode,data){
+    if(!data.notes.length&&!data.mans.length)return toast(t('noNotes'),'bad');
+    this.on=true;this.mode=mode;this.nav=mode==='nav'||mode==='navsim';this.sim=mode==='sim'||mode==='navsim';
+    this.running=false;this.done=false;this.fixTimes=[];
+    $('#scr-drive').classList.add('act');
+    $('#drMode').textContent=this.sim?t('simMode'):this.nav?t('navMode'):'GPS';$('#drMode').className='pill '+(this.sim?'warn':'ok');
+    $('#drSimBar').classList.toggle('hidden',!this.sim);
+    $('#drGps').className='pill'+(this.sim?' hidden':'');$('#drGps').textContent=t('seekGps');
+    $('#drLeftL').textContent=t(this.nav?'toDest':'toFinish');
+    this.load(data,false);
+    if(!this.sim)this.startGps();
+    this.setGo(t('go'),'play');
+  },
+  load(data,keep){
+    this.d=data;this.rt=data.rt;this.notes=data.notes.filter(n=>!n.nav);this.mans=data.mans||[];
+    this.s=0;this.idx=0;this.nextAnn=0;this.off=false;this.offN=0;this.lastFix=null;if(!keep)this.v=0;
+    $('#drOff').classList.add('hidden');
+    const m=makeMap('mapDr');
+    if(m){
+      (this.layers||[]).forEach(l=>l.remove());
+      this.layers=[L.polyline(data.pts,{color:'#ff5a00',weight:6}).addTo(m),L.marker(data.pts[data.pts.length-1],{icon:flagIcon()}).addTo(m)];
+      this.me=L.marker(data.pts[0],{icon:meIcon()}).addTo(m);this.layers.push(this.me);
+      setTimeout(()=>{m.invalidateSize();m.setView(data.pts[0],16);},60);
+    }
+    this.update();
+  },
+  setGo(txt,i){$('#drGo').innerHTML=ic(i)+esc(txt);},
+  startGps(){
+    if(!navigator.geolocation){$('#drGps').textContent=t('noGps');return;}
+    this.watch=navigator.geolocation.watchPosition(p=>this.onFix(p.coords.latitude,p.coords.longitude,p.coords.speed,p.coords.accuracy),e=>{$('#drGps').textContent='GPS: '+e.message;$('#drGps').className='pill bad';},{enableHighAccuracy:true,maximumAge:0,timeout:15000});
+  },
+  async go(){
+    Voice.unlock();
+    if(this.done){this.load(this.d,false);this.done=false;}
+    if(this.running){this.running=false;this.setGo(t('resumeB'),'play');clearInterval(this.simT);try{speechSynthesis.cancel();}catch(e){}return;}
+    this.running=true;this.setGo(t('pauseB'),'pause');
+    try{this.wake=await navigator.wakeLock?.request('screen');}catch(e){}
+    if(this.s<5&&this.nextAnn===0){
+      if(this.nav)Voice.say(L_().sp.navStart,true);
+      else{const n0=this.notes[0];Voice.say(`${L_().sp.start}. ${roundDist(Math.max(30,n0.s-this.s))}`,true);}
+    }
+    if(this.sim){this.lastT=performance.now();clearInterval(this.simT);this.simT=setInterval(()=>this.simTick(),100);}
+  },
+  simTick(){
+    const now=performance.now(),dt=Math.min(.3,(now-this.lastT)/1000);this.lastT=now;
+    const want=(+$('#drSimSpd').value)/3.6;
+    let rmin=1e9;const look=Math.max(40,this.v*3);for(let d=0;d<=look;d+=STEP)rmin=Math.min(rmin,radiusAt(this.rt,this.s+d));
+    let tgt=Math.min(want,Math.sqrt(7*rmin));
+    if(this.nav){const m=this.mans.find(x=>x.s>this.s-5&&x.type!=='arrive');if(m&&m.s-this.s<80&&manIcon(m)!=='ST'&&manIcon(m)!=='SR'&&manIcon(m)!=='SL')tgt=Math.min(tgt,6+(m.s-this.s)*0.12);}
+    this.v+=Math.max(-7*dt,Math.min(3.5*dt,tgt-this.v));this.v=Math.max(3,this.v);
+    const s=Math.min(this.rt.total,this.s+this.v*dt);const p=posAt(this.rt,s);
+    this.onFix(p[0],p[1],this.v,5,s);
+  },
+  match(x,y){
+    const rt=this.rt;let best=1e12,bi=0,bt=0;
+    const scan=(a,b)=>{for(let i=a;i<b;i++){const ax=rt.X[i],ay=rt.Y[i],dx=rt.X[i+1]-ax,dy=rt.Y[i+1]-ay;const L2=dx*dx+dy*dy||1;let u=((x-ax)*dx+(y-ay)*dy)/L2;u=Math.max(0,Math.min(1,u));const ex=ax+dx*u-x,ey=ay+dy*u-y,d=ex*ex+ey*ey;if(d<best){best=d;bi=i;bt=u;}}};
+    scan(Math.max(0,this.idx-20),Math.min(rt.n-1,this.idx+200));
+    if(best>80*80)scan(0,rt.n-1);
+    return {s:(bi+bt)*STEP,d:Math.sqrt(best),i:bi};
+  },
+  onFix(lat,lon,spd,acc,simS){
+    const now=Date.now();this.fixTimes.push(now);this.fixTimes=this.fixTimes.filter(x=>now-x<5000);
+    if(!this.sim&&!Nav.rerouting){$('#drGps').textContent=`GPS ±${Math.round(acc)} m · ${(this.fixTimes.length/5).toFixed(1)} Hz`;$('#drGps').className='pill '+(acc<=15?'ok':acc<=30?'warn':'bad');}
+    if(this.me)this.me.setLatLng([lat,lon]);if(maps.mapDr)maps.mapDr.panTo([lat,lon],{animate:false});
+    if(!this.running)return;
+    let s,d=0;
+    if(simS!=null)s=simS;
+    else{const [x,y]=this.rt.toXY(lat,lon);const m=this.match(x,y);s=m.s;d=m.d;
+      const v=spd!=null&&spd>=0?spd:(this.lastFix?Math.abs(s-this.lastFix.s)/Math.max(.2,(now-this.lastFix.t)/1000):0);
+      this.v=this.v*0.5+v*0.5;this.lastFix={s,t:now};}
+    const off=d>50;
+    this.offN=off?this.offN+1:0;
+    if(off!==this.off){this.off=off;$('#drOff').classList.toggle('hidden',!off);if(off&&!this.nav)Voice.say(L_().sp.off,true);}
+    if(off&&this.nav&&this.offN>=3&&(!this.lastRR||now-this.lastRR>10000)){this.lastRR=now;Nav.reroute(lat,lon);return;}
+    if(!off&&(simS!=null||s>=this.s-30))this.s=s;
+    this.idx=Math.floor(this.s/STEP);
+    this.announce();this.update();
+    if(this.s>=this.rt.total-(this.nav?20:10)&&!this.done){this.done=true;this.running=false;clearInterval(this.simT);Voice.say(this.nav?L_().sp.arrived:L_().sp.done,false);this.setGo(t('repeat'),'repeat');try{this.wake?.release();}catch(e){}}
+  },
+  announce(){
+    const v=this.v,S=L_().sp;
+    // indicaciones del navegador
+    if(this.nav)for(const m of this.mans){
+      if(m.type==='arrive')continue;
+      const d=m.s-this.s;if(d<-10){m.far=m.near=true;continue;}
+      const nearD=Math.max(40,v*3.5),farD=Math.max(250,v*11);
+      if(!m.near&&d<=nearD){m.near=m.far=true;Voice.say(manText(m),false);}
+      else if(!m.far&&d<=farD&&d>nearD+40){m.far=true;Voice.say(fmt(S.inD,{d:roundDist(d),m:manText(m)}),false);}
+    }
+    // notas de curva (en navegador se callan por debajo de 25 km/h)
+    const lead=Math.max(60,v*(+cfg.lead||5)),N=this.notes;
+    while(this.nextAnn<N.length){
+      const n=N[this.nextAnn];
+      if(n.e<this.s){this.nextAnn++;continue;}
+      if(n.s-this.s>lead)break;
+      let j=this.nextAnn;const parts=[noteSpeech(N[j])];
+      while(N[j].gw==='y'&&j+1<N.length){j++;parts.push(S.and+' '+noteSpeech(N[j]));}
+      const last=N[j];
+      if(last.gw==='meta'){if(!this.nav&&last.gap<=500)parts.push(roundDist(Math.max(30,last.gap))+', '+S.finish);}
+      else parts.push(last.gw);
+      if(!(this.nav&&v<7))Voice.say(parts.join(', '),false);
+      this.nextAnn=j+1;
+    }
+  },
+  update(){
+    const N=this.notes;const k=N.findIndex(n=>n.e>=this.s);
+    const box=$('#drNote');
+    if(k<0){box.className='bignote idle';box.innerHTML=`<div><div class="gr h">${this.done||this.s>0?t('finishW'):t('ready')}</div></div>`;$('#drDist').innerHTML=fmtKm(Math.max(0,this.rt.total-this.s));$('#drNext').innerHTML='';}
+    else{
+      const n=N[k],d=n.s-this.s;
+      box.className='bignote c'+n.g;
+      const md=[n.mods.includes('caution')?'¡'+modTxt('caution')+'!':'',...n.mods.filter(m=>m!=='caution').map(modTxt)].filter(Boolean).join(' · ')||t(n.dir==='L'?'dirL':'dirR');
+      box.innerHTML=`<div class="arr">${arrowIcon(n)}</div><div><div class="gr${n.g===7?' h':''}">${n.g===7?esc(L_().sp.hp):gLabel(n.g)}</div><div class="md">${esc(md)}</div></div>`;
+      $('#drDist').innerHTML=d>0?`${Math.round(d)}<small> m</small>`:t('inCurve');
+      const nx=N[k+1];
+      $('#drNext').innerHTML=nx?`<span class="pill">${n.gw==='y'?esc(gapTxt(n)):n.gw+' m'}</span><span class="gb c${nx.g}">${arrowIcon(nx)}${gLabel(nx.g)}</span><span>${esc(nx.mods.map(modTxt).join(' · '))}</span>`:`<span class="pill">${n.gap} m</span><span>${t('finishW')}</span>`;
+    }
+    // banner de indicación
+    const mb=$('#drMan');
+    const m=this.nav&&this.mans.find(x=>x.s>=this.s-10);
+    if(m){mb.classList.remove('hidden');$('#drManAr').innerHTML=ic(manIcon(m));$('#drManD').textContent=fmtKm(Math.max(0,m.s-this.s));const tx=manText(m);$('#drManT').textContent=tx.charAt(0).toUpperCase()+tx.slice(1);}
+    else mb.classList.add('hidden');
+    $('#drSpd').textContent=Math.round((this.v||0)*3.6)+' km/h';
+    $('#drLeft').textContent=fmtKm(Math.max(0,this.rt.total-this.s));
+    $('#drIdx').textContent=!N.length?'—':k<0?`${N.length}/${N.length}`:`${k+1}/${N.length}`;
+    $('#drProg').style.width=Math.min(100,this.s/this.rt.total*100)+'%';
+  },
+  close(){
+    this.on=false;this.running=false;clearInterval(this.simT);if(this.watch!=null){navigator.geolocation.clearWatch(this.watch);this.watch=null;}
+    try{speechSynthesis.cancel();}catch(e){}try{this.wake?.release();}catch(e){}
+    $('#scr-drive').classList.remove('act');setTimeout(()=>Object.values(maps).forEach(m=>m&&m.invalidateSize()),60);
+  }
+};
+$('#drGo').onclick=()=>Drive.go();
+$('#drExit').onclick=()=>Drive.close();
+$('#drRepeat').onclick=()=>{if(Voice.last)Voice.say(Voice.last,true);};
+$('#drMute').onclick=()=>{Voice.muted=!Voice.muted;if(Voice.muted)try{speechSynthesis.cancel();}catch(e){}const b=$('#drMute');b.innerHTML=ic(Voice.muted?'mute':'vol');b.classList.toggle('on',Voice.muted);};
+$('#drSimSpd').oninput=()=>$('#drSimVal').textContent=$('#drSimSpd').value+' km/h';
+document.addEventListener('visibilitychange',async()=>{if(document.visibilityState==='visible'&&Drive.running){try{Drive.wake=await navigator.wakeLock?.request('screen');}catch(e){}}});
+
+/* =========================================================
+   AJUSTES
+   ========================================================= */
+function fillVoices(){const s=$('#setVoice');if(!s)return;s.innerHTML=`<option value="">${t('autoVoice')}</option>`+Voice.voices.map(v=>`<option value="${esc(v.voiceURI)}"${v.voiceURI===cfg.voice?' selected':''}>${esc(v.name)} (${v.lang})</option>`).join('');}
+function openSettings(){
+  [['#setScale','scale'],['#setCalib','calib']].forEach(([sel,key])=>$$(sel+' button').forEach(b=>{b.classList.toggle('on',String(cfg[key])===b.dataset.v);b.onclick=()=>{cfg[key]=key==='calib'?+b.dataset.v:b.dataset.v;saveCfg();openSettings();if(ST&&curScr==='scr-stage'&&key==='scale')renderStage(false);};}));
+  $('#setLead').value=cfg.lead;$('#setLeadV').textContent=cfg.lead+' s';
+  $('#setRate').value=cfg.rate;$('#setRateV').textContent='×'+(+cfg.rate).toFixed(2);
+  fillVoices();$('#ovSet').classList.remove('hidden');
+}
+$('#setLead').oninput=e=>{cfg.lead=+e.target.value;$('#setLeadV').textContent=cfg.lead+' s';saveCfg();};
+$('#setRate').oninput=e=>{cfg.rate=+e.target.value;$('#setRateV').textContent='×'+cfg.rate.toFixed(2);saveCfg();};
+$('#setVoice').onchange=e=>{cfg.voice=e.target.value;saveCfg();};
+$('#setTest').onclick=()=>Voice.say(L_().sp.test,true);
+$('#setOk').onclick=()=>$('#ovSet').classList.add('hidden');
+$('#ovSet').onclick=e=>{if(e.target.id==='ovSet')$('#ovSet').classList.add('hidden');};
+$('#btnSettings').onclick=openSettings;
+
+/* =========================================================
+   INICIO / LOGIN / USUARIOS / ADMIN
+   ========================================================= */
+const isAdmin=()=>me&&me.role==='admin';
+let authReady=false;
+$('#lnGo').onclick=()=>{if(!useFb){show('scr-home');return;}show(me?'scr-home':'scr-login');};
+async function initAuth(){
+  if(!useFb){me={uid:'local',name:'Local',role:'user'};$('#localBar').classList.remove('hidden');show('scr-landing');return;}
+  firebase.initializeApp(FIREBASE_CONFIG);db=firebase.firestore();
+  show('scr-landing');
+  firebase.auth().onAuthStateChanged(async u=>{
+    const first=!authReady;authReady=true;
+    if(!u){me=null;$('#btnLogout').classList.add('hidden');$('#btnAdmin').classList.add('hidden');if(!first)show('scr-landing');return;}
+    try{
+      const ref=db.collection('users').doc(u.uid);let snap=await ref.get();
+      if(!snap.exists){const adm=ADMIN_EMAILS.map(e=>e.toLowerCase()).includes((u.email||'').toLowerCase());await ref.set({name:u.email.split('@')[0],email:u.email,role:adm?'admin':'user',active:true,createdAt:Date.now()});snap=await ref.get();}
+      const d=snap.data();
+      if(d.active===false){await firebase.auth().signOut();show('scr-login');$('#lgErr').textContent=t('userOff');return;}
+      me={uid:u.uid,email:u.email,...d};
+      $('#btnLogout').classList.remove('hidden');$('#btnAdmin').classList.toggle('hidden',!isAdmin());
+      if(curScr==='scr-login'||!first)show('scr-home');
+    }catch(e){$('#lgErr').textContent=e.message;}
+  });
+}
+$('#lgBtn').onclick=async()=>{
+  $('#lgErr').textContent='';const em=$('#lgEmail').value.trim(),pw=$('#lgPass').value;
+  if(!em||!pw)return $('#lgErr').textContent=t('needCreds');
+  try{await firebase.auth().setPersistence($('#lgRemember').checked?firebase.auth.Auth.Persistence.LOCAL:firebase.auth.Auth.Persistence.SESSION);await firebase.auth().signInWithEmailAndPassword(em,pw);show('scr-home');}
+  catch(e){$('#lgErr').textContent=/invalid|wrong|not-found|credential/i.test(e.code||'')?t('badCreds'):e.message;}
+};
+$('#lgPass').onkeydown=e=>{if(e.key==='Enter')$('#lgBtn').click();};
+$('#lgReset').onclick=async()=>{const em=$('#lgEmail').value.trim();if(!em)return $('#lgErr').textContent=t('writeEmail');try{await firebase.auth().sendPasswordResetEmail(em);toast(t('resetMail'),'ok');}catch(e){$('#lgErr').textContent=e.message;}};
+$('#btnLogout').onclick=()=>{if(confirm(t('logoutQ')))firebase.auth().signOut();};
+$('#btnAdmin').onclick=()=>{show('scr-admin');renderAdmin();};
+$$('.tab').forEach(tb=>tb.onclick=()=>{$$('.tab').forEach(x=>x.classList.toggle('on',x===tb));$('#admUsers').classList.toggle('hidden',tb.dataset.tab!=='users');$('#admStages').classList.toggle('hidden',tb.dataset.tab!=='stages');renderAdmin();});
+async function renderAdmin(){
+  if(!isAdmin()||!db)return;
+  try{
+    const us=(await db.collection('users').get()).docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.name||'').localeCompare(b.name||''));
+    $('#admUserList').innerHTML=us.map(u=>`<div class="urow"><div class="ic">${ic(u.role==='admin'?'gear':'users')}</div><div class="t"><b>${esc(u.name)}</b><span>${esc(u.email)} · ${t(u.role==='admin'?'adminR':'pilot')}${u.active===false?` · <span style="color:var(--bad)">${t('disabled')}</span>`:''}</span></div>${u.id!==me.uid?`<button class="btn sm" data-act="role" data-id="${u.id}">${t(u.role==='admin'?'makePilot':'makeAdmin')}</button><button class="btn sm${u.active===false?'':' bad'}" data-act="act" data-id="${u.id}">${t(u.active===false?'activate':'deact')}</button>`:''}<button class="btn sm" data-act="reset" data-id="${u.id}" title="${esc(t('forgot'))}">${ic('mail')}</button></div>`).join('')||`<div class="empty" style="border:0">${t('noUsers')}</div>`;
+    $$('#admUserList [data-act]').forEach(b=>b.onclick=async()=>{
+      const u=us.find(x=>x.id===b.dataset.id);
+      try{
+        if(b.dataset.act==='role')await db.collection('users').doc(u.id).update({role:u.role==='admin'?'user':'admin'});
+        if(b.dataset.act==='act')await db.collection('users').doc(u.id).update({active:u.active===false});
+        if(b.dataset.act==='reset'){await firebase.auth().sendPasswordResetEmail(u.email);toast(t('resetSent',{e:u.email}),'ok');}
+        renderAdmin();
+      }catch(e){toast(e.message,'bad');}
+    });
+    const ss=(await Store.list(true)).sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0));
+    $('#admStageList').innerHTML=ss.length?ss.map(s=>`<div class="stage" data-id="${s.id}"><div class="ic">${ic('route')}</div><div class="t"><b>${esc(s.name)}</b><span>${esc(s.owner||'')} · ${fmtKm(s.total||0)} · ${(s.notes||[]).length} ${t('curves')} · ${fmtDate(s.updatedAt)}</span></div></div>`).join(''):`<div class="empty">${t('noStages')}</div>`;
+    $$('#admStageList .stage').forEach(el=>el.onclick=()=>openStage(ss.find(s=>s.id===el.dataset.id)));
+  }catch(e){toast(e.message,'bad');}
+}
+$('#nuBtn').onclick=async()=>{
+  const name=$('#nuName').value.trim(),email=$('#nuEmail').value.trim(),pass=$('#nuPass').value,role=$('#nuRole').value;
+  if(!name||!email||pass.length<6)return toast(t('fillAll'),'bad');
+  $('#nuBtn').disabled=true;
+  try{
+    const sec=firebase.apps.find(a=>a.name==='sec')||firebase.initializeApp(FIREBASE_CONFIG,'sec');
+    const cred=await sec.auth().createUserWithEmailAndPassword(email,pass);
+    await db.collection('users').doc(cred.user.uid).set({name,email,role,active:true,createdAt:Date.now()});
+    await sec.auth().signOut();
+    toast(t('userCreated',{n:name}),'ok');$('#nuName').value=$('#nuEmail').value=$('#nuPass').value='';renderAdmin();
+  }catch(e){toast(/email-already/.test(e.code||'')?t('emailUsed'):e.message,'bad');}
+  $('#nuBtn').disabled=false;
+};
+
+/* ---------- arranque ---------- */
+paintIcons();applyTheme();applyLang();initAuth();
+window.__T={buildRoute,computeNotes,newStage,Drive,Nav,prepMans,get ST(){return ST;},cfg,Voice,applyLang,show};
+</script>
+</body>
+</html>
