@@ -296,6 +296,116 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
 
 @media(min-width:900px){main{max-width:1000px}}
 @media(max-width:760px){.layout2{grid-template-columns:1fr}.notes{max-height:none}.map{height:46vh}}
+
+/* ===================== VERSIÓN WEB (escritorio) ===================== */
+.sbrand,.scredit{display:none}
+@media(min-width:1000px){
+  html,body{font-size:15px}
+  /* menú lateral */
+  #tabbar{top:0;bottom:0;right:auto;width:250px;border-top:0;border-right:1px solid var(--line);padding:26px 14px;display:flex;flex-direction:column;gap:22px}
+  #tabbar.hidden{display:none!important}
+  .sbrand{display:flex;align-items:center;gap:10px;padding:0 8px}
+  .sbrand .wm{font-size:26px}
+  #tabbar .in2{display:flex;flex-direction:column;gap:4px;max-width:none;margin:0}
+  #tabbar button{flex-direction:row;justify-content:flex-start;gap:14px;height:50px;padding:0 14px;border-radius:var(--rs);font-size:15px;font-weight:600}
+  #tabbar button:hover{background:var(--panel)}
+  #tabbar button.on{background:rgba(255,90,0,.12);color:var(--acc2)}
+  .scredit{display:flex;flex-direction:column;gap:2px;margin-top:auto;padding:0 8px;font-size:12px;color:var(--mut)}
+  .scredit b{color:var(--txt)}
+  body:not(.notab) main{margin-left:250px;max-width:1180px;padding:36px 44px 48px}
+  body.notab main{max-width:1240px;padding:32px 40px 48px}
+  #toast{bottom:28px}
+  h1{font-size:44px}.head h1{font-size:40px}
+  .head{margin-bottom:22px}
+
+  /* portada */
+  #scr-landing{margin:-32px -40px 0}
+  .land{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);grid-template-rows:auto 1fr;min-height:100vh}
+  .land .ltop{grid-column:1/-1;grid-row:1;z-index:2;max-width:none;padding:28px 48px 0}
+  .land .lbody{grid-column:1;grid-row:2;z-index:2;align-self:center;max-width:640px;width:100%;margin:0 0 0 auto;padding:0 32px 60px 56px;gap:22px}
+  .land .art{grid-column:2;grid-row:1/3;margin:0;max-width:none;height:100%;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 22%,#000 100%);mask-image:linear-gradient(to right,transparent 0,#000 22%,#000 100%)}
+  .land h1{font-size:clamp(64px,5.8vw,96px)}
+  .land p{font-size:18px;max-width:440px}
+  .land .btn.pri{max-width:360px}
+  .chkline{max-width:440px}
+  .install{text-align:left}
+
+  /* acceso */
+  #scr-login.act{display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 80px)}
+  .login{min-height:0;width:440px;background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:16px;padding:28px 30px 22px;box-shadow:var(--sh)}
+  .login h1{font-size:46px}
+  .login .in{background:var(--bg2)}
+
+  /* inicio piloto */
+  .hello{margin-bottom:26px}
+  .hello .t b{font-size:38px}
+  .hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
+  .hcol2 h2{margin-top:0}
+  .navcard{padding:30px 28px;min-height:200px;justify-content:flex-end}
+  .navcard b{font-size:56px}
+  .tiles{gap:12px}.tile{height:110px;font-size:14px}
+
+  /* listas de tramos */
+  #stageList,#admStageList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  #stageList .stage,#admStageList .stage{margin:0}
+  #stageList .empty,#admStageList .empty{grid-column:1/-1}
+
+  /* perfil */
+  .pgrid{display:grid;grid-template-columns:340px minmax(0,1fr);grid-template-rows:auto 1fr;grid-template-areas:"left right" "acc right";gap:0 32px;align-items:start}
+  .pleft{grid-area:left}.pright{grid-area:right}.pacc{grid-area:acc}
+  .pright>label.f:first-child{margin-top:0}
+  .pacc .credit{text-align:left}
+  .vadd{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr) auto;align-items:end}
+  .vadd .full:first-child{grid-column:auto}
+  .vadd .btn.full{grid-column:auto;margin-top:0!important}
+
+  /* panel administrador */
+  #scr-panel .stats{gap:14px;margin-bottom:16px}
+  #scr-panel .stat{padding:18px 20px}
+  #scr-panel .stat b{font-size:48px}
+  #scr-panel>.row{max-width:520px}
+  #admRecent:empty{display:none}
+  .urow{flex-wrap:nowrap}
+  .urow .acts{width:auto;padding-left:0}
+
+  /* navegador (configuración) */
+  #scr-nav.act{display:grid;grid-template-columns:400px minmax(0,1fr);grid-template-rows:auto auto auto auto auto 1fr;gap:0 24px}
+  #scr-nav .head{grid-column:1;grid-row:1}
+  #scr-nav .searchbar{grid-column:1;grid-row:2}
+  #scr-nav .results{grid-column:1;grid-row:3;margin-top:0}
+  #scr-nav .panelbar{grid-column:1;grid-row:4}
+  #scr-nav>.row{grid-column:1;grid-row:5;flex-direction:column;align-items:stretch;gap:10px;margin-top:14px!important}
+  #scr-nav>.row .btn{flex:none!important;height:56px}
+  #scr-nav #mapNav{grid-column:2;grid-row:1/7;height:calc(100vh - 84px);min-height:520px}
+
+  /* editor / grabación / tramo */
+  #mapEd,#mapRec{height:62vh}
+  #scr-record .stats{grid-template-columns:repeat(6,minmax(0,1fr))}
+  #scr-editor .btn.pri.block,#scr-record>.row{max-width:520px;margin-left:auto}
+  #mapSt{height:58vh}
+  .layout2{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px}
+  .notes{max-height:calc(58vh + 108px)}
+
+  /* conducción */
+  #scr-drive.act{display:grid;grid-template-columns:440px minmax(0,1fr);grid-template-rows:auto 1fr;gap:0}
+  #scr-drive .dtop{grid-column:1;grid-row:1;padding:20px 16px 10px 20px}
+  #scr-drive .dbottom{grid-column:1;grid-row:2;align-self:start;padding:6px 16px 20px 20px;gap:14px}
+  #scr-drive .dmap{grid-column:2;grid-row:1/3;margin:20px 20px 20px 4px}
+  .topcard{min-height:240px}
+  .topcard{gap:12px}
+  .topcard .ar svg{width:88px;height:88px}
+  .topcard .gr{font-size:136px}
+  .topcard .md{font-size:28px}
+  .topcard .ds{font-size:42px;white-space:nowrap}
+  .topcard.blue .md{font-size:20px}
+  .dnext{min-height:84px}
+  .dnext .t b{font-size:26px}
+  .d3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .d3 b{font-size:30px}
+  .drow{flex-wrap:wrap}
+  .drow .d3{flex:1 1 100%;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
+  .drow .dbtn{flex:1;width:auto;height:60px}
+}
 </style>
 </head>
 <body>
@@ -358,7 +468,7 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
       <h1 data-t="loginH"></h1>
       <div class="mut" data-t="loginSub"></div>
     </div>
-    <label class="f" for="lgEmail" data-t="email"></label><input class="in" id="lgEmail" type="email" autocomplete="username" placeholder="tu@email.com">
+    <label class="f" for="lgEmail" data-t="userOrEmail"></label><input class="in" id="lgEmail" type="text" autocapitalize="none" autocorrect="off" spellcheck="false" autocomplete="username" placeholder="panda · tu@email.com">
     <label class="f" for="lgPass" data-t="pass"></label><input class="in" id="lgPass" type="password" autocomplete="current-password" placeholder="••••••••">
     <label class="chk"><input type="checkbox" id="lgRemember" checked> <span data-t="remember"></span></label>
     <div class="err" id="lgErr"></div>
@@ -377,6 +487,7 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
     <div class="t sp"><small data-t="hi"></small><b id="homeName"></b></div>
     <button class="ib" data-settings data-ti="settings" data-i="gear"></button>
   </div>
+  <div class="hgrid"><div class="hcol1">
   <button class="navcard" data-go="scr-nav"><span data-i="nav"></span><b data-t="navT"></b><span data-t="navD"></span></button>
   <div class="tiles">
     <button class="tile" id="newMap"><span data-i="map"></span><span data-t="tMap"></span></button>
@@ -384,8 +495,10 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
     <button class="tile" id="newRec"><span data-i="rec"></span><span data-t="tRec"></span></button>
   </div>
   <input type="file" id="gpxFile" accept=".gpx,application/gpx+xml,application/xml,text/xml" class="hidden">
+  </div><div class="hcol2">
   <h2><span data-t="mine"></span><button class="link" data-go="scr-stages" data-t="seeAll"></button></h2>
   <div id="homeStages"></div>
+  </div></div>
   <div class="note-warn"><span data-i="alert"></span><div data-t="safety"></div></div>
 </section>
 
@@ -398,12 +511,14 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
 <!-- PERFIL -->
 <section id="scr-profile" class="scr">
   <div class="head"><h1 data-t="profile"></h1><button class="ib" data-settings data-ti="settings" data-i="gear"></button></div>
+  <div class="pgrid"><div class="pleft">
   <div class="pcard">
     <button class="avbtn" id="pfPhotoBtn" data-ti="changePhoto"><div id="pfAv"></div><span class="cam" data-i="camera"></span></button>
     <input type="file" id="pfFile" accept="image/*" class="hidden">
     <b id="pfTitle"></b>
     <span class="badge" id="pfRole"></span>
   </div>
+  </div><div class="pright">
   <label class="f" for="pfName" data-t="name"></label><input class="in" id="pfName" autocomplete="name">
   <label class="f" for="pfEmail" data-t="email"></label><input class="in" id="pfEmail" type="email" readonly>
   <label class="f" for="pfPhone" data-t="phone"></label><input class="in" id="pfPhone" type="tel" autocomplete="tel" placeholder="+34 600 000 000">
@@ -416,6 +531,7 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
     <button class="btn full" id="vAdd" style="margin-top:12px"><span data-i="plus"></span><span data-t="addVehicle"></span></button>
   </div>
   <button class="btn pri block" id="pfSave" style="margin-top:18px;height:54px"><span data-i="save"></span><span data-t="saveProfile"></span></button>
+  </div><div class="pacc">
   <h2 data-t="account"></h2>
   <div class="acclist">
     <button id="accEmail" class="fbonly"><span data-i="mail"></span><span data-t="changeEmail"></span><span class="chev" data-i="next"></span></button>
@@ -424,6 +540,7 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
     <button id="accLogout" class="bad fbonly"><span data-i="logout"></span><span data-t="logout"></span></button>
   </div>
   <div class="credit"><span data-t="devBy"></span> <b>Sergio Aranda</b></div>
+  </div></div>
 </section>
 
 <!-- PANEL ADMIN -->
@@ -533,7 +650,7 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
 </main>
 
 <!-- MENÚ INFERIOR -->
-<nav id="tabbar" class="hidden" aria-label="Menú"><div class="in2" id="tabIn"></div></nav>
+<nav id="tabbar" class="hidden" aria-label="Menú"><div class="sbrand"><img class="logo" src="data:image/png;base64,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" alt=""><div class="wm">W<b>TRACKS</b></div></div><div class="in2" id="tabIn"></div><div class="scredit"><span data-t="devBy"></span><b>Sergio Aranda</b></div></nav>
 
 <!-- CONDUCCIÓN -->
 <section id="scr-drive">
@@ -606,7 +723,7 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
 <div class="ov hidden" id="ovUser"><div class="sheet">
   <h3 data-t="newPilot"></h3>
   <label class="f" for="nuName" data-t="name"></label><input class="in" id="nuName">
-  <label class="f" for="nuEmail" data-t="email"></label><input class="in" id="nuEmail" type="email">
+  <label class="f" for="nuEmail" data-t="userOrEmail"></label><input class="in" id="nuEmail" type="text" autocapitalize="none" autocorrect="off" spellcheck="false">
   <label class="f" for="nuPass" data-t="passMin"></label><input class="in" id="nuPass" type="text">
   <div class="row" style="margin-top:18px"><button class="btn sm" data-close data-t="cancel"></button><div class="sp"></div><button class="btn pri" id="nuBtn"><span data-i="plus"></span><span data-t="createUser"></span></button></div>
 </div></div>
@@ -628,8 +745,19 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
       Si lo dejas en null la app funciona en "modo local" (sin usuarios).
    2) Pon en ADMIN_EMAILS el email del administrador.
    ========================================================= */
-const FIREBASE_CONFIG = null;
-const ADMIN_EMAILS = ['TU_EMAIL@gmail.com'];
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyApIQYid8P_v50Rg_jTHeWF04Kt0--9C24",
+  authDomain: "wtracks-cc8b2.firebaseapp.com",
+  projectId: "wtracks-cc8b2",
+  storageBucket: "wtracks-cc8b2.firebasestorage.app",
+  messagingSenderId: "714580081048",
+  appId: "1:714580081048:web:55e9acb80defae113713ed"
+};
+const ADMIN_EMAILS = ['panda@wtracks.app'];
+/* Los usuarios sin email (p. ej. "panda") se guardan como usuario@wtracks.app */
+const USER_DOMAIN='@wtracks.app';
+const toEmail=x=>{x=String(x||'').trim().toLowerCase();return !x||x.includes('@')?x:x.replace(/\s+/g,'')+USER_DOMAIN;};
+const showEmail=e=>String(e||'').endsWith(USER_DOMAIN)?String(e).slice(0,-USER_DOMAIN.length):String(e||'');
 
 /* =========================================================
    IDIOMAS
@@ -744,35 +872,35 @@ sp:{nums:['','eins','zwei','drei','vier','fünf','sechs'],hp:'Kehre',L:'links',R
 man:{right:'rechts abbiegen',left:'links abbiegen','slight right':'rechts halten','slight left':'links halten','sharp right':'scharf rechts abbiegen','sharp left':'scharf links abbiegen',uturn:'wenden',straight:'geradeaus weiter',round:'im Kreisverkehr die {n}. Ausfahrt nehmen',arrive:'Sie erreichen Ihr Ziel',onto:' auf {s}'}}
 };
 const I18X={
-es:{act1:'Activo',h1a:'Cada curva,',h1b:'cantada',h1c:'a tiempo.',heroSub:'Notas de ritmo por voz y navegador. Conduce solo, como si llevaras copiloto.',mf1:'Notas por voz',mf2:'Navegador',mf3:'Tus tramos',enter:'Entrar',install:'En iPhone: Compartir → «Añadir a pantalla de inicio»',
+es:{userOrEmail:'Usuario o email',noMailUser:'Este usuario no tiene email. Añade un email real en tu perfil para poder recuperar la contraseña.',act1:'Activo',h1a:'Cada curva,',h1b:'cantada',h1c:'a tiempo.',heroSub:'Notas de ritmo por voz y navegador. Conduce solo, como si llevaras copiloto.',mf1:'Notas por voz',mf2:'Navegador',mf3:'Tus tramos',enter:'Entrar',install:'En iPhone: Compartir → «Añadir a pantalla de inicio»',
 loginKick:'Acceso',loginH:'Entra en tu sesión',loginSub:'Usa el email y la contraseña que te dio el administrador.',hi:'Hola,',tMap:'Tramo',tRec:'Grabar',seeAll:'Ver todos',navD:'Elige destino y Wtracks te canta cada curva',
 tabHome:'Inicio',tabNav:'Navegar',tabStages:'Tramos',tabProfile:'Perfil',tabPanel:'Panel',tabPilots:'Pilotos',
 profile:'Perfil',phone:'Teléfono',vehicles:'Vehículos',vehName:'Marca y modelo',vehType:'Tipo',car:'Coche',moto:'Moto',otherV:'Otro',plate:'Matrícula',addVehicle:'Añadir vehículo',noVehicles:'Aún no has añadido vehículos',changePhoto:'Cambiar foto',saveProfile:'Guardar perfil',profileSaved:'Perfil guardado',
 account:'Cuenta',changeEmail:'Cambiar email',changePass:'Cambiar contraseña',curPass:'Contraseña actual',newEmail:'Nuevo email',newPass:'Nueva contraseña (mín. 6)',emailVerify:'Te hemos enviado un correo a {e}. Confírmalo para completar el cambio.',passChanged:'Contraseña cambiada',imgErr:'No se pudo cargar la imagen',cancel:'Cancelar',accept:'Aceptar',
 pilots:'Pilotos',stagesW:'Tramos',actives:'Activos',newPilot:'Nuevo piloto',then:'Luego',inM:'en {d}',night:'Noche',day:'Día',vehFill:'Escribe la marca y el modelo',
 voiceHint:'Para una voz más natural en iPhone: Ajustes → Accesibilidad → Contenido leído → Voces y descarga una voz «Mejorada». Luego elígela aquí.'},
-en:{act1:'Active',h1a:'Every corner,',h1b:'called',h1c:'on time.',heroSub:'Voice pace notes and navigation. Drive solo as if you had a co-driver.',mf1:'Voice notes',mf2:'Navigation',mf3:'Your stages',enter:'Enter',install:'On iPhone: Share → “Add to Home Screen”',
+en:{userOrEmail:'Username or email',noMailUser:'This user has no email. Add a real email in your profile to be able to recover the password.',act1:'Active',h1a:'Every corner,',h1b:'called',h1c:'on time.',heroSub:'Voice pace notes and navigation. Drive solo as if you had a co-driver.',mf1:'Voice notes',mf2:'Navigation',mf3:'Your stages',enter:'Enter',install:'On iPhone: Share → “Add to Home Screen”',
 loginKick:'Sign in',loginH:'Enter your session',loginSub:'Use the email and password your administrator gave you.',hi:'Hi,',tMap:'Stage',tRec:'Record',seeAll:'See all',navD:'Pick a destination and Wtracks calls every corner',
 tabHome:'Home',tabNav:'Navigate',tabStages:'Stages',tabProfile:'Profile',tabPanel:'Panel',tabPilots:'Drivers',
 profile:'Profile',phone:'Phone',vehicles:'Vehicles',vehName:'Make and model',vehType:'Type',car:'Car',moto:'Motorbike',otherV:'Other',plate:'Plate',addVehicle:'Add vehicle',noVehicles:'No vehicles added yet',changePhoto:'Change photo',saveProfile:'Save profile',profileSaved:'Profile saved',
 account:'Account',changeEmail:'Change email',changePass:'Change password',curPass:'Current password',newEmail:'New email',newPass:'New password (min. 6)',emailVerify:'We sent an email to {e}. Confirm it to complete the change.',passChanged:'Password changed',imgErr:'Could not load the image',cancel:'Cancel',accept:'OK',
 pilots:'Drivers',stagesW:'Stages',actives:'Active',newPilot:'New driver',then:'Then',inM:'in {d}',night:'Night',day:'Day',vehFill:'Enter make and model',
 voiceHint:'For a more natural voice on iPhone: Settings → Accessibility → Spoken Content → Voices and download an “Enhanced” voice. Then pick it here.'},
-fr:{act1:'Actif',h1a:'Chaque virage,',h1b:'annoncé',h1c:'à temps.',heroSub:'Notes à la voix et navigation. Roulez seul comme avec un copilote.',mf1:'Notes vocales',mf2:'Navigation',mf3:'Vos spéciales',enter:'Entrer',install:'Sur iPhone : Partager → « Sur l’écran d’accueil »',
+fr:{userOrEmail:'Identifiant ou email',noMailUser:'Cet utilisateur n’a pas d’email. Ajoutez un vrai email dans votre profil pour pouvoir récupérer le mot de passe.',act1:'Actif',h1a:'Chaque virage,',h1b:'annoncé',h1c:'à temps.',heroSub:'Notes à la voix et navigation. Roulez seul comme avec un copilote.',mf1:'Notes vocales',mf2:'Navigation',mf3:'Vos spéciales',enter:'Entrer',install:'Sur iPhone : Partager → « Sur l’écran d’accueil »',
 loginKick:'Accès',loginH:'Entrez dans votre session',loginSub:'Utilisez l’email et le mot de passe fournis par l’administrateur.',hi:'Bonjour,',tMap:'Spéciale',tRec:'Enregistrer',seeAll:'Tout voir',navD:'Choisissez une destination, Wtracks annonce chaque virage',
 tabHome:'Accueil',tabNav:'Naviguer',tabStages:'Spéciales',tabProfile:'Profil',tabPanel:'Panneau',tabPilots:'Pilotes',
 profile:'Profil',phone:'Téléphone',vehicles:'Véhicules',vehName:'Marque et modèle',vehType:'Type',car:'Voiture',moto:'Moto',otherV:'Autre',plate:'Immatriculation',addVehicle:'Ajouter un véhicule',noVehicles:'Aucun véhicule pour l’instant',changePhoto:'Changer la photo',saveProfile:'Enregistrer le profil',profileSaved:'Profil enregistré',
 account:'Compte',changeEmail:'Changer l’email',changePass:'Changer le mot de passe',curPass:'Mot de passe actuel',newEmail:'Nouvel email',newPass:'Nouveau mot de passe (min. 6)',emailVerify:'Nous avons envoyé un email à {e}. Confirmez-le pour terminer.',passChanged:'Mot de passe changé',imgErr:'Impossible de charger l’image',cancel:'Annuler',accept:'OK',
 pilots:'Pilotes',stagesW:'Spéciales',actives:'Actifs',newPilot:'Nouveau pilote',then:'Ensuite',inM:'dans {d}',night:'Nuit',day:'Jour',vehFill:'Saisissez la marque et le modèle',
 voiceHint:'Pour une voix plus naturelle sur iPhone : Réglages → Accessibilité → Contenu énoncé → Voix, et téléchargez une voix « améliorée ». Choisissez-la ensuite ici.'},
-it:{act1:'Attivo',h1a:'Ogni curva,',h1b:'chiamata',h1c:'in tempo.',heroSub:'Note a voce e navigatore. Guida da solo come con un navigatore a fianco.',mf1:'Note a voce',mf2:'Navigatore',mf3:'Le tue prove',enter:'Entra',install:'Su iPhone: Condividi → «Aggiungi alla schermata Home»',
+it:{userOrEmail:'Utente o email',noMailUser:'Questo utente non ha email. Aggiungi un’email reale nel profilo per poter recuperare la password.',act1:'Attivo',h1a:'Ogni curva,',h1b:'chiamata',h1c:'in tempo.',heroSub:'Note a voce e navigatore. Guida da solo come con un navigatore a fianco.',mf1:'Note a voce',mf2:'Navigatore',mf3:'Le tue prove',enter:'Entra',install:'Su iPhone: Condividi → «Aggiungi alla schermata Home»',
 loginKick:'Accesso',loginH:'Entra nella tua sessione',loginSub:'Usa l’email e la password che ti ha dato l’amministratore.',hi:'Ciao,',tMap:'Prova',tRec:'Registra',seeAll:'Vedi tutte',navD:'Scegli la destinazione e Wtracks chiama ogni curva',
 tabHome:'Home',tabNav:'Naviga',tabStages:'Prove',tabProfile:'Profilo',tabPanel:'Pannello',tabPilots:'Piloti',
 profile:'Profilo',phone:'Telefono',vehicles:'Veicoli',vehName:'Marca e modello',vehType:'Tipo',car:'Auto',moto:'Moto',otherV:'Altro',plate:'Targa',addVehicle:'Aggiungi veicolo',noVehicles:'Nessun veicolo aggiunto',changePhoto:'Cambia foto',saveProfile:'Salva profilo',profileSaved:'Profilo salvato',
 account:'Account',changeEmail:'Cambia email',changePass:'Cambia password',curPass:'Password attuale',newEmail:'Nuova email',newPass:'Nuova password (min. 6)',emailVerify:'Ti abbiamo inviato un’email a {e}. Confermala per completare.',passChanged:'Password cambiata',imgErr:'Impossibile caricare l’immagine',cancel:'Annulla',accept:'OK',
 pilots:'Piloti',stagesW:'Prove',actives:'Attivi',newPilot:'Nuovo pilota',then:'Poi',inM:'tra {d}',night:'Notte',day:'Giorno',vehFill:'Inserisci marca e modello',
 voiceHint:'Per una voce più naturale su iPhone: Impostazioni → Accessibilità → Contenuto letto → Voci e scarica una voce «Migliorata». Poi sceglila qui.'},
-de:{act1:'Aktiv',h1a:'Jede Kurve,',h1b:'angesagt',h1c:'pünktlich.',heroSub:'Aufschrieb per Sprache und Navigation. Fahr allein, als hättest du einen Beifahrer.',mf1:'Sprachansagen',mf2:'Navigation',mf3:'Deine Prüfungen',enter:'Los',install:'Auf dem iPhone: Teilen → „Zum Home-Bildschirm“',
+de:{userOrEmail:'Benutzername oder E-Mail',noMailUser:'Dieser Benutzer hat keine E-Mail. Füge im Profil eine echte E-Mail hinzu, um das Passwort wiederherstellen zu können.',act1:'Aktiv',h1a:'Jede Kurve,',h1b:'angesagt',h1c:'pünktlich.',heroSub:'Aufschrieb per Sprache und Navigation. Fahr allein, als hättest du einen Beifahrer.',mf1:'Sprachansagen',mf2:'Navigation',mf3:'Deine Prüfungen',enter:'Los',install:'Auf dem iPhone: Teilen → „Zum Home-Bildschirm“',
 loginKick:'Anmeldung',loginH:'Melde dich an',loginSub:'Nutze die E-Mail und das Passwort vom Administrator.',hi:'Hallo,',tMap:'Prüfung',tRec:'Aufzeichnen',seeAll:'Alle',navD:'Ziel wählen – Wtracks sagt jede Kurve an',
 tabHome:'Start',tabNav:'Navi',tabStages:'Prüfungen',tabProfile:'Profil',tabPanel:'Panel',tabPilots:'Fahrer',
 profile:'Profil',phone:'Telefon',vehicles:'Fahrzeuge',vehName:'Marke und Modell',vehType:'Typ',car:'Auto',moto:'Motorrad',otherV:'Andere',plate:'Kennzeichen',addVehicle:'Fahrzeug hinzufügen',noVehicles:'Noch keine Fahrzeuge',changePhoto:'Foto ändern',saveProfile:'Profil speichern',profileSaved:'Profil gespeichert',
@@ -1547,6 +1675,7 @@ $('#drExit').onclick=()=>Drive.close();
 $('#drTop').onclick=()=>{if(Voice.last)Voice.say(Voice.last,true);};
 $('#drMute').onclick=()=>{Voice.muted=!Voice.muted;if(Voice.muted)try{speechSynthesis.cancel();}catch(e){}const b=$('#drMute');b.innerHTML=ic(Voice.muted?'mute':'vol');b.classList.toggle('on',Voice.muted);};
 $('#drSimSpd').oninput=()=>$('#drSimVal').textContent=$('#drSimSpd').value+' km/h';
+window.addEventListener('resize',()=>{clearTimeout(window.__rz);window.__rz=setTimeout(()=>Object.values(maps).forEach(m=>m&&m.invalidateSize()),150);});
 document.addEventListener('visibilitychange',async()=>{if(document.visibilityState==='visible'&&Drive.running){try{Drive.wake=await navigator.wakeLock?.request('screen');}catch(e){}}});
 
 /* =========================================================
@@ -1586,7 +1715,7 @@ async function initAuth(){
     if(!u){me=null;if(!first)show('scr-landing');return;}
     try{
       const ref=db.collection('users').doc(u.uid);let snap=await ref.get();
-      if(!snap.exists){const adm=ADMIN_EMAILS.map(e=>e.toLowerCase()).includes((u.email||'').toLowerCase());await ref.set({name:u.email.split('@')[0],email:u.email,role:adm?'admin':'user',active:true,phone:'',vehicles:[],photo:'',createdAt:Date.now()});snap=await ref.get();}
+      if(!snap.exists){const adm=ADMIN_EMAILS.map(e=>e.toLowerCase()).includes((u.email||'').toLowerCase());await ref.set({name:showEmail(u.email).split('@')[0],email:u.email,role:adm?'admin':'user',active:true,phone:'',vehicles:[],photo:'',createdAt:Date.now()});snap=await ref.get();}
       const d=snap.data();
       if(d.active===false){await firebase.auth().signOut();show('scr-login');$('#lgErr').textContent=t('userOff');return;}
       if(d.email!==u.email){try{await ref.update({email:u.email});d.email=u.email;}catch(e){}}
@@ -1596,14 +1725,14 @@ async function initAuth(){
   });
 }
 $('#lgBtn').onclick=async()=>{
-  $('#lgErr').textContent='';const em=$('#lgEmail').value.trim(),pw=$('#lgPass').value;
+  $('#lgErr').textContent='';const em=toEmail($('#lgEmail').value),pw=$('#lgPass').value;
   if(!useFb){show('scr-home');return;}
   if(!em||!pw)return $('#lgErr').textContent=t('needCreds');
   try{await firebase.auth().setPersistence($('#lgRemember').checked?firebase.auth.Auth.Persistence.LOCAL:firebase.auth.Auth.Persistence.SESSION);await firebase.auth().signInWithEmailAndPassword(em,pw);}
   catch(e){$('#lgErr').textContent=/invalid|wrong|not-found|credential/i.test(e.code||'')?t('badCreds'):e.message;}
 };
 $('#lgPass').onkeydown=e=>{if(e.key==='Enter')$('#lgBtn').click();};
-$('#lgReset').onclick=async()=>{const em=$('#lgEmail').value.trim();if(!em)return $('#lgErr').textContent=t('writeEmail');if(!useFb)return;try{await firebase.auth().sendPasswordResetEmail(em);toast(t('resetMail'),'ok');}catch(e){$('#lgErr').textContent=e.message;}};
+$('#lgReset').onclick=async()=>{const em=toEmail($('#lgEmail').value);if(!em)return $('#lgErr').textContent=t('writeEmail');if(!useFb)return;if(em.endsWith(USER_DOMAIN))return $('#lgErr').textContent=t('noMailUser');try{await firebase.auth().sendPasswordResetEmail(em);toast(t('resetMail'),'ok');}catch(e){$('#lgErr').textContent=e.message;}};
 
 /* ---------- perfil ---------- */
 function resizeImg(file,max=320){return new Promise((res,rej)=>{const img=new Image();img.onload=()=>{const s=Math.min(img.width,img.height),c=document.createElement('canvas');c.width=c.height=max;const x=c.getContext('2d');x.drawImage(img,(img.width-s)/2,(img.height-s)/2,s,s,0,0,max,max);URL.revokeObjectURL(img.src);res(c.toDataURL('image/jpeg',0.82));};img.onerror=()=>rej(new Error(t('imgErr')));img.src=URL.createObjectURL(file);});}
@@ -1611,7 +1740,7 @@ const vehIcon=tp=>tp==='moto'?'moto':tp==='car'?'car':'route';
 const Profile={draft:null,
   render(){
     this.draft={name:me.name||'',phone:me.phone||'',vehicles:(me.vehicles||[]).map(v=>({...v})),photo:me.photo||''};
-    $('#pfName').value=this.draft.name;$('#pfEmail').value=me.email||'';$('#pfPhone').value=this.draft.phone;
+    $('#pfName').value=this.draft.name;$('#pfEmail').value=showEmail(me.email);$('#pfPhone').value=this.draft.phone;
     $('#pfEmail').style.display=useFb?'':'none';$('label[for=pfEmail]').style.display=useFb?'':'none';
     this.paint();
   },
@@ -1658,7 +1787,7 @@ $('#acOk').onclick=async()=>{
 /* ---------- administración ---------- */
 let usersCache=[];
 function userRow(u,actions){
-  const sub=[u.email,u.phone,(u.vehicles||[]).length?(u.vehicles.length+' '+t('vehicles').toLowerCase()):''].filter(Boolean).map(esc).join(' · ');
+  const sub=[showEmail(u.email),u.phone,(u.vehicles||[]).length?(u.vehicles.length+' '+t('vehicles').toLowerCase()):''].filter(Boolean).map(esc).join(' · ');
   const badge=u.role==='admin'?`<span class="badge adm">${t('adminR')}</span>`:u.active===false?`<span class="badge off">${t('disabled')}</span>`:`<span class="badge on">${t('act1')}</span>`;
   const acts=actions&&u.id!==me.uid?`<div class="acts"><button class="btn sm" data-act="act" data-id="${u.id}">${t(u.active===false?'activate':'deact')}</button><button class="btn sm" data-act="role" data-id="${u.id}">${t(u.role==='admin'?'makePilot':'makeAdmin')}</button><button class="btn sm icon" data-act="reset" data-id="${u.id}" aria-label="${esc(t('forgot'))}" title="${esc(t('forgot'))}">${ic('mail')}</button></div>`:'';
   return `<div class="urow">${avatarHTML(u,'sm')}<div class="t"><b>${esc(u.name||u.email)}</b><span>${sub}</span></div>${badge}${acts}</div>`;
@@ -1679,7 +1808,7 @@ async function renderAdmin(){
       try{
         if(b.dataset.act==='role')await db.collection('users').doc(u.id).update({role:u.role==='admin'?'user':'admin'});
         if(b.dataset.act==='act')await db.collection('users').doc(u.id).update({active:u.active===false});
-        if(b.dataset.act==='reset'){await firebase.auth().sendPasswordResetEmail(u.email);toast(t('resetSent',{e:u.email}),'ok');}
+        if(b.dataset.act==='reset'){if(String(u.email).endsWith(USER_DOMAIN))return toast(t('noMailUser'),'bad');await firebase.auth().sendPasswordResetEmail(u.email);toast(t('resetSent',{e:u.email}),'ok');}
         renderAdmin();
       }catch(e){toast(e.message,'bad');}
     });
@@ -1692,7 +1821,7 @@ async function renderAdmin(){
 const openNewUser=()=>{$('#nuName').value=$('#nuEmail').value=$('#nuPass').value='';$('#ovUser').classList.remove('hidden');};
 $('#admNew').onclick=openNewUser;$('#pilNew').onclick=openNewUser;
 $('#nuBtn').onclick=async()=>{
-  const name=$('#nuName').value.trim(),email=$('#nuEmail').value.trim(),pass=$('#nuPass').value;
+  const name=$('#nuName').value.trim(),email=toEmail($('#nuEmail').value),pass=$('#nuPass').value;
   if(!name||!email||pass.length<6)return toast(t('fillAll'),'bad');
   $('#nuBtn').disabled=true;
   try{
