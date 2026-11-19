@@ -485,6 +485,7 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
   <div class="hello">
     <div id="homeAv"></div>
     <div class="t sp"><small data-t="hi"></small><b id="homeName"></b></div>
+    <button class="ib" data-theme-toggle data-ti="theme"></button>
     <button class="ib" data-settings data-ti="settings" data-i="gear"></button>
   </div>
   <div class="hgrid"><div class="hcol1">
@@ -496,6 +497,7 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
   </div>
   <input type="file" id="gpxFile" accept=".gpx,application/gpx+xml,application/xml,text/xml" class="hidden">
   </div><div class="hcol2">
+  <button class="btn block hidden" id="homeAdmin" data-go="scr-panel" style="margin-top:10px"><span data-i="grid"></span><span data-t="tabPanel"></span></button>
   <h2><span data-t="mine"></span><button class="link" data-go="scr-stages" data-t="seeAll"></button></h2>
   <div id="homeStages"></div>
   </div></div>
@@ -548,6 +550,7 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
   <div class="hello">
     <div id="admAv"></div>
     <div class="t sp"><small data-t="adminR" style="color:var(--acc2);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px"></small><b id="admName"></b></div>
+    <button class="ib" data-theme-toggle data-ti="theme"></button>
     <button class="ib" data-settings data-ti="settings" data-i="gear"></button>
   </div>
   <div class="stats">
@@ -661,6 +664,7 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
   <div class="dmap">
     <div class="map" id="mapDr"></div>
     <div class="dstat"><span class="pill" id="drMode"></span><span class="pill" id="drGps"></span></div>
+    <button class="ib dmute" id="drRepeat" data-ti="repeat" data-i="repeat" style="bottom:74px"></button>
     <button class="ib dmute" id="drMute" data-i="vol"></button>
     <div id="drOff" class="offroute hidden" data-t="offroute"></div>
   </div>
@@ -725,6 +729,7 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
   <label class="f" for="nuName" data-t="name"></label><input class="in" id="nuName">
   <label class="f" for="nuEmail" data-t="userOrEmail"></label><input class="in" id="nuEmail" type="text" autocapitalize="none" autocorrect="off" spellcheck="false">
   <label class="f" for="nuPass" data-t="passMin"></label><input class="in" id="nuPass" type="text">
+  <label class="f" for="nuRole" data-t="role"></label><select class="in" id="nuRole"><option value="user" data-t="pilot"></option><option value="admin" data-t="adminR"></option></select>
   <div class="row" style="margin-top:18px"><button class="btn sm" data-close data-t="cancel"></button><div class="sp"></div><button class="btn pri" id="nuBtn"><span data-i="plus"></span><span data-t="createUser"></span></button></div>
 </div></div>
 
@@ -1137,10 +1142,11 @@ function applyLang(){
 document.addEventListener('change',e=>{if(e.target.matches('select[data-lang]')){cfg.lang=e.target.value;cfg.voice='';saveCfg();applyLang();}});
 
 const TABS_USER=[['scr-home','home','tabHome'],['scr-nav','nav','tabNav'],['scr-stages','route','tabStages'],['scr-profile','user','tabProfile']];
-const TABS_ADMIN=[['scr-panel','grid','tabPanel'],['scr-pilots','users','tabPilots'],['scr-allstages','route','tabStages'],['scr-profile','user','tabProfile']];
+const TABS_ADMIN=[['scr-home','home','tabHome'],['scr-nav','nav','tabNav'],['scr-panel','grid','tabPanel'],['scr-allstages','route','tabStages'],['scr-profile','user','tabProfile']];
 const TAB_SCR=['scr-home','scr-nav','scr-stages','scr-profile','scr-panel','scr-pilots','scr-allstages'];
 function renderTabs(){
   const tabs=isAdmin()?TABS_ADMIN:TABS_USER;
+  $('#tabIn').style.gridTemplateColumns=`repeat(${tabs.length},minmax(0,1fr))`;
   $('#tabIn').innerHTML=tabs.map(([id,i,k])=>`<button data-go="${id}" class="${curScr===id?'on':''}" aria-label="${esc(t(k))}">${ic(i)}<span>${esc(t(k))}</span></button>`).join('');
 }
 let curScr='';
@@ -1163,8 +1169,10 @@ function applyTheme(){
   document.documentElement.dataset.theme=cfg.theme;
   $('meta[name=theme-color]').content=cfg.theme==='light'?'#eef1f4':'#07080a';
   Object.values(maps).forEach(m=>m&&setBase(m));
+  $$('[data-theme-toggle]').forEach(b=>b.innerHTML=ic(cfg.theme==='dark'?'sun':'moon'));
 }
 document.addEventListener('click',e=>{
+  if(e.target.closest('[data-theme-toggle]')){cfg.theme=cfg.theme==='dark'?'light':'dark';saveCfg();applyTheme();return;}
   const g=e.target.closest('[data-go]');if(g){show(g.dataset.go);return;}
   if(e.target.closest('[data-back]')){show(curScr==='scr-stage'&&ST&&ST.from?ST.from:homeScr());return;}
   if(e.target.closest('[data-settings]')){openSettings();return;}
@@ -1239,6 +1247,7 @@ const stageRow=s=>`<div class="stage" data-id="${s.id}"><div class="bar"></div><
 async function loadStages(){try{stagesCache=(await Store.list(false)).sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0));}catch(e){toast(e.message,'bad');stagesCache=[];}return stagesCache;}
 function bindStages(box,list,from){$$('.stage',box).forEach(el=>el.onclick=()=>openStage(list.find(s=>s.id===el.dataset.id),from));}
 async function renderHome(){
+  $('#homeAdmin').classList.toggle('hidden',!isAdmin());
   $('#homeAv').innerHTML=avatarHTML(me);$('#homeAv').firstChild.onclick=()=>show('scr-profile');
   $('#homeName').textContent=(me&&me.name&&me.name!=='Local')?me.name.split(' ')[0]:'Piloto';
   const box=$('#homeStages');box.innerHTML=`<div class="empty">${t('loading')}</div>`;
@@ -1672,7 +1681,7 @@ const Drive={
 };
 $('#drGo').onclick=()=>Drive.go();
 $('#drExit').onclick=()=>Drive.close();
-$('#drTop').onclick=()=>{if(Voice.last)Voice.say(Voice.last,true);};
+$('#drTop').onclick=$('#drRepeat').onclick=()=>{if(Voice.last)Voice.say(Voice.last,true);};
 $('#drMute').onclick=()=>{Voice.muted=!Voice.muted;if(Voice.muted)try{speechSynthesis.cancel();}catch(e){}const b=$('#drMute');b.innerHTML=ic(Voice.muted?'mute':'vol');b.classList.toggle('on',Voice.muted);};
 $('#drSimSpd').oninput=()=>$('#drSimVal').textContent=$('#drSimSpd').value+' km/h';
 window.addEventListener('resize',()=>{clearTimeout(window.__rz);window.__rz=setTimeout(()=>Object.values(maps).forEach(m=>m&&m.invalidateSize()),150);});
@@ -1818,7 +1827,7 @@ async function renderAdmin(){
     bindStages(box,ss,'scr-allstages');
   }catch(e){toast(e.message,'bad');}
 }
-const openNewUser=()=>{$('#nuName').value=$('#nuEmail').value=$('#nuPass').value='';$('#ovUser').classList.remove('hidden');};
+const openNewUser=()=>{$('#nuName').value=$('#nuEmail').value=$('#nuPass').value='';$('#nuRole').value='user';$('#ovUser').classList.remove('hidden');};
 $('#admNew').onclick=openNewUser;$('#pilNew').onclick=openNewUser;
 $('#nuBtn').onclick=async()=>{
   const name=$('#nuName').value.trim(),email=toEmail($('#nuEmail').value),pass=$('#nuPass').value;
@@ -1827,7 +1836,7 @@ $('#nuBtn').onclick=async()=>{
   try{
     const sec=firebase.apps.find(a=>a.name==='sec')||firebase.initializeApp(FIREBASE_CONFIG,'sec');
     const cred=await sec.auth().createUserWithEmailAndPassword(email,pass);
-    await db.collection('users').doc(cred.user.uid).set({name,email,role:'user',active:true,phone:'',vehicles:[],photo:'',createdAt:Date.now()});
+    await db.collection('users').doc(cred.user.uid).set({name,email,role:$('#nuRole').value,active:true,phone:'',vehicles:[],photo:'',createdAt:Date.now()});
     await sec.auth().signOut();
     toast(t('userCreated',{n:name}),'ok');$('#ovUser').classList.add('hidden');renderAdmin();
   }catch(e){toast(/email-already/.test(e.code||'')?t('emailUsed'):e.message,'bad');}
