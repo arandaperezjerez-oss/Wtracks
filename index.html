@@ -227,6 +227,12 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
 .veh{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);background:var(--panel);border-radius:var(--r);margin-bottom:8px}
 .veh .ic{width:40px;height:40px;border-radius:var(--rs);background:rgba(255,90,0,.14);color:var(--acc2);display:grid;place-items:center;flex:none}
 .veh .t{flex:1;min-width:0}.veh .t b{display:block;font-weight:700}.veh .t span{font-size:12px;color:var(--mut)}
+.vrow{display:flex;align-items:center;gap:10px;padding:8px 10px 8px 14px;border-bottom:1px solid var(--line)}
+.vrow:last-child{border-bottom:0}
+.vrow b{font-family:var(--disp);font-style:italic;font-weight:900;font-size:21px;text-transform:uppercase;min-width:0;line-height:1}
+.vrow .ib{width:40px;height:40px}
+.vdot{width:10px;height:10px;border-radius:50%;background:var(--line);flex:none}
+.vdot.on{background:var(--ok)}
 .vadd{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:8px}
 .vadd .full{grid-column:1/-1}
 .acclist{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--panel)}
@@ -362,7 +368,13 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
   .pleft{grid-area:left}.pright{grid-area:right}.pacc{grid-area:acc}
   .pright>label.f:first-child{margin-top:0}
   .pacc .credit{text-align:left}
-  .vadd{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr) auto;align-items:end}
+  .vrow{display:flex;align-items:center;gap:10px;padding:8px 10px 8px 14px;border-bottom:1px solid var(--line)}
+.vrow:last-child{border-bottom:0}
+.vrow b{font-family:var(--disp);font-style:italic;font-weight:900;font-size:21px;text-transform:uppercase;min-width:0;line-height:1}
+.vrow .ib{width:40px;height:40px}
+.vdot{width:10px;height:10px;border-radius:50%;background:var(--line);flex:none}
+.vdot.on{background:var(--ok)}
+.vadd{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr) auto;align-items:end}
   .vadd .full:first-child{grid-column:auto}
   .vadd .btn.full{grid-column:auto;margin-top:0!important}
 
@@ -733,6 +745,8 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
   <input type="range" id="setLead" min="3" max="9" step="0.5" style="width:100%;accent-color:var(--acc)">
   <label class="f"><span data-t="rate"></span>: <span id="setRateV"></span></label>
   <input type="range" id="setRate" min="0.8" max="1.6" step="0.05" style="width:100%;accent-color:var(--acc)">
+  <label class="f" data-t="voiceStyle"></label>
+  <div class="seg" style="grid-template-columns:1fr 1fr" id="setVStyle"><button data-v="rally" data-t="styleRally"></button><button data-v="normal" data-t="styleNormal"></button></div>
   <label class="f" data-t="voice"></label>
   <select class="in" id="setVoice"></select>
   <div class="mut" style="font-size:12px;margin-top:6px;line-height:1.45" data-t="voiceHint"></div>
@@ -893,35 +907,35 @@ sp:{nums:['','eins','zwei','drei','vier','fünf','sechs'],hp:'Kehre',L:'links',R
 man:{right:'rechts abbiegen',left:'links abbiegen','slight right':'rechts halten','slight left':'links halten','sharp right':'scharf rechts abbiegen','sharp left':'scharf links abbiegen',uturn:'wenden',straight:'geradeaus weiter',round:'im Kreisverkehr die {n}. Ausfahrt nehmen',arrive:'Sie erreichen Ihr Ziel',onto:' auf {s}'}}
 };
 const I18X={
-es:{headUp:'Dirección de marcha',northUp:'Norte arriba',mapOrient:'Orientación del mapa',userOrEmail:'Usuario o email',noMailUser:'Este usuario no tiene email. Añade un email real en tu perfil para poder recuperar la contraseña.',act1:'Activo',h1a:'Cada curva,',h1b:'cantada',h1c:'a tiempo.',heroSub:'Notas de ritmo por voz y navegador. Conduce solo, como si llevaras copiloto.',mf1:'Notas por voz',mf2:'Navegador',mf3:'Tus tramos',enter:'Entrar',install:'En iPhone: Compartir → «Añadir a pantalla de inicio»',
+es:{voiceT:'Voz de copiloto',voiceIntro:'Elige cómo te canta las notas. Puedes grabar tu propia voz de copiloto y sonará con efecto de casco/intercom, como en los onboards de rally.',vModeL:'Voz',vModeTts:'Voz del móvil',vModeRec:'Copiloto grabado',voiceStyle:'Estilo de voz',styleRally:'Rally',styleNormal:'Normal',fxL:'Efecto casco / intercom',fxOn:'Activado',fxOff:'Desactivado',recorded:'{n} de {t} palabras grabadas',testPhrase:'Probar',recHint:'Pulsa Grabar, di la palabra con tono de copiloto y pulsa Parar (se para sola a los 3 s). Grábalas en un sitio sin ruido.',vMissing:'Faltan palabras por grabar: mientras tanto se usará la voz del móvil.',recBtn:'Grabar',stopRec:'Parar',gGrades:'Grados',gDir:'Dirección',gMods:'Detalles',gDist:'Distancias',gOther:'Otros',micErr:'No se pudo usar el micrófono. Revisa los permisos.',headUp:'Dirección de marcha',northUp:'Norte arriba',mapOrient:'Orientación del mapa',userOrEmail:'Usuario o email',noMailUser:'Este usuario no tiene email. Añade un email real en tu perfil para poder recuperar la contraseña.',act1:'Activo',h1a:'Cada curva,',h1b:'cantada',h1c:'a tiempo.',heroSub:'Notas de ritmo por voz y navegador. Conduce solo, como si llevaras copiloto.',mf1:'Notas por voz',mf2:'Navegador',mf3:'Tus tramos',enter:'Entrar',install:'En iPhone: Compartir → «Añadir a pantalla de inicio»',
 loginKick:'Acceso',loginH:'Entra en tu sesión',loginSub:'Usa el email y la contraseña que te dio el administrador.',hi:'Hola,',tMap:'Tramo',tRec:'Grabar',seeAll:'Ver todos',navD:'Elige destino y Wtracks te canta cada curva',
 tabHome:'Inicio',tabNav:'Navegar',tabStages:'Tramos',tabProfile:'Perfil',tabPanel:'Panel',tabPilots:'Pilotos',
 profile:'Perfil',phone:'Teléfono',vehicles:'Vehículos',vehName:'Marca y modelo',vehType:'Tipo',car:'Coche',moto:'Moto',otherV:'Otro',plate:'Matrícula',addVehicle:'Añadir vehículo',noVehicles:'Aún no has añadido vehículos',changePhoto:'Cambiar foto',saveProfile:'Guardar perfil',profileSaved:'Perfil guardado',
 account:'Cuenta',changeEmail:'Cambiar email',changePass:'Cambiar contraseña',curPass:'Contraseña actual',newEmail:'Nuevo email',newPass:'Nueva contraseña (mín. 6)',emailVerify:'Te hemos enviado un correo a {e}. Confírmalo para completar el cambio.',passChanged:'Contraseña cambiada',imgErr:'No se pudo cargar la imagen',cancel:'Cancelar',accept:'Aceptar',
 pilots:'Pilotos',stagesW:'Tramos',actives:'Activos',newPilot:'Nuevo piloto',then:'Luego',inM:'en {d}',night:'Noche',day:'Día',vehFill:'Escribe la marca y el modelo',
 voiceHint:'Para una voz más natural en iPhone: Ajustes → Accesibilidad → Contenido leído → Voces y descarga una voz «Mejorada». Luego elígela aquí.'},
-en:{headUp:'Heading up',northUp:'North up',mapOrient:'Map orientation',userOrEmail:'Username or email',noMailUser:'This user has no email. Add a real email in your profile to be able to recover the password.',act1:'Active',h1a:'Every corner,',h1b:'called',h1c:'on time.',heroSub:'Voice pace notes and navigation. Drive solo as if you had a co-driver.',mf1:'Voice notes',mf2:'Navigation',mf3:'Your stages',enter:'Enter',install:'On iPhone: Share → “Add to Home Screen”',
+en:{voiceT:'Co-driver voice',voiceIntro:'Choose how notes are called. You can record your own co-driver voice and it will sound with a helmet/intercom effect, like rally onboards.',vModeL:'Voice',vModeTts:'Phone voice',vModeRec:'Recorded co-driver',voiceStyle:'Voice style',styleRally:'Rally',styleNormal:'Normal',fxL:'Helmet / intercom effect',fxOn:'On',fxOff:'Off',recorded:'{n} of {t} words recorded',testPhrase:'Test',recHint:'Tap Record, say the word like a co-driver and tap Stop (it stops by itself after 3 s). Record somewhere quiet.',vMissing:'Some words are missing: the phone voice will be used meanwhile.',recBtn:'Record',stopRec:'Stop',gGrades:'Grades',gDir:'Direction',gMods:'Details',gDist:'Distances',gOther:'Other',micErr:'Could not use the microphone. Check permissions.',headUp:'Heading up',northUp:'North up',mapOrient:'Map orientation',userOrEmail:'Username or email',noMailUser:'This user has no email. Add a real email in your profile to be able to recover the password.',act1:'Active',h1a:'Every corner,',h1b:'called',h1c:'on time.',heroSub:'Voice pace notes and navigation. Drive solo as if you had a co-driver.',mf1:'Voice notes',mf2:'Navigation',mf3:'Your stages',enter:'Enter',install:'On iPhone: Share → “Add to Home Screen”',
 loginKick:'Sign in',loginH:'Enter your session',loginSub:'Use the email and password your administrator gave you.',hi:'Hi,',tMap:'Stage',tRec:'Record',seeAll:'See all',navD:'Pick a destination and Wtracks calls every corner',
 tabHome:'Home',tabNav:'Navigate',tabStages:'Stages',tabProfile:'Profile',tabPanel:'Panel',tabPilots:'Drivers',
 profile:'Profile',phone:'Phone',vehicles:'Vehicles',vehName:'Make and model',vehType:'Type',car:'Car',moto:'Motorbike',otherV:'Other',plate:'Plate',addVehicle:'Add vehicle',noVehicles:'No vehicles added yet',changePhoto:'Change photo',saveProfile:'Save profile',profileSaved:'Profile saved',
 account:'Account',changeEmail:'Change email',changePass:'Change password',curPass:'Current password',newEmail:'New email',newPass:'New password (min. 6)',emailVerify:'We sent an email to {e}. Confirm it to complete the change.',passChanged:'Password changed',imgErr:'Could not load the image',cancel:'Cancel',accept:'OK',
 pilots:'Drivers',stagesW:'Stages',actives:'Active',newPilot:'New driver',then:'Then',inM:'in {d}',night:'Night',day:'Day',vehFill:'Enter make and model',
 voiceHint:'For a more natural voice on iPhone: Settings → Accessibility → Spoken Content → Voices and download an “Enhanced” voice. Then pick it here.'},
-fr:{headUp:'Sens de marche',northUp:'Nord en haut',mapOrient:'Orientation de la carte',userOrEmail:'Identifiant ou email',noMailUser:'Cet utilisateur n’a pas d’email. Ajoutez un vrai email dans votre profil pour pouvoir récupérer le mot de passe.',act1:'Actif',h1a:'Chaque virage,',h1b:'annoncé',h1c:'à temps.',heroSub:'Notes à la voix et navigation. Roulez seul comme avec un copilote.',mf1:'Notes vocales',mf2:'Navigation',mf3:'Vos spéciales',enter:'Entrer',install:'Sur iPhone : Partager → « Sur l’écran d’accueil »',
+fr:{voiceT:'Voix du copilote',voiceIntro:'Choisissez comment les notes sont annoncées. Vous pouvez enregistrer votre propre voix de copilote, avec un effet casque/intercom comme dans les caméras embarquées.',vModeL:'Voix',vModeTts:'Voix du téléphone',vModeRec:'Copilote enregistré',voiceStyle:'Style de voix',styleRally:'Rallye',styleNormal:'Normal',fxL:'Effet casque / intercom',fxOn:'Activé',fxOff:'Désactivé',recorded:'{n} sur {t} mots enregistrés',testPhrase:'Tester',recHint:'Touchez Enregistrer, dites le mot comme un copilote et touchez Arrêter (arrêt auto après 3 s). Enregistrez au calme.',vMissing:'Il manque des mots : la voix du téléphone sera utilisée en attendant.',recBtn:'Enregistrer',stopRec:'Arrêter',gGrades:'Degrés',gDir:'Direction',gMods:'Détails',gDist:'Distances',gOther:'Autres',micErr:'Impossible d’utiliser le micro. Vérifiez les autorisations.',headUp:'Sens de marche',northUp:'Nord en haut',mapOrient:'Orientation de la carte',userOrEmail:'Identifiant ou email',noMailUser:'Cet utilisateur n’a pas d’email. Ajoutez un vrai email dans votre profil pour pouvoir récupérer le mot de passe.',act1:'Actif',h1a:'Chaque virage,',h1b:'annoncé',h1c:'à temps.',heroSub:'Notes à la voix et navigation. Roulez seul comme avec un copilote.',mf1:'Notes vocales',mf2:'Navigation',mf3:'Vos spéciales',enter:'Entrer',install:'Sur iPhone : Partager → « Sur l’écran d’accueil »',
 loginKick:'Accès',loginH:'Entrez dans votre session',loginSub:'Utilisez l’email et le mot de passe fournis par l’administrateur.',hi:'Bonjour,',tMap:'Spéciale',tRec:'Enregistrer',seeAll:'Tout voir',navD:'Choisissez une destination, Wtracks annonce chaque virage',
 tabHome:'Accueil',tabNav:'Naviguer',tabStages:'Spéciales',tabProfile:'Profil',tabPanel:'Panneau',tabPilots:'Pilotes',
 profile:'Profil',phone:'Téléphone',vehicles:'Véhicules',vehName:'Marque et modèle',vehType:'Type',car:'Voiture',moto:'Moto',otherV:'Autre',plate:'Immatriculation',addVehicle:'Ajouter un véhicule',noVehicles:'Aucun véhicule pour l’instant',changePhoto:'Changer la photo',saveProfile:'Enregistrer le profil',profileSaved:'Profil enregistré',
 account:'Compte',changeEmail:'Changer l’email',changePass:'Changer le mot de passe',curPass:'Mot de passe actuel',newEmail:'Nouvel email',newPass:'Nouveau mot de passe (min. 6)',emailVerify:'Nous avons envoyé un email à {e}. Confirmez-le pour terminer.',passChanged:'Mot de passe changé',imgErr:'Impossible de charger l’image',cancel:'Annuler',accept:'OK',
 pilots:'Pilotes',stagesW:'Spéciales',actives:'Actifs',newPilot:'Nouveau pilote',then:'Ensuite',inM:'dans {d}',night:'Nuit',day:'Jour',vehFill:'Saisissez la marque et le modèle',
 voiceHint:'Pour une voix plus naturelle sur iPhone : Réglages → Accessibilité → Contenu énoncé → Voix, et téléchargez une voix « améliorée ». Choisissez-la ensuite ici.'},
-it:{headUp:'Direzione di marcia',northUp:'Nord in alto',mapOrient:'Orientamento mappa',userOrEmail:'Utente o email',noMailUser:'Questo utente non ha email. Aggiungi un’email reale nel profilo per poter recuperare la password.',act1:'Attivo',h1a:'Ogni curva,',h1b:'chiamata',h1c:'in tempo.',heroSub:'Note a voce e navigatore. Guida da solo come con un navigatore a fianco.',mf1:'Note a voce',mf2:'Navigatore',mf3:'Le tue prove',enter:'Entra',install:'Su iPhone: Condividi → «Aggiungi alla schermata Home»',
+it:{voiceT:'Voce del navigatore',voiceIntro:'Scegli come vengono chiamate le note. Puoi registrare la tua voce da navigatore e suonerà con effetto casco/interfono, come negli onboard dei rally.',vModeL:'Voce',vModeTts:'Voce del telefono',vModeRec:'Navigatore registrato',voiceStyle:'Stile di voce',styleRally:'Rally',styleNormal:'Normale',fxL:'Effetto casco / interfono',fxOn:'Attivo',fxOff:'Disattivo',recorded:'{n} di {t} parole registrate',testPhrase:'Prova',recHint:'Tocca Registra, di’ la parola come un navigatore e tocca Stop (si ferma da sola dopo 3 s). Registra in un posto silenzioso.',vMissing:'Mancano parole: nel frattempo si userà la voce del telefono.',recBtn:'Registra',stopRec:'Stop',gGrades:'Gradi',gDir:'Direzione',gMods:'Dettagli',gDist:'Distanze',gOther:'Altro',micErr:'Impossibile usare il microfono. Controlla i permessi.',headUp:'Direzione di marcia',northUp:'Nord in alto',mapOrient:'Orientamento mappa',userOrEmail:'Utente o email',noMailUser:'Questo utente non ha email. Aggiungi un’email reale nel profilo per poter recuperare la password.',act1:'Attivo',h1a:'Ogni curva,',h1b:'chiamata',h1c:'in tempo.',heroSub:'Note a voce e navigatore. Guida da solo come con un navigatore a fianco.',mf1:'Note a voce',mf2:'Navigatore',mf3:'Le tue prove',enter:'Entra',install:'Su iPhone: Condividi → «Aggiungi alla schermata Home»',
 loginKick:'Accesso',loginH:'Entra nella tua sessione',loginSub:'Usa l’email e la password che ti ha dato l’amministratore.',hi:'Ciao,',tMap:'Prova',tRec:'Registra',seeAll:'Vedi tutte',navD:'Scegli la destinazione e Wtracks chiama ogni curva',
 tabHome:'Home',tabNav:'Naviga',tabStages:'Prove',tabProfile:'Profilo',tabPanel:'Pannello',tabPilots:'Piloti',
 profile:'Profilo',phone:'Telefono',vehicles:'Veicoli',vehName:'Marca e modello',vehType:'Tipo',car:'Auto',moto:'Moto',otherV:'Altro',plate:'Targa',addVehicle:'Aggiungi veicolo',noVehicles:'Nessun veicolo aggiunto',changePhoto:'Cambia foto',saveProfile:'Salva profilo',profileSaved:'Profilo salvato',
 account:'Account',changeEmail:'Cambia email',changePass:'Cambia password',curPass:'Password attuale',newEmail:'Nuova email',newPass:'Nuova password (min. 6)',emailVerify:'Ti abbiamo inviato un’email a {e}. Confermala per completare.',passChanged:'Password cambiata',imgErr:'Impossibile caricare l’immagine',cancel:'Annulla',accept:'OK',
 pilots:'Piloti',stagesW:'Prove',actives:'Attivi',newPilot:'Nuovo pilota',then:'Poi',inM:'tra {d}',night:'Notte',day:'Giorno',vehFill:'Inserisci marca e modello',
 voiceHint:'Per una voce più naturale su iPhone: Impostazioni → Accessibilità → Contenuto letto → Voci e scarica una voce «Migliorata». Poi sceglila qui.'},
-de:{headUp:'Fahrtrichtung',northUp:'Norden oben',mapOrient:'Kartenausrichtung',userOrEmail:'Benutzername oder E-Mail',noMailUser:'Dieser Benutzer hat keine E-Mail. Füge im Profil eine echte E-Mail hinzu, um das Passwort wiederherstellen zu können.',act1:'Aktiv',h1a:'Jede Kurve,',h1b:'angesagt',h1c:'pünktlich.',heroSub:'Aufschrieb per Sprache und Navigation. Fahr allein, als hättest du einen Beifahrer.',mf1:'Sprachansagen',mf2:'Navigation',mf3:'Deine Prüfungen',enter:'Los',install:'Auf dem iPhone: Teilen → „Zum Home-Bildschirm“',
+de:{voiceT:'Beifahrer-Stimme',voiceIntro:'Wähle, wie der Aufschrieb angesagt wird. Du kannst deine eigene Beifahrer-Stimme aufnehmen – mit Helm-/Intercom-Effekt wie bei Rallye-Onboards.',vModeL:'Stimme',vModeTts:'Handy-Stimme',vModeRec:'Aufgenommener Beifahrer',voiceStyle:'Sprechstil',styleRally:'Rallye',styleNormal:'Normal',fxL:'Helm-/Intercom-Effekt',fxOn:'An',fxOff:'Aus',recorded:'{n} von {t} Wörtern aufgenommen',testPhrase:'Testen',recHint:'Tippe auf Aufnehmen, sprich das Wort wie ein Beifahrer und tippe auf Stopp (stoppt nach 3 s von selbst). An einem ruhigen Ort aufnehmen.',vMissing:'Es fehlen Wörter: bis dahin wird die Handy-Stimme verwendet.',recBtn:'Aufnehmen',stopRec:'Stopp',gGrades:'Grade',gDir:'Richtung',gMods:'Details',gDist:'Distanzen',gOther:'Sonstiges',micErr:'Mikrofon nicht verfügbar. Berechtigungen prüfen.',headUp:'Fahrtrichtung',northUp:'Norden oben',mapOrient:'Kartenausrichtung',userOrEmail:'Benutzername oder E-Mail',noMailUser:'Dieser Benutzer hat keine E-Mail. Füge im Profil eine echte E-Mail hinzu, um das Passwort wiederherstellen zu können.',act1:'Aktiv',h1a:'Jede Kurve,',h1b:'angesagt',h1c:'pünktlich.',heroSub:'Aufschrieb per Sprache und Navigation. Fahr allein, als hättest du einen Beifahrer.',mf1:'Sprachansagen',mf2:'Navigation',mf3:'Deine Prüfungen',enter:'Los',install:'Auf dem iPhone: Teilen → „Zum Home-Bildschirm“',
 loginKick:'Anmeldung',loginH:'Melde dich an',loginSub:'Nutze die E-Mail und das Passwort vom Administrator.',hi:'Hallo,',tMap:'Prüfung',tRec:'Aufzeichnen',seeAll:'Alle',navD:'Ziel wählen – Wtracks sagt jede Kurve an',
 tabHome:'Start',tabNav:'Navi',tabStages:'Prüfungen',tabProfile:'Profil',tabPanel:'Panel',tabPilots:'Fahrer',
 profile:'Profil',phone:'Telefon',vehicles:'Fahrzeuge',vehName:'Marke und Modell',vehType:'Typ',car:'Auto',moto:'Motorrad',otherV:'Andere',plate:'Kennzeichen',addVehicle:'Fahrzeug hinzufügen',noVehicles:'Noch keine Fahrzeuge',changePhoto:'Foto ändern',saveProfile:'Profil speichern',profileSaved:'Profil gespeichert',
@@ -983,6 +997,7 @@ UT:'<path d="M8 21V9a4 4 0 0 1 8 0v4"/><path d="m12 10 4 4 4-4"/>',
 RB:'<circle cx="12" cy="10" r="4"/><path d="M12 21v-7"/><path d="M15 7l4-4"/><path d="M15 3h4v4"/>',
 arrow:'<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>',
 minus:'<path d="M5 12h14"/>',
+mic:'<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/>',
 compass:'<circle cx="12" cy="12" r="9"/><path d="m12 5 3 7h-6z" fill="currentColor"/><path d="m12 19-3-7h6z"/>',
 camera:'<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>',
 lock:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
@@ -1012,7 +1027,7 @@ function decodePoly(s){const pts=[];let i=0,a=0,b=0;while(i<s.length){for(let k=
 
 /* ---------- ajustes ---------- */
 const guessLang=()=>{const l=(navigator.language||'es').slice(0,2);return I18N[l]?l:'es';};
-const CFG_DEF={mapStyle:'auto',scale:'1fast',calib:1,lead:5,rate:1.1,voice:'',theme:'dark',lang:guessLang()};
+const CFG_DEF={vstyle:'rally',mapStyle:'auto',scale:'1fast',calib:1,lead:5,rate:1.1,voice:'',theme:'dark',lang:guessLang()};
 let cfg=Object.assign({},CFG_DEF,JSON.parse(localStorage.getItem('wt_cfg')||'{}'));
 const saveCfg=()=>localStorage.setItem('wt_cfg',JSON.stringify(cfg));
 
@@ -1108,20 +1123,62 @@ const gLabel=g=>g===7?'H':String(cfg.scale==='1fast'?g:7-g);
 const gWord=g=>g===7?L_().sp.hp:L_().sp.nums[cfg.scale==='1fast'?g:7-g];
 const modTxt=m=>L_().mods[m]||m;
 function noteTitle(nt){return `${t(nt.dir==='L'?'dirL':'dirR')} ${nt.g===7?L_().sp.hp:gLabel(nt.g)}`;}
-function noteSpeech(nt){const m=nt.mods||[],S=L_().sp;const pre=m.includes('caution')?modTxt('caution')+', ':'';const rest=m.filter(x=>x!=='caution').map(modTxt);return pre+S[nt.dir]+' '+gWord(nt.g)+(rest.length?' '+rest.join(' '):'');}
+/* ---------- frases por palabras (tokens) ----------
+   n1..n6 número · hp horquilla · L/R dirección · mods · and · dNNN distancia · fin meta · start salida */
+const DISTS=[30,50,70,100,150,200,250,300,350,400,500,600,700,800,900,1000];
+const spokenNum=g=>cfg.scale==='1fast'?g:7-g;
+function noteTokens(nt){
+  const m=nt.mods||[],out=[];
+  if(m.includes('caution'))out.push('caution');
+  const rally=cfg.vstyle!=='normal';
+  const num=nt.g===7?'hp':'n'+spokenNum(nt.g);
+  if(rally)out.push(num,nt.dir);else out.push(nt.dir,num);
+  m.filter(x=>x!=='caution').forEach(x=>out.push(x));
+  return out;
+}
+const distTok=d=>{const r=roundDist(d);return DISTS.includes(r)?'d'+r:'#'+r;};
+const gapTokens=nt=>nt.gw==='y'?['and']:nt.gw==='meta'?['fin']:[distTok(+nt.gw)];
+function tokWord(tok){
+  const S=L_().sp;
+  if(tok[0]==='#')return tok.slice(1);
+  if(/^n\d$/.test(tok))return S.nums[+tok[1]];
+  if(/^d\d+$/.test(tok))return tok.slice(1);
+  return {hp:S.hp,L:S.L,R:S.R,and:S.and,fin:S.finish,start:S.start}[tok]??modTxt(tok);
+}
+const tokText=toks=>toks.map(x=>x===','?',':tokWord(x)).join(' ').replace(/ ,/g,',');
+function noteSpeech(nt){return tokText(noteTokens(nt));}
 const gapTxt=nt=>nt.gw==='y'?L_().sp.and.toUpperCase():nt.gw==='meta'?t('finishW'):nt.gw;
-const gapSpeech=nt=>nt.gw==='y'?L_().sp.and:nt.gw==='meta'?L_().sp.finish:nt.gw;
+const gapSpeech=nt=>tokText(gapTokens(nt));
 function arrowIcon(nt,cls){return ic(nt.g===7?(nt.dir==='L'?'HL':'HR'):nt.dir,cls||'i');}
 
-/* ---------- voz ---------- */
-const Voice={muted:false,voices:[],last:'',
+
+/* ---------- voz: cola única (voz del móvil o copiloto grabado) ---------- */
+const Voice={muted:false,voices:[],last:null,q:[],busy:false,
   load(){if(!('speechSynthesis'in window))return;try{this.all=speechSynthesis.getVoices();}catch(e){this.all=[];}this.filter();},
   filter(){const p=cfg.lang;this.voices=(this.all||[]).filter(v=>(v.lang||'').toLowerCase().startsWith(p));fillVoices();},
   pick(){const V=VLANG[cfg.lang];return this.voices.find(v=>v.voiceURI===cfg.voice)||this.voices.find(v=>(v.lang||'').replace('_','-')===V)||this.voices[0]||null;},
-  say(txt,flush){Voice.last=txt;if(this.muted||!('speechSynthesis'in window)||!txt)return;try{const u=new SpeechSynthesisUtterance(txt);u.lang=VLANG[cfg.lang];const v=this.pick();if(v)u.voice=v;u.rate=+cfg.rate||1.1;if(flush)speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}},
+  say(txt,flush){if(txt)this.push({text:txt},flush);},
+  sayTok(toks,flush){if(toks&&toks.length)this.push({toks},flush);},
+  push(item,flush){this.last=item;if(this.muted)return;if(flush)this.cancel();this.q.push(item);this.next();},
+  repeat(){if(this.last)this.push(this.last,true);},
+  cancel(){this.q=[];clearTimeout(this.tm);try{speechSynthesis.cancel();}catch(e){}this.busy=false;},
+  async next(){
+    if(this.busy||!this.q.length)return;this.busy=true;const it=this.q.shift();
+    const done=()=>{clearTimeout(this.tm);this.busy=false;this.next();};
+    try{
+      const txt=it.text||tokText(it.toks);
+      if(!('speechSynthesis'in window)){done();return;}
+      const u=new SpeechSynthesisUtterance(txt);u.lang=VLANG[cfg.lang];const v=this.pick();if(v)u.voice=v;
+      const rally=cfg.vstyle!=='normal'&&!!it.toks;
+      u.rate=(+cfg.rate||1.1)*(rally?1.18:1);u.pitch=rally?1.05:1;
+      u.onend=u.onerror=done;this.tm=setTimeout(done,Math.max(2500,txt.length*140));
+      speechSynthesis.speak(u);
+    }catch(e){done();}
+  },
   unlock(){try{const u=new SpeechSynthesisUtterance(' ');u.volume=0;speechSynthesis.speak(u);}catch(e){}}
 };
 if('speechSynthesis'in window){Voice.load();try{speechSynthesis.onvoiceschanged=()=>Voice.load();}catch(e){}}
+
 
 /* =========================================================
    ALMACENAMIENTO (Firebase o local)
@@ -1553,7 +1610,7 @@ function openNoteSheet(i){
   $('#ovNote').classList.remove('hidden');
 }
 $$('#nsDir button').forEach(b=>b.onclick=()=>{ST.notes[nsIdx].dir=b.dataset.v;markDirty();openNoteSheet(nsIdx);});
-$('#nsSay').onclick=()=>{const n=ST.notes[nsIdx];Voice.say(noteSpeech(n)+', '+gapSpeech(n),true);};
+$('#nsSay').onclick=()=>{Voice.unlock();const n=ST.notes[nsIdx];Voice.sayTok([...noteTokens(n),',',...gapTokens(n)],true);};
 $('#nsDel').onclick=()=>{ST.notes.splice(nsIdx,1);$('#ovNote').classList.add('hidden');selNote=-1;markDirty();};
 $('#nsOk').onclick=()=>$('#ovNote').classList.add('hidden');
 $('#ovNote').onclick=e=>{if(e.target.id==='ovNote')$('#ovNote').classList.add('hidden');};
@@ -1599,12 +1656,12 @@ const Drive={
   async go(){
     Voice.unlock();
     if(this.done){this.load(this.d,false);this.done=false;}
-    if(this.running){this.running=false;this.setGo('play');clearInterval(this.simT);try{speechSynthesis.cancel();}catch(e){}return;}
+    if(this.running){this.running=false;this.setGo('play');clearInterval(this.simT);Voice.cancel();return;}
     this.running=true;this.setGo('pause');
     try{this.wake=await navigator.wakeLock?.request('screen');}catch(e){}
     if(this.s<5&&this.nextAnn===0){
       if(this.nav)Voice.say(L_().sp.navStart,true);
-      else{const n0=this.notes[0];Voice.say(`${L_().sp.start}. ${roundDist(Math.max(30,n0.s-this.s))}`,true);}
+      else{const n0=this.notes[0];Voice.sayTok(['start',',',distTok(Math.max(30,n0.s-this.s))],true);}
     }
     if(this.sim){this.lastT=performance.now();clearInterval(this.simT);this.simT=setInterval(()=>this.simTick(),100);}
   },
@@ -1693,12 +1750,12 @@ const Drive={
       const n=N[this.nextAnn];
       if(n.e<this.s){this.nextAnn++;continue;}
       if(n.s-this.s>lead)break;
-      let j=this.nextAnn;const parts=[noteSpeech(N[j])];
-      while(N[j].gw==='y'&&j+1<N.length){j++;parts.push(S.and+' '+noteSpeech(N[j]));}
+      let j=this.nextAnn;const toks=[...noteTokens(N[j])];
+      while(N[j].gw==='y'&&j+1<N.length){j++;toks.push(',','and',...noteTokens(N[j]));}
       const last=N[j];
-      if(last.gw==='meta'){if(!this.nav&&last.gap<=500)parts.push(roundDist(Math.max(30,last.gap))+', '+S.finish);}
-      else parts.push(last.gw);
-      if(!(this.nav&&v<7))Voice.say(parts.join(', '),false);
+      if(last.gw==='meta'){if(!this.nav&&last.gap<=500)toks.push(',',distTok(Math.max(30,last.gap)),',','fin');}
+      else toks.push(',',distTok(+last.gw));
+      if(!(this.nav&&v<7))Voice.sayTok(toks,false);
       this.nextAnn=j+1;
     }
   },
@@ -1746,7 +1803,7 @@ const Drive={
   },
   close(){
     this.on=false;this.running=false;clearInterval(this.simT);clearInterval(this.tick);this.tick=null;if(this.watch!=null){navigator.geolocation.clearWatch(this.watch);this.watch=null;}
-    try{speechSynthesis.cancel();}catch(e){}try{this.wake?.release();}catch(e){}
+    Voice.cancel();try{this.wake?.release();}catch(e){}
     $('#scr-drive').classList.remove('act');setTimeout(()=>Object.values(maps).forEach(m=>m&&m.invalidateSize()),60);
   }
 };
@@ -1764,8 +1821,8 @@ $('#drLayers').onclick=e=>{
 };
 window.addEventListener('resize',()=>{if(Drive.on)setTimeout(()=>Drive.sizeRot(),120);});
 $('#drExit').onclick=()=>Drive.close();
-$('#drTop').onclick=$('#drRepeat').onclick=()=>{if(Voice.last)Voice.say(Voice.last,true);};
-$('#drMute').onclick=()=>{Voice.muted=!Voice.muted;if(Voice.muted)try{speechSynthesis.cancel();}catch(e){}const b=$('#drMute');b.innerHTML=ic(Voice.muted?'mute':'vol');b.classList.toggle('on',Voice.muted);};
+$('#drTop').onclick=$('#drRepeat').onclick=()=>Voice.repeat();
+$('#drMute').onclick=()=>{Voice.muted=!Voice.muted;if(Voice.muted)Voice.cancel();const b=$('#drMute');b.innerHTML=ic(Voice.muted?'mute':'vol');b.classList.toggle('on',Voice.muted);};
 $('#drSimSpd').oninput=()=>$('#drSimVal').textContent=$('#drSimSpd').value+' km/h';
 window.addEventListener('resize',()=>{clearTimeout(window.__rz);window.__rz=setTimeout(()=>Object.values(maps).forEach(m=>m&&m.invalidateSize()),150);});
 document.addEventListener('visibilitychange',async()=>{if(document.visibilityState==='visible'&&Drive.running){try{Drive.wake=await navigator.wakeLock?.request('screen');}catch(e){}}});
@@ -1776,6 +1833,7 @@ document.addEventListener('visibilitychange',async()=>{if(document.visibilitySta
 function fillVoices(){const s=$('#setVoice');if(!s)return;s.innerHTML=`<option value="">${t('autoVoice')}</option>`+Voice.voices.map(v=>`<option value="${esc(v.voiceURI)}"${v.voiceURI===cfg.voice?' selected':''}>${esc(v.name)} (${v.lang})</option>`).join('');}
 function openSettings(){
   [['#setScale','scale'],['#setCalib','calib'],['#setTheme','theme']].forEach(([sel,key])=>$$(sel+' button').forEach(b=>{b.classList.toggle('on',String(cfg[key])===b.dataset.v);b.onclick=()=>{cfg[key]=key==='calib'?+b.dataset.v:b.dataset.v;saveCfg();if(key==='theme')applyTheme();openSettings();if(ST&&curScr==='scr-stage'&&key==='scale')renderStage(false);};}));
+  $$('#setVStyle button').forEach(b=>{b.classList.toggle('on',(cfg.vstyle||'rally')===b.dataset.v);b.onclick=()=>{cfg.vstyle=b.dataset.v;saveCfg();openSettings();};});
   $$('#setHead button').forEach(b=>{b.classList.toggle('on',(cfg.headUp!==false?'1':'0')===b.dataset.v);b.onclick=()=>{cfg.headUp=b.dataset.v==='1';saveCfg();Drive.headBtn();openSettings();};});
   $('#setMap').innerHTML=MSTYLES.map(k=>`<button data-v="${k}" class="${cfg.mapStyle===k?'on':''}">${esc(t('ms'+k))}</button>`).join('');
   $$('#setMap button').forEach(b=>b.onclick=()=>setMapStyle(b.dataset.v));
@@ -1786,7 +1844,7 @@ function openSettings(){
 $('#setLead').oninput=e=>{cfg.lead=+e.target.value;$('#setLeadV').textContent=cfg.lead+' s';saveCfg();};
 $('#setRate').oninput=e=>{cfg.rate=+e.target.value;$('#setRateV').textContent='×'+cfg.rate.toFixed(2);saveCfg();};
 $('#setVoice').onchange=e=>{cfg.voice=e.target.value;saveCfg();};
-$('#setTest').onclick=()=>Voice.say(L_().sp.test,true);
+$('#setTest').onclick=()=>{Voice.unlock();Voice.sayTok(['n4','R','long',',','d100',',','hp','L',',','and','n6','R','tightens'],true);};
 $('#setOk').onclick=()=>$('#ovSet').classList.add('hidden');
 
 /* =========================================================
