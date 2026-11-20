@@ -268,7 +268,14 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
 .dprog{height:5px;border-radius:3px;background:var(--panel2);overflow:hidden;margin-top:8px}
 .dprog i{display:block;height:100%;width:0;background:var(--acc)}
 .dmap{position:relative;flex:1;min-height:140px;margin:0 10px}
-.dmap .map{position:absolute;inset:0;height:auto;min-height:0}
+.dmap .rotwrap{position:absolute;inset:0;overflow:hidden;border-radius:var(--r);border:1px solid var(--line);background:#181b20;isolation:isolate;z-index:0}
+.dmap #mapDr{position:absolute;left:50%;top:50%;width:var(--d,140%);height:var(--d,140%);min-height:0;border:0;border-radius:0;transform:translate(-50%,-50%) rotate(var(--rot,0deg));transition:transform .45s linear}
+.dctl{position:absolute;right:8px;top:8px;z-index:500;display:flex;flex-direction:column;gap:6px}
+.dctl .ib{box-shadow:var(--sh)}
+.dctl .mapmenu{right:50px;top:0}
+.dattr{position:absolute;right:6px;bottom:4px;z-index:500;font-size:9px;color:#cfd6de;background:rgba(10,11,13,.5);padding:1px 5px;border-radius:4px;pointer-events:none}
+.me-nav{width:34px;height:34px;display:grid;place-items:center;transition:transform .45s linear}
+.me-nav svg{width:34px;height:34px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.6))}
 .dmap .dstat{position:absolute;left:8px;bottom:8px;z-index:500;display:flex;gap:6px;flex-wrap:wrap;pointer-events:none}
 .dmap .dstat .pill{background:var(--panel);box-shadow:var(--sh)}
 .dmap .dmute{position:absolute;right:8px;bottom:22px;z-index:500;box-shadow:var(--sh)}
@@ -662,7 +669,14 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
     <div class="dprog"><i id="drProg"></i></div>
   </div>
   <div class="dmap">
-    <div class="map" id="mapDr"></div>
+    <div class="rotwrap" id="drRot"><div class="map" id="mapDr"></div></div>
+    <div class="dctl">
+      <button class="ib" id="drHead" data-ti="headUp"></button>
+      <button class="ib" id="drLayers" data-ti="mapStyle" data-i="layers"></button>
+      <button class="ib" id="drZin" aria-label="+" data-i="plus"></button>
+      <button class="ib" id="drZout" aria-label="-" data-i="minus"></button>
+    </div>
+    <div class="dattr">© Esri · OSM</div>
     <div class="dstat"><span class="pill" id="drMode"></span><span class="pill" id="drGps"></span></div>
     <button class="ib dmute" id="drRepeat" data-ti="repeat" data-i="repeat" style="bottom:74px"></button>
     <button class="ib dmute" id="drMute" data-i="vol"></button>
@@ -709,6 +723,8 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
   <div class="seg" style="grid-template-columns:1fr 1fr" id="setTheme"><button data-v="dark" data-t="night"></button><button data-v="light" data-t="day"></button></div>
   <label class="f" data-t="mapStyle"></label>
   <div class="seg" style="grid-template-columns:repeat(3,1fr)" id="setMap"></div>
+  <label class="f" data-t="mapOrient"></label>
+  <div class="seg" style="grid-template-columns:1fr 1fr" id="setHead"><button data-v="1" data-t="headUp"></button><button data-v="0" data-t="northUp"></button></div>
   <label class="f" data-t="scale"></label>
   <div class="seg" style="grid-template-columns:1fr 1fr" id="setScale"><button data-v="1fast" data-t="s1"></button><button data-v="6fast" data-t="s6"></button></div>
   <label class="f" data-t="calib"></label>
@@ -877,35 +893,35 @@ sp:{nums:['','eins','zwei','drei','vier','fünf','sechs'],hp:'Kehre',L:'links',R
 man:{right:'rechts abbiegen',left:'links abbiegen','slight right':'rechts halten','slight left':'links halten','sharp right':'scharf rechts abbiegen','sharp left':'scharf links abbiegen',uturn:'wenden',straight:'geradeaus weiter',round:'im Kreisverkehr die {n}. Ausfahrt nehmen',arrive:'Sie erreichen Ihr Ziel',onto:' auf {s}'}}
 };
 const I18X={
-es:{userOrEmail:'Usuario o email',noMailUser:'Este usuario no tiene email. Añade un email real en tu perfil para poder recuperar la contraseña.',act1:'Activo',h1a:'Cada curva,',h1b:'cantada',h1c:'a tiempo.',heroSub:'Notas de ritmo por voz y navegador. Conduce solo, como si llevaras copiloto.',mf1:'Notas por voz',mf2:'Navegador',mf3:'Tus tramos',enter:'Entrar',install:'En iPhone: Compartir → «Añadir a pantalla de inicio»',
+es:{headUp:'Dirección de marcha',northUp:'Norte arriba',mapOrient:'Orientación del mapa',userOrEmail:'Usuario o email',noMailUser:'Este usuario no tiene email. Añade un email real en tu perfil para poder recuperar la contraseña.',act1:'Activo',h1a:'Cada curva,',h1b:'cantada',h1c:'a tiempo.',heroSub:'Notas de ritmo por voz y navegador. Conduce solo, como si llevaras copiloto.',mf1:'Notas por voz',mf2:'Navegador',mf3:'Tus tramos',enter:'Entrar',install:'En iPhone: Compartir → «Añadir a pantalla de inicio»',
 loginKick:'Acceso',loginH:'Entra en tu sesión',loginSub:'Usa el email y la contraseña que te dio el administrador.',hi:'Hola,',tMap:'Tramo',tRec:'Grabar',seeAll:'Ver todos',navD:'Elige destino y Wtracks te canta cada curva',
 tabHome:'Inicio',tabNav:'Navegar',tabStages:'Tramos',tabProfile:'Perfil',tabPanel:'Panel',tabPilots:'Pilotos',
 profile:'Perfil',phone:'Teléfono',vehicles:'Vehículos',vehName:'Marca y modelo',vehType:'Tipo',car:'Coche',moto:'Moto',otherV:'Otro',plate:'Matrícula',addVehicle:'Añadir vehículo',noVehicles:'Aún no has añadido vehículos',changePhoto:'Cambiar foto',saveProfile:'Guardar perfil',profileSaved:'Perfil guardado',
 account:'Cuenta',changeEmail:'Cambiar email',changePass:'Cambiar contraseña',curPass:'Contraseña actual',newEmail:'Nuevo email',newPass:'Nueva contraseña (mín. 6)',emailVerify:'Te hemos enviado un correo a {e}. Confírmalo para completar el cambio.',passChanged:'Contraseña cambiada',imgErr:'No se pudo cargar la imagen',cancel:'Cancelar',accept:'Aceptar',
 pilots:'Pilotos',stagesW:'Tramos',actives:'Activos',newPilot:'Nuevo piloto',then:'Luego',inM:'en {d}',night:'Noche',day:'Día',vehFill:'Escribe la marca y el modelo',
 voiceHint:'Para una voz más natural en iPhone: Ajustes → Accesibilidad → Contenido leído → Voces y descarga una voz «Mejorada». Luego elígela aquí.'},
-en:{userOrEmail:'Username or email',noMailUser:'This user has no email. Add a real email in your profile to be able to recover the password.',act1:'Active',h1a:'Every corner,',h1b:'called',h1c:'on time.',heroSub:'Voice pace notes and navigation. Drive solo as if you had a co-driver.',mf1:'Voice notes',mf2:'Navigation',mf3:'Your stages',enter:'Enter',install:'On iPhone: Share → “Add to Home Screen”',
+en:{headUp:'Heading up',northUp:'North up',mapOrient:'Map orientation',userOrEmail:'Username or email',noMailUser:'This user has no email. Add a real email in your profile to be able to recover the password.',act1:'Active',h1a:'Every corner,',h1b:'called',h1c:'on time.',heroSub:'Voice pace notes and navigation. Drive solo as if you had a co-driver.',mf1:'Voice notes',mf2:'Navigation',mf3:'Your stages',enter:'Enter',install:'On iPhone: Share → “Add to Home Screen”',
 loginKick:'Sign in',loginH:'Enter your session',loginSub:'Use the email and password your administrator gave you.',hi:'Hi,',tMap:'Stage',tRec:'Record',seeAll:'See all',navD:'Pick a destination and Wtracks calls every corner',
 tabHome:'Home',tabNav:'Navigate',tabStages:'Stages',tabProfile:'Profile',tabPanel:'Panel',tabPilots:'Drivers',
 profile:'Profile',phone:'Phone',vehicles:'Vehicles',vehName:'Make and model',vehType:'Type',car:'Car',moto:'Motorbike',otherV:'Other',plate:'Plate',addVehicle:'Add vehicle',noVehicles:'No vehicles added yet',changePhoto:'Change photo',saveProfile:'Save profile',profileSaved:'Profile saved',
 account:'Account',changeEmail:'Change email',changePass:'Change password',curPass:'Current password',newEmail:'New email',newPass:'New password (min. 6)',emailVerify:'We sent an email to {e}. Confirm it to complete the change.',passChanged:'Password changed',imgErr:'Could not load the image',cancel:'Cancel',accept:'OK',
 pilots:'Drivers',stagesW:'Stages',actives:'Active',newPilot:'New driver',then:'Then',inM:'in {d}',night:'Night',day:'Day',vehFill:'Enter make and model',
 voiceHint:'For a more natural voice on iPhone: Settings → Accessibility → Spoken Content → Voices and download an “Enhanced” voice. Then pick it here.'},
-fr:{userOrEmail:'Identifiant ou email',noMailUser:'Cet utilisateur n’a pas d’email. Ajoutez un vrai email dans votre profil pour pouvoir récupérer le mot de passe.',act1:'Actif',h1a:'Chaque virage,',h1b:'annoncé',h1c:'à temps.',heroSub:'Notes à la voix et navigation. Roulez seul comme avec un copilote.',mf1:'Notes vocales',mf2:'Navigation',mf3:'Vos spéciales',enter:'Entrer',install:'Sur iPhone : Partager → « Sur l’écran d’accueil »',
+fr:{headUp:'Sens de marche',northUp:'Nord en haut',mapOrient:'Orientation de la carte',userOrEmail:'Identifiant ou email',noMailUser:'Cet utilisateur n’a pas d’email. Ajoutez un vrai email dans votre profil pour pouvoir récupérer le mot de passe.',act1:'Actif',h1a:'Chaque virage,',h1b:'annoncé',h1c:'à temps.',heroSub:'Notes à la voix et navigation. Roulez seul comme avec un copilote.',mf1:'Notes vocales',mf2:'Navigation',mf3:'Vos spéciales',enter:'Entrer',install:'Sur iPhone : Partager → « Sur l’écran d’accueil »',
 loginKick:'Accès',loginH:'Entrez dans votre session',loginSub:'Utilisez l’email et le mot de passe fournis par l’administrateur.',hi:'Bonjour,',tMap:'Spéciale',tRec:'Enregistrer',seeAll:'Tout voir',navD:'Choisissez une destination, Wtracks annonce chaque virage',
 tabHome:'Accueil',tabNav:'Naviguer',tabStages:'Spéciales',tabProfile:'Profil',tabPanel:'Panneau',tabPilots:'Pilotes',
 profile:'Profil',phone:'Téléphone',vehicles:'Véhicules',vehName:'Marque et modèle',vehType:'Type',car:'Voiture',moto:'Moto',otherV:'Autre',plate:'Immatriculation',addVehicle:'Ajouter un véhicule',noVehicles:'Aucun véhicule pour l’instant',changePhoto:'Changer la photo',saveProfile:'Enregistrer le profil',profileSaved:'Profil enregistré',
 account:'Compte',changeEmail:'Changer l’email',changePass:'Changer le mot de passe',curPass:'Mot de passe actuel',newEmail:'Nouvel email',newPass:'Nouveau mot de passe (min. 6)',emailVerify:'Nous avons envoyé un email à {e}. Confirmez-le pour terminer.',passChanged:'Mot de passe changé',imgErr:'Impossible de charger l’image',cancel:'Annuler',accept:'OK',
 pilots:'Pilotes',stagesW:'Spéciales',actives:'Actifs',newPilot:'Nouveau pilote',then:'Ensuite',inM:'dans {d}',night:'Nuit',day:'Jour',vehFill:'Saisissez la marque et le modèle',
 voiceHint:'Pour une voix plus naturelle sur iPhone : Réglages → Accessibilité → Contenu énoncé → Voix, et téléchargez une voix « améliorée ». Choisissez-la ensuite ici.'},
-it:{userOrEmail:'Utente o email',noMailUser:'Questo utente non ha email. Aggiungi un’email reale nel profilo per poter recuperare la password.',act1:'Attivo',h1a:'Ogni curva,',h1b:'chiamata',h1c:'in tempo.',heroSub:'Note a voce e navigatore. Guida da solo come con un navigatore a fianco.',mf1:'Note a voce',mf2:'Navigatore',mf3:'Le tue prove',enter:'Entra',install:'Su iPhone: Condividi → «Aggiungi alla schermata Home»',
+it:{headUp:'Direzione di marcia',northUp:'Nord in alto',mapOrient:'Orientamento mappa',userOrEmail:'Utente o email',noMailUser:'Questo utente non ha email. Aggiungi un’email reale nel profilo per poter recuperare la password.',act1:'Attivo',h1a:'Ogni curva,',h1b:'chiamata',h1c:'in tempo.',heroSub:'Note a voce e navigatore. Guida da solo come con un navigatore a fianco.',mf1:'Note a voce',mf2:'Navigatore',mf3:'Le tue prove',enter:'Entra',install:'Su iPhone: Condividi → «Aggiungi alla schermata Home»',
 loginKick:'Accesso',loginH:'Entra nella tua sessione',loginSub:'Usa l’email e la password che ti ha dato l’amministratore.',hi:'Ciao,',tMap:'Prova',tRec:'Registra',seeAll:'Vedi tutte',navD:'Scegli la destinazione e Wtracks chiama ogni curva',
 tabHome:'Home',tabNav:'Naviga',tabStages:'Prove',tabProfile:'Profilo',tabPanel:'Pannello',tabPilots:'Piloti',
 profile:'Profilo',phone:'Telefono',vehicles:'Veicoli',vehName:'Marca e modello',vehType:'Tipo',car:'Auto',moto:'Moto',otherV:'Altro',plate:'Targa',addVehicle:'Aggiungi veicolo',noVehicles:'Nessun veicolo aggiunto',changePhoto:'Cambia foto',saveProfile:'Salva profilo',profileSaved:'Profilo salvato',
 account:'Account',changeEmail:'Cambia email',changePass:'Cambia password',curPass:'Password attuale',newEmail:'Nuova email',newPass:'Nuova password (min. 6)',emailVerify:'Ti abbiamo inviato un’email a {e}. Confermala per completare.',passChanged:'Password cambiata',imgErr:'Impossibile caricare l’immagine',cancel:'Annulla',accept:'OK',
 pilots:'Piloti',stagesW:'Prove',actives:'Attivi',newPilot:'Nuovo pilota',then:'Poi',inM:'tra {d}',night:'Notte',day:'Giorno',vehFill:'Inserisci marca e modello',
 voiceHint:'Per una voce più naturale su iPhone: Impostazioni → Accessibilità → Contenuto letto → Voci e scarica una voce «Migliorata». Poi sceglila qui.'},
-de:{userOrEmail:'Benutzername oder E-Mail',noMailUser:'Dieser Benutzer hat keine E-Mail. Füge im Profil eine echte E-Mail hinzu, um das Passwort wiederherstellen zu können.',act1:'Aktiv',h1a:'Jede Kurve,',h1b:'angesagt',h1c:'pünktlich.',heroSub:'Aufschrieb per Sprache und Navigation. Fahr allein, als hättest du einen Beifahrer.',mf1:'Sprachansagen',mf2:'Navigation',mf3:'Deine Prüfungen',enter:'Los',install:'Auf dem iPhone: Teilen → „Zum Home-Bildschirm“',
+de:{headUp:'Fahrtrichtung',northUp:'Norden oben',mapOrient:'Kartenausrichtung',userOrEmail:'Benutzername oder E-Mail',noMailUser:'Dieser Benutzer hat keine E-Mail. Füge im Profil eine echte E-Mail hinzu, um das Passwort wiederherstellen zu können.',act1:'Aktiv',h1a:'Jede Kurve,',h1b:'angesagt',h1c:'pünktlich.',heroSub:'Aufschrieb per Sprache und Navigation. Fahr allein, als hättest du einen Beifahrer.',mf1:'Sprachansagen',mf2:'Navigation',mf3:'Deine Prüfungen',enter:'Los',install:'Auf dem iPhone: Teilen → „Zum Home-Bildschirm“',
 loginKick:'Anmeldung',loginH:'Melde dich an',loginSub:'Nutze die E-Mail und das Passwort vom Administrator.',hi:'Hallo,',tMap:'Prüfung',tRec:'Aufzeichnen',seeAll:'Alle',navD:'Ziel wählen – Wtracks sagt jede Kurve an',
 tabHome:'Start',tabNav:'Navi',tabStages:'Prüfungen',tabProfile:'Profil',tabPanel:'Panel',tabPilots:'Fahrer',
 profile:'Profil',phone:'Telefon',vehicles:'Fahrzeuge',vehName:'Marke und Modell',vehType:'Typ',car:'Auto',moto:'Motorrad',otherV:'Andere',plate:'Kennzeichen',addVehicle:'Fahrzeug hinzufügen',noVehicles:'Noch keine Fahrzeuge',changePhoto:'Foto ändern',saveProfile:'Profil speichern',profileSaved:'Profil gespeichert',
@@ -966,6 +982,8 @@ SL:'<path d="M16 21v-7a6 6 0 0 0-6-6H8"/><path d="m11 4-4 4 4 4"/>',
 UT:'<path d="M8 21V9a4 4 0 0 1 8 0v4"/><path d="m12 10 4 4 4-4"/>',
 RB:'<circle cx="12" cy="10" r="4"/><path d="M12 21v-7"/><path d="M15 7l4-4"/><path d="M15 3h4v4"/>',
 arrow:'<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>',
+minus:'<path d="M5 12h14"/>',
+compass:'<circle cx="12" cy="12" r="9"/><path d="m12 5 3 7h-6z" fill="currentColor"/><path d="m12 19-3-7h6z"/>',
 camera:'<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>',
 lock:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
 next:'<path d="m9 18 6-6-6-6"/>',
@@ -1028,16 +1046,23 @@ function buildRoute(rawPts,source){
   }
   const H=[];for(let i=0;i<n-1;i++)H.push(Math.atan2(Ys[i+1]-Ys[i],Xs[i+1]-Xs[i]));
   for(let i=1;i<H.length;i++){while(H[i]-H[i-1]>Math.PI)H[i]-=2*Math.PI;while(H[i]-H[i-1]<-Math.PI)H[i]+=2*Math.PI;}
-  const W=2,K=new Array(n).fill(0);
-  for(let i=0;i<n;i++){const a=Math.max(0,i-W),b=Math.min(H.length-1,i+W-1);if(b>a)K[i]=(H[b]-H[a])/((b-a)*STEP);}
+  // curvatura por circunferencia que pasa por 3 puntos separados ±15 m (más precisa que la diferencia de rumbos)
+  const h=3,K0=new Array(n).fill(0),K=new Array(n).fill(0);
+  for(let i=h;i<n-h;i++){
+    const ax=Xs[i-h],ay=Ys[i-h],bx=Xs[i],by=Ys[i],cx=Xs[i+h],cy=Ys[i+h];
+    const cr=(bx-ax)*(cy-ay)-(by-ay)*(cx-ax);
+    const ab=Math.hypot(bx-ax,by-ay),bc=Math.hypot(cx-bx,cy-by),ca=Math.hypot(ax-cx,ay-cy);
+    const den=ab*bc*ca;K0[i]=den>1e-6?2*cr/den:0;
+  }
+  for(let i=0;i<n;i++){let s=0,c=0;for(let j=Math.max(0,i-1);j<=Math.min(n-1,i+1);j++){s+=K0[j];c++;}K[i]=s/c;}
   return {pts,source,X,Y,K,n,total:(n-1)*STEP,toXY,toLL};
 }
 function posAt(rt,s){const f=Math.max(0,Math.min(rt.n-1.000001,s/STEP)),i=Math.floor(f),u=f-i,j=Math.min(rt.n-1,i+1);return rt.toLL(rt.X[i]+(rt.X[j]-rt.X[i])*u,rt.Y[i]+(rt.Y[j]-rt.Y[i])*u);}
 function radiusAt(rt,s){const i=Math.max(0,Math.min(rt.n-1,Math.round(s/STEP)));return 1/Math.max(Math.abs(rt.K[i]),1e-5);}
-function nearestS(rt,lat,lon){const [x,y]=rt.toXY(lat,lon);let best=1e18,bs=0;for(let i=0;i<rt.n-1;i++){const ax=rt.X[i],ay=rt.Y[i],dx=rt.X[i+1]-ax,dy=rt.Y[i+1]-ay,L2=dx*dx+dy*dy||1;let u=((x-ax)*dx+(y-ay)*dy)/L2;u=Math.max(0,Math.min(1,u));const ex=ax+dx*u-x,ey=ay+dy*u-y,d=ex*ex+ey*ey;if(d<best){best=d;bs=(i+u)*STEP;}}return bs;}
+function nearestS(rt,lat,lon,from){const [x,y]=rt.toXY(lat,lon);let best=1e18,bs=0;for(let i=Math.max(0,Math.floor((from||0)/STEP)-2);i<rt.n-1;i++){const ax=rt.X[i],ay=rt.Y[i],dx=rt.X[i+1]-ax,dy=rt.Y[i+1]-ay,L2=dx*dx+dy*dy||1;let u=((x-ax)*dx+(y-ay)*dy)/L2;u=Math.max(0,Math.min(1,u));const ex=ax+dx*u-x,ey=ay+dy*u-y,d=ex*ex+ey*ey;if(d<best){best=d;bs=(i+u)*STEP;}}return bs;}
 
 function computeNotes(rt){
-  const K=rt.K,n=rt.n,thr=1/350,cal=+cfg.calib||1;
+  const K=rt.K,n=rt.n,thr=1/300,cal=+cfg.calib||1;
   const groups=[];let cur=null;
   for(let i=0;i<n;i++){
     const sg=K[i]>thr?1:K[i]<-thr?-1:0;if(!sg)continue;
@@ -1049,7 +1074,13 @@ function computeNotes(rt){
   for(const g of groups){
     let sum=0,mx=0,ap=g.s;
     for(let i=g.s;i<=g.e;i++){sum+=K[i];if(Math.abs(K[i])>mx){mx=Math.abs(K[i]);ap=i;}}
-    const ang=Math.abs(sum)*STEP/D2R, R=1/mx;
+    // recorta los extremos suaves para que la curva empiece donde de verdad empieza
+    while(g.s<ap&&Math.abs(K[g.s])<mx*0.35)g.s++;
+    while(g.e>ap&&Math.abs(K[g.e])<mx*0.35)g.e--;
+    // radio robusto: media de las 3 curvaturas más fuertes
+    const top=[];for(let i=g.s;i<=g.e;i++)top.push(Math.abs(K[i]));top.sort((a,b)=>b-a);
+    const kk=top.slice(0,3).reduce((a,b)=>a+b,0)/Math.min(3,top.length);
+    const ang=Math.abs(sum)*STEP/D2R, R=1/kk;
     if(ang<15)continue;
     let gr=R>=T[0]?1:R>=T[1]?2:R>=T[2]?3:R>=T[3]?4:R>=T[4]?5:R>=T[5]?6:7;
     if(ang>=150&&R<25*cal)gr=7;
@@ -1188,20 +1219,24 @@ const fromScr=()=>TAB_SCR.includes(curScr)?curScr:homeScr();
    ========================================================= */
 const maps={};
 const MSTYLES=['auto','dark','streets','sat','hybrid','topo'];
+const ESRI='https://server.arcgisonline.com/ArcGIS/rest/services/';
+const esri=(p,o)=>L.tileLayer(ESRI+p+'/MapServer/tile/{z}/{y}/{x}',Object.assign({maxZoom:20,maxNativeZoom:18,attribution:'© Esri'},o||{}));
 const TILE={
-  dark:()=>[L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{maxZoom:20,attribution:'© OpenStreetMap © CARTO'})],
-  streets:()=>[L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{maxZoom:20,attribution:'© OpenStreetMap © CARTO'})],
-  sat:()=>[L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,attribution:'© Esri'})],
-  hybrid:()=>[L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,attribution:'© Esri'}),
-              L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}',{maxZoom:19}),
-              L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',{maxZoom:19})],
-  topo:()=>[L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{maxZoom:17,attribution:'© OpenStreetMap © OpenTopoMap'})]
+  dark:()=>[esri('Canvas/World_Dark_Gray_Base',{maxNativeZoom:16}),esri('Canvas/World_Dark_Gray_Reference',{maxNativeZoom:16,attribution:''})],
+  streets:()=>[esri('World_Street_Map')],
+  sat:()=>[esri('World_Imagery')],
+  hybrid:()=>[esri('World_Imagery'),esri('Reference/World_Transportation',{attribution:''}),esri('Reference/World_Boundaries_and_Places',{attribution:''})],
+  topo:()=>[esri('World_Topo_Map')],
+  osm:()=>[L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'})]
 };
 const realStyle=()=>cfg.mapStyle==='auto'?(cfg.theme==='light'?'streets':'dark'):cfg.mapStyle;
 function setBase(m){
   const st=realStyle();if(m._st===st)return;
   (m._tiles||[]).forEach(l=>m.removeLayer(l));
   m._tiles=TILE[st]();m._tiles.forEach((l,i)=>{l.addTo(m);if(i===0)l.bringToBack();});m._st=st;
+  // si la capa base no carga, se cambia sola a una que funcione
+  let errs=0;const base=m._tiles[0];
+  base.on('tileerror',()=>{if(++errs===8&&m._st===st&&st!=='sat'){m._st=null;(m._tiles||[]).forEach(l=>m.removeLayer(l));m._tiles=TILE[st==='streets'?'sat':'streets']();m._tiles.forEach(l=>l.addTo(m));m._st=st;}});
 }
 function setMapStyle(k){cfg.mapStyle=k;saveCfg();Object.values(maps).forEach(m=>m&&setBase(m));$$('#setMap button').forEach(b=>b.classList.toggle('on',b.dataset.v===k));}
 const MapSwitch=window.L?L.Control.extend({options:{position:'topright'},
@@ -1221,8 +1256,9 @@ const MapSwitch=window.L?L.Control.extend({options:{position:'topright'},
 function makeMap(id){
   if(maps[id])return maps[id];
   if(!window.L){$('#'+id).innerHTML=`<div class="empty">${t('mapFail')}</div>`;return null;}
-  const m=L.map(id,{zoomControl:true,attributionControl:true}).setView([40.4,-3.7],6);
-  setBase(m);new MapSwitch().addTo(m);
+  const dr=id==='mapDr';
+  const m=L.map(id,{zoomControl:!dr,attributionControl:!dr,dragging:!dr,touchZoom:!dr,scrollWheelZoom:!dr,doubleClickZoom:!dr,keyboard:!dr}).setView([40.4,-3.7],6);
+  setBase(m);if(!dr)new MapSwitch().addTo(m);
   maps[id]=m;return m;
 }
 const flagIcon=()=>L.divIcon({className:'',html:'<div class="flag-ic"></div>',iconSize:[28,28],iconAnchor:[14,14]});
@@ -1314,11 +1350,11 @@ const Nav={dest:null,res:null,layers:[],seq:0,busy:false,
   }
 };
 function prepMans(rt,mans,notes){
-  const out=[];
+  const out=[];let lastS=0;
   for(const m of mans){
     if(m.type==='depart')continue;
     if((m.type==='new name'||m.type==='continue'||m.type==='notification')&&(!m.mod||m.mod==='straight'))continue;
-    const s=m.type==='arrive'?rt.total:nearestS(rt,m.ll[0],m.ll[1]);
+    const s=m.type==='arrive'?rt.total:nearestS(rt,m.ll[0],m.ll[1],lastS);lastS=s;
     out.push({...m,s,far:false,near:false});
   }
   // las notas que coinciden con un cruce/rotonda las sustituye la indicación
@@ -1536,6 +1572,7 @@ const Drive={
     $('#drSimBar').classList.toggle('hidden',!this.sim);
     $('#drGps').className='pill'+(this.sim?' hidden':'');$('#drGps').textContent=t('seekGps');
     $('#drLeftL').textContent=t(this.nav?'toDest':'toFinish');
+    this.zoom=this.zoom||17;this.headBtn();
     this.load(data,false);
     if(!this.sim)this.startGps();
     this.setGo('play');
@@ -1548,8 +1585,9 @@ const Drive={
     if(m){
       (this.layers||[]).forEach(l=>l.remove());
       this.layers=[L.polyline(data.pts,{color:'#ff5a00',weight:6}).addTo(m),L.marker(data.pts[data.pts.length-1],{icon:flagIcon()}).addTo(m)];
-      this.me=L.marker(data.pts[0],{icon:meIcon()}).addTo(m);this.layers.push(this.me);
-      setTimeout(()=>{m.invalidateSize();m.setView(data.pts[0],17);},80);
+      this.me=L.marker(data.pts[0],{icon:L.divIcon({className:'',html:'<div class="me-nav"><svg viewBox="0 0 24 24"><path d="M12 2 20 21 12 16.5 4 21z" fill="#3b82f6" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></div>',iconSize:[34,34],iconAnchor:[17,17]})}).addTo(m);this.layers.push(this.me);
+      this.rot=null;this.hd=null;
+      setTimeout(()=>{this.sizeRot();this.follow(data.pts[0][0],data.pts[0][1]);},90);
     }
     this.update();
   },
@@ -1590,21 +1628,54 @@ const Drive={
   onFix(lat,lon,spd,acc,simS){
     const now=Date.now();this.fixTimes.push(now);this.fixTimes=this.fixTimes.filter(x=>now-x<5000);
     if(!this.sim&&!Nav.rerouting){$('#drGps').textContent=`GPS ±${Math.round(acc)} m · ${(this.fixTimes.length/5).toFixed(1)} Hz`;$('#drGps').className='pill '+(acc<=15?'ok':acc<=30?'warn':'bad');}
-    if(this.me)this.me.setLatLng([lat,lon]);if(maps.mapDr)maps.mapDr.panTo([lat,lon],{animate:false});
-    if(!this.running)return;
+    this.gps=[lat,lon];
+    if(!this.running){this.follow(lat,lon,true);return;}
     let s,d=0;
     if(simS!=null)s=simS;
-    else{const [x,y]=this.rt.toXY(lat,lon);const m=this.match(x,y);s=m.s;d=m.d;
+    else{
+      if(acc>40)return; // posición poco fiable: se ignora
+      const [x,y]=this.rt.toXY(lat,lon);const m=this.match(x,y);s=m.s;d=m.d;
       const v=spd!=null&&spd>=0?spd:(this.lastFix?Math.abs(s-this.lastFix.s)/Math.max(.2,(now-this.lastFix.t)/1000):0);
-      this.v=this.v*0.5+v*0.5;this.lastFix={s,t:now};}
+      this.v=this.v*0.4+v*0.6;
+      // compensa el retraso del GPS (≈0,7 s)
+      s+=this.v*0.7;
+      this.lastFix={s,t:now};
+      if(!this.tick)this.tick=setInterval(()=>this.interp(),200);}
     const off=d>50;
     this.offN=off?this.offN+1:0;
     if(off!==this.off){this.off=off;$('#drOff').classList.toggle('hidden',!off);if(off&&!this.nav)Voice.say(L_().sp.off,true);}
     if(off&&this.nav&&this.offN>=3&&(!this.lastRR||now-this.lastRR>10000)){this.lastRR=now;Nav.reroute(lat,lon);return;}
     if(!off&&(simS!=null||s>=this.s-30))this.s=s;
     this.idx=Math.floor(this.s/STEP);
-    this.announce();this.update();
-    if(this.s>=this.rt.total-(this.nav?20:10)&&!this.done){this.done=true;this.running=false;clearInterval(this.simT);Voice.say(this.nav?L_().sp.arrived:L_().sp.done,false);this.setGo(t('repeat'),'repeat');try{this.wake?.release();}catch(e){}}
+    this.follow(lat,lon);this.announce();this.update();
+    if(this.s>=this.rt.total-(this.nav?20:10)&&!this.done){this.done=true;this.running=false;clearInterval(this.simT);Voice.say(this.nav?L_().sp.arrived:L_().sp.done,false);this.setGo('repeat');try{this.wake?.release();}catch(e){}}
+  },
+  sizeRot(){const r=$('#drRot');if(!r)return;const d=Math.ceil(Math.hypot(r.clientWidth,r.clientHeight))+6;$('#mapDr').style.setProperty('--d',d+'px');if(maps.mapDr)maps.mapDr.invalidateSize({pan:false});},
+  headBtn(){const up=cfg.headUp!==false,b=$('#drHead');b.innerHTML=`<span style="display:grid;transform:rotate(${up?(this.rot||0):0}deg);transition:transform .45s linear">${ic('compass')}</span>`;b.classList.toggle('on',up);b.title=t(up?'headUp':'northUp');if(this.d)this.follow();},
+  follow(lat,lon,raw){
+    const m=maps.mapDr,rt=this.rt;if(!m||!rt)return;
+    const ll=(lat!=null&&(raw||this.off))?[lat,lon]:posAt(rt,this.s);
+    // rumbo de la carretera por delante (más estable que el del GPS)
+    let hd=this.hd;
+    if(!this.off){const a=posAt(rt,Math.max(0,this.s-5)),b=posAt(rt,Math.min(rt.total,this.s+35));const [ax,ay]=rt.toXY(a[0],a[1]),[bx,by]=rt.toXY(b[0],b[1]);if(Math.hypot(bx-ax,by-ay)>3)hd=Math.atan2(bx-ax,by-ay)*180/Math.PI;}
+    if(hd==null)hd=0;
+    const up=cfg.headUp!==false;
+    let rot=up?-hd:0;if(this.rot!=null){while(rot-this.rot>180)rot-=360;while(rot-this.rot<-180)rot+=360;}
+    this.rot=rot;this.hd=hd;
+    $('#mapDr').style.setProperty('--rot',rot+'deg');
+    if(this.me){this.me.setLatLng(ll);const el=this.me.getElement();if(el&&el.firstChild)el.firstChild.style.transform=`rotate(${hd+rot}deg)`;}
+    const hb=$('#drHead span');if(hb)hb.style.transform=`rotate(${up?rot:0}deg)`;
+    // la posición queda en la parte baja para ver más carretera por delante
+    const z=this.zoom||17,mpp=156543.03*Math.cos(ll[0]*D2R)/2**z,off=($('#drRot').clientHeight||300)*0.25*mpp,h=(up?hd:0)*D2R;
+    const [x,y]=rt.toXY(ll[0],ll[1]);
+    m.setView(rt.toLL(x+Math.sin(h)*off,y+Math.cos(h)*off),z,{animate:false});
+  },
+  interp(){
+    // entre posiciones GPS avanza la posición estimada para que avisos y distancias vayan finos
+    if(!this.running||this.sim||!this.lastFix||this.off)return;
+    const dt=(Date.now()-this.lastFix.t)/1000;if(dt>3)return;
+    const sp=this.lastFix.s+this.v*dt;
+    if(sp>this.s&&sp-this.lastFix.s<60){this.s=Math.min(sp,this.rt.total);this.idx=Math.floor(this.s/STEP);this.follow();this.announce();this.update();}
   },
   announce(){
     const v=this.v,S=L_().sp;
@@ -1612,12 +1683,12 @@ const Drive={
     if(this.nav)for(const m of this.mans){
       if(m.type==='arrive')continue;
       const d=m.s-this.s;if(d<-10){m.far=m.near=true;continue;}
-      const nearD=Math.max(40,v*3.5),farD=Math.max(250,v*11);
+      const nearD=Math.max(35,v*4),farD=Math.max(250,v*12);
       if(!m.near&&d<=nearD){m.near=m.far=true;Voice.say(manText(m),false);}
       else if(!m.far&&d<=farD&&d>nearD+40){m.far=true;Voice.say(fmt(S.inD,{d:roundDist(d),m:manText(m)}),false);}
     }
     // notas de curva (en navegador se callan por debajo de 25 km/h)
-    const lead=Math.max(60,v*(+cfg.lead||5)),N=this.notes;
+    const lead=Math.max(50,v*((+cfg.lead||5)+0.8)),N=this.notes;
     while(this.nextAnn<N.length){
       const n=N[this.nextAnn];
       if(n.e<this.s){this.nextAnn++;continue;}
@@ -1674,12 +1745,24 @@ const Drive={
     $('#drProg').style.width=Math.min(100,this.s/this.rt.total*100)+'%';
   },
   close(){
-    this.on=false;this.running=false;clearInterval(this.simT);if(this.watch!=null){navigator.geolocation.clearWatch(this.watch);this.watch=null;}
+    this.on=false;this.running=false;clearInterval(this.simT);clearInterval(this.tick);this.tick=null;if(this.watch!=null){navigator.geolocation.clearWatch(this.watch);this.watch=null;}
     try{speechSynthesis.cancel();}catch(e){}try{this.wake?.release();}catch(e){}
     $('#scr-drive').classList.remove('act');setTimeout(()=>Object.values(maps).forEach(m=>m&&m.invalidateSize()),60);
   }
 };
 $('#drGo').onclick=()=>Drive.go();
+$('#drHead').onclick=()=>{cfg.headUp=cfg.headUp===false;saveCfg();Drive.headBtn();};
+$('#drZin').onclick=()=>{Drive.zoom=Math.min(19,(Drive.zoom||17)+1);Drive.follow();};
+$('#drZout').onclick=()=>{Drive.zoom=Math.max(12,(Drive.zoom||17)-1);Drive.follow();};
+$('#drLayers').onclick=e=>{
+  e.stopPropagation();const box=$('.dctl');let mm=box.querySelector('.mapmenu');
+  if(mm){mm.remove();$('#drLayers').classList.remove('on');return;}
+  mm=document.createElement('div');mm.className='mapmenu';
+  mm.innerHTML=MSTYLES.map(k=>`<button type="button" data-v="${k}" class="${cfg.mapStyle===k?'on':''}"><i class="sw-${k}"></i>${esc(t('ms'+k))}</button>`).join('');
+  mm.querySelectorAll('button').forEach(x=>x.onclick=()=>{setMapStyle(x.dataset.v);mm.remove();$('#drLayers').classList.remove('on');});
+  box.appendChild(mm);$('#drLayers').classList.add('on');
+};
+window.addEventListener('resize',()=>{if(Drive.on)setTimeout(()=>Drive.sizeRot(),120);});
 $('#drExit').onclick=()=>Drive.close();
 $('#drTop').onclick=$('#drRepeat').onclick=()=>{if(Voice.last)Voice.say(Voice.last,true);};
 $('#drMute').onclick=()=>{Voice.muted=!Voice.muted;if(Voice.muted)try{speechSynthesis.cancel();}catch(e){}const b=$('#drMute');b.innerHTML=ic(Voice.muted?'mute':'vol');b.classList.toggle('on',Voice.muted);};
@@ -1693,6 +1776,7 @@ document.addEventListener('visibilitychange',async()=>{if(document.visibilitySta
 function fillVoices(){const s=$('#setVoice');if(!s)return;s.innerHTML=`<option value="">${t('autoVoice')}</option>`+Voice.voices.map(v=>`<option value="${esc(v.voiceURI)}"${v.voiceURI===cfg.voice?' selected':''}>${esc(v.name)} (${v.lang})</option>`).join('');}
 function openSettings(){
   [['#setScale','scale'],['#setCalib','calib'],['#setTheme','theme']].forEach(([sel,key])=>$$(sel+' button').forEach(b=>{b.classList.toggle('on',String(cfg[key])===b.dataset.v);b.onclick=()=>{cfg[key]=key==='calib'?+b.dataset.v:b.dataset.v;saveCfg();if(key==='theme')applyTheme();openSettings();if(ST&&curScr==='scr-stage'&&key==='scale')renderStage(false);};}));
+  $$('#setHead button').forEach(b=>{b.classList.toggle('on',(cfg.headUp!==false?'1':'0')===b.dataset.v);b.onclick=()=>{cfg.headUp=b.dataset.v==='1';saveCfg();Drive.headBtn();openSettings();};});
   $('#setMap').innerHTML=MSTYLES.map(k=>`<button data-v="${k}" class="${cfg.mapStyle===k?'on':''}">${esc(t('ms'+k))}</button>`).join('');
   $$('#setMap button').forEach(b=>b.onclick=()=>setMapStyle(b.dataset.v));
   $('#setLead').value=cfg.lead;$('#setLeadV').textContent=cfg.lead+' s';
