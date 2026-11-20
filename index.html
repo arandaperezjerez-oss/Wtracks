@@ -153,6 +153,12 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
 .stage .t b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700;font-size:15px}
 .stage .t span{font-size:12px;color:var(--mut)}
 .chev{color:var(--mut)}
+.cc{width:40px;height:30px;border-radius:6px;background:var(--panel2);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--disp);font-style:italic;font-weight:900;font-size:16px;flex:none}
+.libcard{position:relative;overflow:hidden;display:flex;align-items:center;gap:14px;width:100%;margin-top:10px;padding:16px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel);color:var(--txt);cursor:pointer;text-align:left}
+.libcard:hover{border-color:var(--acc)}
+.libcard .ic{width:46px;height:46px;border-radius:var(--rs);background:repeating-conic-gradient(#f2f4f7 0 25%,#111 0 50%) 0 0/12px 12px;flex:none;border:2px solid var(--acc)}
+.libcard b{display:block;font-family:var(--disp);font-style:italic;font-weight:900;font-size:24px;text-transform:uppercase;line-height:1}
+.libcard span{font-size:13px;color:var(--mut)}
 
 /* stats */
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:10px}
@@ -514,6 +520,7 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
     <button class="tile" id="newGpx"><span data-i="upload"></span><span>GPX</span></button>
     <button class="tile" id="newRec"><span data-i="rec"></span><span data-t="tRec"></span></button>
   </div>
+  <button class="libcard" data-go="scr-library"><div class="ic"></div><div class="sp"><b data-t="library"></b><span data-t="libD"></span></div><span class="chev" data-i="next"></span></button>
   <input type="file" id="gpxFile" accept=".gpx,application/gpx+xml,application/xml,text/xml" class="hidden">
   </div><div class="hcol2">
   <button class="btn block hidden" id="homeAdmin" data-go="scr-panel" style="margin-top:10px"><span data-i="grid"></span><span data-t="tabPanel"></span></button>
@@ -525,7 +532,7 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
 
 <!-- MIS TRAMOS -->
 <section id="scr-stages" class="scr">
-  <div class="head"><h1 data-t="mine"></h1><button class="ib" id="stagesNew" data-ti="mapT" data-i="plus"></button></div>
+  <div class="head"><h1 data-t="mine"></h1><button class="ib" data-go="scr-library" data-ti="library" data-i="flag"></button><button class="ib" id="stagesNew" data-ti="mapT" data-i="plus"></button></div>
   <div id="stageList"></div>
 </section>
 
@@ -614,6 +621,16 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
   </div>
 </section>
 
+<!-- RUTAS FAMOSAS -->
+<section id="scr-library" class="scr">
+  <div class="head"><button class="ib" data-back data-i="back"></button><h1 data-t="library"></h1></div>
+  <div class="mut" style="line-height:1.5" data-t="libD"></div>
+  <div class="seg" id="libType" style="grid-template-columns:1fr 1fr;margin-top:14px"><button data-v="road"><span data-t="roads"></span></button><button data-v="circuit"><span data-t="circuits"></span></button></div>
+  <div class="seg" id="libReg" style="grid-template-columns:1fr 1fr;margin-top:8px"><button data-v="es" data-t="spain"></button><button data-v="eu" data-t="europe"></button></div>
+  <div class="localbar hidden" id="libCircNote" style="margin:12px 0 0" data-t="circuitNote"></div>
+  <div id="libList" style="margin-top:12px"></div>
+</section>
+
 <!-- EDITOR EN MAPA -->
 <section id="scr-editor" class="scr">
   <div class="head"><button class="ib" data-back data-i="back"></button><h1 data-t="edTitle"></h1></div>
@@ -660,6 +677,8 @@ h2 a,h2 button.link{margin-left:auto;font-family:Inter;font-style:normal;font-si
         <button class="btn sm" id="stSave"><span data-i="save"></span><span data-t="save"></span></button>
         <button class="btn sm" id="stRegen"><span data-i="wand"></span><span data-t="regen"></span></button>
         <button class="btn sm" id="stGpx"><span data-i="download"></span>GPX</button>
+        <button class="btn sm" id="stRev"><span data-i="repeat"></span><span data-t="reverse"></span></button>
+        <button class="btn sm" id="stStart"><span data-i="nav"></span><span data-t="goStart"></span></button>
         <button class="btn sm bad" id="stDel"><span data-i="trash"></span><span data-t="del"></span></button>
       </div>
     </div>
@@ -909,35 +928,35 @@ sp:{nums:['','eins','zwei','drei','vier','fünf','sechs'],hp:'Kehre',L:'links',R
 man:{right:'rechts abbiegen',left:'links abbiegen','slight right':'rechts halten','slight left':'links halten','sharp right':'scharf rechts abbiegen','sharp left':'scharf links abbiegen',uturn:'wenden',straight:'geradeaus weiter',round:'im Kreisverkehr die {n}. Ausfahrt nehmen',arrive:'Sie erreichen Ihr Ziel',onto:' auf {s}'}}
 };
 const I18X={
-es:{voiceT:'Voz de copiloto',voiceIntro:'Elige cómo te canta las notas. Puedes grabar tu propia voz de copiloto y sonará con efecto de casco/intercom, como en los onboards de rally.',vModeL:'Voz',vModeTts:'Voz del móvil',vModeRec:'Copiloto grabado',voiceStyle:'Estilo de voz',styleRally:'Rally',styleNormal:'Normal',fxL:'Efecto casco / intercom',fxOn:'Activado',fxOff:'Desactivado',recorded:'{n} de {t} palabras grabadas',testPhrase:'Probar',recHint:'Pulsa Grabar, di la palabra con tono de copiloto y pulsa Parar (se para sola a los 3 s). Grábalas en un sitio sin ruido.',vMissing:'Faltan palabras por grabar: mientras tanto se usará la voz del móvil.',recBtn:'Grabar',stopRec:'Parar',gGrades:'Grados',gDir:'Dirección',gMods:'Detalles',gDist:'Distancias',gOther:'Otros',micErr:'No se pudo usar el micrófono. Revisa los permisos.',headUp:'Dirección de marcha',awakeL:'Pantalla siempre encendida',on1:'Sí',off1:'No',northUp:'Norte arriba',mapOrient:'Orientación del mapa',userOrEmail:'Usuario o email',noMailUser:'Este usuario no tiene email. Añade un email real en tu perfil para poder recuperar la contraseña.',act1:'Activo',h1a:'Cada curva,',h1b:'cantada',h1c:'a tiempo.',heroSub:'Notas de ritmo por voz y navegador. Conduce solo, como si llevaras copiloto.',mf1:'Notas por voz',mf2:'Navegador',mf3:'Tus tramos',enter:'Entrar',install:'En iPhone: Compartir → «Añadir a pantalla de inicio»',
+es:{voiceT:'Voz de copiloto',voiceIntro:'Elige cómo te canta las notas. Puedes grabar tu propia voz de copiloto y sonará con efecto de casco/intercom, como en los onboards de rally.',vModeL:'Voz',vModeTts:'Voz del móvil',vModeRec:'Copiloto grabado',voiceStyle:'Estilo de voz',styleRally:'Rally',styleNormal:'Normal',fxL:'Efecto casco / intercom',fxOn:'Activado',fxOff:'Desactivado',recorded:'{n} de {t} palabras grabadas',testPhrase:'Probar',recHint:'Pulsa Grabar, di la palabra con tono de copiloto y pulsa Parar (se para sola a los 3 s). Grábalas en un sitio sin ruido.',vMissing:'Faltan palabras por grabar: mientras tanto se usará la voz del móvil.',recBtn:'Grabar',stopRec:'Parar',gGrades:'Grados',gDir:'Dirección',gMods:'Detalles',gDist:'Distancias',gOther:'Otros',micErr:'No se pudo usar el micrófono. Revisa los permisos.',headUp:'Dirección de marcha',library:'Rutas famosas',libD:'Carreteras míticas y circuitos de España y Europa, listos para copilotar.',roads:'Carreteras',circuits:'Circuitos',spain:'España',europe:'Europa',loadingRoute:'Calculando el trazado…',circuitErr:'No se pudo obtener el trazado del circuito. Inténtalo más tarde.',reverse:'Invertir sentido',goStart:'Ir a la salida',srccircuit:'Circuito',circuitNote:'En circuitos, úsalo solo en tandas o track days autorizados. Si el sentido no es el de carrera, pulsa «Invertir sentido».',awakeL:'Pantalla siempre encendida',on1:'Sí',off1:'No',northUp:'Norte arriba',mapOrient:'Orientación del mapa',userOrEmail:'Usuario o email',noMailUser:'Este usuario no tiene email. Añade un email real en tu perfil para poder recuperar la contraseña.',act1:'Activo',h1a:'Cada curva,',h1b:'cantada',h1c:'a tiempo.',heroSub:'Notas de ritmo por voz y navegador. Conduce solo, como si llevaras copiloto.',mf1:'Notas por voz',mf2:'Navegador',mf3:'Tus tramos',enter:'Entrar',install:'En iPhone: Compartir → «Añadir a pantalla de inicio»',
 loginKick:'Acceso',loginH:'Entra en tu sesión',loginSub:'Usa el email y la contraseña que te dio el administrador.',hi:'Hola,',tMap:'Tramo',tRec:'Grabar',seeAll:'Ver todos',navD:'Elige destino y Wtracks te canta cada curva',
 tabHome:'Inicio',tabNav:'Navegar',tabStages:'Tramos',tabProfile:'Perfil',tabPanel:'Panel',tabPilots:'Pilotos',
 profile:'Perfil',phone:'Teléfono',vehicles:'Vehículos',vehName:'Marca y modelo',vehType:'Tipo',car:'Coche',moto:'Moto',otherV:'Otro',plate:'Matrícula',addVehicle:'Añadir vehículo',noVehicles:'Aún no has añadido vehículos',changePhoto:'Cambiar foto',saveProfile:'Guardar perfil',profileSaved:'Perfil guardado',
 account:'Cuenta',changeEmail:'Cambiar email',changePass:'Cambiar contraseña',curPass:'Contraseña actual',newEmail:'Nuevo email',newPass:'Nueva contraseña (mín. 6)',emailVerify:'Te hemos enviado un correo a {e}. Confírmalo para completar el cambio.',passChanged:'Contraseña cambiada',imgErr:'No se pudo cargar la imagen',cancel:'Cancelar',accept:'Aceptar',
 pilots:'Pilotos',stagesW:'Tramos',actives:'Activos',newPilot:'Nuevo piloto',then:'Luego',inM:'en {d}',night:'Noche',day:'Día',vehFill:'Escribe la marca y el modelo',
 voiceHint:'Para una voz más natural en iPhone: Ajustes → Accesibilidad → Contenido leído → Voces y descarga una voz «Mejorada». Luego elígela aquí.'},
-en:{voiceT:'Co-driver voice',voiceIntro:'Choose how notes are called. You can record your own co-driver voice and it will sound with a helmet/intercom effect, like rally onboards.',vModeL:'Voice',vModeTts:'Phone voice',vModeRec:'Recorded co-driver',voiceStyle:'Voice style',styleRally:'Rally',styleNormal:'Normal',fxL:'Helmet / intercom effect',fxOn:'On',fxOff:'Off',recorded:'{n} of {t} words recorded',testPhrase:'Test',recHint:'Tap Record, say the word like a co-driver and tap Stop (it stops by itself after 3 s). Record somewhere quiet.',vMissing:'Some words are missing: the phone voice will be used meanwhile.',recBtn:'Record',stopRec:'Stop',gGrades:'Grades',gDir:'Direction',gMods:'Details',gDist:'Distances',gOther:'Other',micErr:'Could not use the microphone. Check permissions.',headUp:'Heading up',awakeL:'Keep screen on',on1:'On',off1:'Off',northUp:'North up',mapOrient:'Map orientation',userOrEmail:'Username or email',noMailUser:'This user has no email. Add a real email in your profile to be able to recover the password.',act1:'Active',h1a:'Every corner,',h1b:'called',h1c:'on time.',heroSub:'Voice pace notes and navigation. Drive solo as if you had a co-driver.',mf1:'Voice notes',mf2:'Navigation',mf3:'Your stages',enter:'Enter',install:'On iPhone: Share → “Add to Home Screen”',
+en:{voiceT:'Co-driver voice',voiceIntro:'Choose how notes are called. You can record your own co-driver voice and it will sound with a helmet/intercom effect, like rally onboards.',vModeL:'Voice',vModeTts:'Phone voice',vModeRec:'Recorded co-driver',voiceStyle:'Voice style',styleRally:'Rally',styleNormal:'Normal',fxL:'Helmet / intercom effect',fxOn:'On',fxOff:'Off',recorded:'{n} of {t} words recorded',testPhrase:'Test',recHint:'Tap Record, say the word like a co-driver and tap Stop (it stops by itself after 3 s). Record somewhere quiet.',vMissing:'Some words are missing: the phone voice will be used meanwhile.',recBtn:'Record',stopRec:'Stop',gGrades:'Grades',gDir:'Direction',gMods:'Details',gDist:'Distances',gOther:'Other',micErr:'Could not use the microphone. Check permissions.',headUp:'Heading up',library:'Famous routes',libD:'Legendary roads and circuits in Spain and Europe, ready to co-drive.',roads:'Roads',circuits:'Circuits',spain:'Spain',europe:'Europe',loadingRoute:'Calculating the route…',circuitErr:'Could not get the circuit layout. Try again later.',reverse:'Reverse direction',goStart:'Go to start',srccircuit:'Circuit',circuitNote:'On circuits, use it only in authorised sessions or track days. If the direction is not the race direction, tap “Reverse direction”.',awakeL:'Keep screen on',on1:'On',off1:'Off',northUp:'North up',mapOrient:'Map orientation',userOrEmail:'Username or email',noMailUser:'This user has no email. Add a real email in your profile to be able to recover the password.',act1:'Active',h1a:'Every corner,',h1b:'called',h1c:'on time.',heroSub:'Voice pace notes and navigation. Drive solo as if you had a co-driver.',mf1:'Voice notes',mf2:'Navigation',mf3:'Your stages',enter:'Enter',install:'On iPhone: Share → “Add to Home Screen”',
 loginKick:'Sign in',loginH:'Enter your session',loginSub:'Use the email and password your administrator gave you.',hi:'Hi,',tMap:'Stage',tRec:'Record',seeAll:'See all',navD:'Pick a destination and Wtracks calls every corner',
 tabHome:'Home',tabNav:'Navigate',tabStages:'Stages',tabProfile:'Profile',tabPanel:'Panel',tabPilots:'Drivers',
 profile:'Profile',phone:'Phone',vehicles:'Vehicles',vehName:'Make and model',vehType:'Type',car:'Car',moto:'Motorbike',otherV:'Other',plate:'Plate',addVehicle:'Add vehicle',noVehicles:'No vehicles added yet',changePhoto:'Change photo',saveProfile:'Save profile',profileSaved:'Profile saved',
 account:'Account',changeEmail:'Change email',changePass:'Change password',curPass:'Current password',newEmail:'New email',newPass:'New password (min. 6)',emailVerify:'We sent an email to {e}. Confirm it to complete the change.',passChanged:'Password changed',imgErr:'Could not load the image',cancel:'Cancel',accept:'OK',
 pilots:'Drivers',stagesW:'Stages',actives:'Active',newPilot:'New driver',then:'Then',inM:'in {d}',night:'Night',day:'Day',vehFill:'Enter make and model',
 voiceHint:'For a more natural voice on iPhone: Settings → Accessibility → Spoken Content → Voices and download an “Enhanced” voice. Then pick it here.'},
-fr:{voiceT:'Voix du copilote',voiceIntro:'Choisissez comment les notes sont annoncées. Vous pouvez enregistrer votre propre voix de copilote, avec un effet casque/intercom comme dans les caméras embarquées.',vModeL:'Voix',vModeTts:'Voix du téléphone',vModeRec:'Copilote enregistré',voiceStyle:'Style de voix',styleRally:'Rallye',styleNormal:'Normal',fxL:'Effet casque / intercom',fxOn:'Activé',fxOff:'Désactivé',recorded:'{n} sur {t} mots enregistrés',testPhrase:'Tester',recHint:'Touchez Enregistrer, dites le mot comme un copilote et touchez Arrêter (arrêt auto après 3 s). Enregistrez au calme.',vMissing:'Il manque des mots : la voix du téléphone sera utilisée en attendant.',recBtn:'Enregistrer',stopRec:'Arrêter',gGrades:'Degrés',gDir:'Direction',gMods:'Détails',gDist:'Distances',gOther:'Autres',micErr:'Impossible d’utiliser le micro. Vérifiez les autorisations.',headUp:'Sens de marche',awakeL:'Écran toujours allumé',on1:'Oui',off1:'Non',northUp:'Nord en haut',mapOrient:'Orientation de la carte',userOrEmail:'Identifiant ou email',noMailUser:'Cet utilisateur n’a pas d’email. Ajoutez un vrai email dans votre profil pour pouvoir récupérer le mot de passe.',act1:'Actif',h1a:'Chaque virage,',h1b:'annoncé',h1c:'à temps.',heroSub:'Notes à la voix et navigation. Roulez seul comme avec un copilote.',mf1:'Notes vocales',mf2:'Navigation',mf3:'Vos spéciales',enter:'Entrer',install:'Sur iPhone : Partager → « Sur l’écran d’accueil »',
+fr:{voiceT:'Voix du copilote',voiceIntro:'Choisissez comment les notes sont annoncées. Vous pouvez enregistrer votre propre voix de copilote, avec un effet casque/intercom comme dans les caméras embarquées.',vModeL:'Voix',vModeTts:'Voix du téléphone',vModeRec:'Copilote enregistré',voiceStyle:'Style de voix',styleRally:'Rallye',styleNormal:'Normal',fxL:'Effet casque / intercom',fxOn:'Activé',fxOff:'Désactivé',recorded:'{n} sur {t} mots enregistrés',testPhrase:'Tester',recHint:'Touchez Enregistrer, dites le mot comme un copilote et touchez Arrêter (arrêt auto après 3 s). Enregistrez au calme.',vMissing:'Il manque des mots : la voix du téléphone sera utilisée en attendant.',recBtn:'Enregistrer',stopRec:'Arrêter',gGrades:'Degrés',gDir:'Direction',gMods:'Détails',gDist:'Distances',gOther:'Autres',micErr:'Impossible d’utiliser le micro. Vérifiez les autorisations.',headUp:'Sens de marche',library:'Routes célèbres',libD:'Routes mythiques et circuits d’Espagne et d’Europe, prêts à copiloter.',roads:'Routes',circuits:'Circuits',spain:'Espagne',europe:'Europe',loadingRoute:'Calcul du tracé…',circuitErr:'Impossible d’obtenir le tracé du circuit. Réessayez plus tard.',reverse:'Inverser le sens',goStart:'Aller au départ',srccircuit:'Circuit',circuitNote:'Sur circuit, uniquement lors de sessions ou track days autorisés. Si le sens n’est pas celui de la course, touchez « Inverser le sens ».',awakeL:'Écran toujours allumé',on1:'Oui',off1:'Non',northUp:'Nord en haut',mapOrient:'Orientation de la carte',userOrEmail:'Identifiant ou email',noMailUser:'Cet utilisateur n’a pas d’email. Ajoutez un vrai email dans votre profil pour pouvoir récupérer le mot de passe.',act1:'Actif',h1a:'Chaque virage,',h1b:'annoncé',h1c:'à temps.',heroSub:'Notes à la voix et navigation. Roulez seul comme avec un copilote.',mf1:'Notes vocales',mf2:'Navigation',mf3:'Vos spéciales',enter:'Entrer',install:'Sur iPhone : Partager → « Sur l’écran d’accueil »',
 loginKick:'Accès',loginH:'Entrez dans votre session',loginSub:'Utilisez l’email et le mot de passe fournis par l’administrateur.',hi:'Bonjour,',tMap:'Spéciale',tRec:'Enregistrer',seeAll:'Tout voir',navD:'Choisissez une destination, Wtracks annonce chaque virage',
 tabHome:'Accueil',tabNav:'Naviguer',tabStages:'Spéciales',tabProfile:'Profil',tabPanel:'Panneau',tabPilots:'Pilotes',
 profile:'Profil',phone:'Téléphone',vehicles:'Véhicules',vehName:'Marque et modèle',vehType:'Type',car:'Voiture',moto:'Moto',otherV:'Autre',plate:'Immatriculation',addVehicle:'Ajouter un véhicule',noVehicles:'Aucun véhicule pour l’instant',changePhoto:'Changer la photo',saveProfile:'Enregistrer le profil',profileSaved:'Profil enregistré',
 account:'Compte',changeEmail:'Changer l’email',changePass:'Changer le mot de passe',curPass:'Mot de passe actuel',newEmail:'Nouvel email',newPass:'Nouveau mot de passe (min. 6)',emailVerify:'Nous avons envoyé un email à {e}. Confirmez-le pour terminer.',passChanged:'Mot de passe changé',imgErr:'Impossible de charger l’image',cancel:'Annuler',accept:'OK',
 pilots:'Pilotes',stagesW:'Spéciales',actives:'Actifs',newPilot:'Nouveau pilote',then:'Ensuite',inM:'dans {d}',night:'Nuit',day:'Jour',vehFill:'Saisissez la marque et le modèle',
 voiceHint:'Pour une voix plus naturelle sur iPhone : Réglages → Accessibilité → Contenu énoncé → Voix, et téléchargez une voix « améliorée ». Choisissez-la ensuite ici.'},
-it:{voiceT:'Voce del navigatore',voiceIntro:'Scegli come vengono chiamate le note. Puoi registrare la tua voce da navigatore e suonerà con effetto casco/interfono, come negli onboard dei rally.',vModeL:'Voce',vModeTts:'Voce del telefono',vModeRec:'Navigatore registrato',voiceStyle:'Stile di voce',styleRally:'Rally',styleNormal:'Normale',fxL:'Effetto casco / interfono',fxOn:'Attivo',fxOff:'Disattivo',recorded:'{n} di {t} parole registrate',testPhrase:'Prova',recHint:'Tocca Registra, di’ la parola come un navigatore e tocca Stop (si ferma da sola dopo 3 s). Registra in un posto silenzioso.',vMissing:'Mancano parole: nel frattempo si userà la voce del telefono.',recBtn:'Registra',stopRec:'Stop',gGrades:'Gradi',gDir:'Direzione',gMods:'Dettagli',gDist:'Distanze',gOther:'Altro',micErr:'Impossibile usare il microfono. Controlla i permessi.',headUp:'Direzione di marcia',awakeL:'Schermo sempre acceso',on1:'Sì',off1:'No',northUp:'Nord in alto',mapOrient:'Orientamento mappa',userOrEmail:'Utente o email',noMailUser:'Questo utente non ha email. Aggiungi un’email reale nel profilo per poter recuperare la password.',act1:'Attivo',h1a:'Ogni curva,',h1b:'chiamata',h1c:'in tempo.',heroSub:'Note a voce e navigatore. Guida da solo come con un navigatore a fianco.',mf1:'Note a voce',mf2:'Navigatore',mf3:'Le tue prove',enter:'Entra',install:'Su iPhone: Condividi → «Aggiungi alla schermata Home»',
+it:{voiceT:'Voce del navigatore',voiceIntro:'Scegli come vengono chiamate le note. Puoi registrare la tua voce da navigatore e suonerà con effetto casco/interfono, come negli onboard dei rally.',vModeL:'Voce',vModeTts:'Voce del telefono',vModeRec:'Navigatore registrato',voiceStyle:'Stile di voce',styleRally:'Rally',styleNormal:'Normale',fxL:'Effetto casco / interfono',fxOn:'Attivo',fxOff:'Disattivo',recorded:'{n} di {t} parole registrate',testPhrase:'Prova',recHint:'Tocca Registra, di’ la parola come un navigatore e tocca Stop (si ferma da sola dopo 3 s). Registra in un posto silenzioso.',vMissing:'Mancano parole: nel frattempo si userà la voce del telefono.',recBtn:'Registra',stopRec:'Stop',gGrades:'Gradi',gDir:'Direzione',gMods:'Dettagli',gDist:'Distanze',gOther:'Altro',micErr:'Impossibile usare il microfono. Controlla i permessi.',headUp:'Direzione di marcia',library:'Percorsi famosi',libD:'Strade leggendarie e circuiti di Spagna ed Europa, pronti da navigare.',roads:'Strade',circuits:'Circuiti',spain:'Spagna',europe:'Europa',loadingRoute:'Calcolo del tracciato…',circuitErr:'Impossibile ottenere il tracciato del circuito. Riprova più tardi.',reverse:'Inverti senso',goStart:'Vai alla partenza',srccircuit:'Circuito',circuitNote:'In circuito usalo solo in turni o track day autorizzati. Se il senso non è quello di gara, tocca «Inverti senso».',awakeL:'Schermo sempre acceso',on1:'Sì',off1:'No',northUp:'Nord in alto',mapOrient:'Orientamento mappa',userOrEmail:'Utente o email',noMailUser:'Questo utente non ha email. Aggiungi un’email reale nel profilo per poter recuperare la password.',act1:'Attivo',h1a:'Ogni curva,',h1b:'chiamata',h1c:'in tempo.',heroSub:'Note a voce e navigatore. Guida da solo come con un navigatore a fianco.',mf1:'Note a voce',mf2:'Navigatore',mf3:'Le tue prove',enter:'Entra',install:'Su iPhone: Condividi → «Aggiungi alla schermata Home»',
 loginKick:'Accesso',loginH:'Entra nella tua sessione',loginSub:'Usa l’email e la password che ti ha dato l’amministratore.',hi:'Ciao,',tMap:'Prova',tRec:'Registra',seeAll:'Vedi tutte',navD:'Scegli la destinazione e Wtracks chiama ogni curva',
 tabHome:'Home',tabNav:'Naviga',tabStages:'Prove',tabProfile:'Profilo',tabPanel:'Pannello',tabPilots:'Piloti',
 profile:'Profilo',phone:'Telefono',vehicles:'Veicoli',vehName:'Marca e modello',vehType:'Tipo',car:'Auto',moto:'Moto',otherV:'Altro',plate:'Targa',addVehicle:'Aggiungi veicolo',noVehicles:'Nessun veicolo aggiunto',changePhoto:'Cambia foto',saveProfile:'Salva profilo',profileSaved:'Profilo salvato',
 account:'Account',changeEmail:'Cambia email',changePass:'Cambia password',curPass:'Password attuale',newEmail:'Nuova email',newPass:'Nuova password (min. 6)',emailVerify:'Ti abbiamo inviato un’email a {e}. Confermala per completare.',passChanged:'Password cambiata',imgErr:'Impossibile caricare l’immagine',cancel:'Annulla',accept:'OK',
 pilots:'Piloti',stagesW:'Prove',actives:'Attivi',newPilot:'Nuovo pilota',then:'Poi',inM:'tra {d}',night:'Notte',day:'Giorno',vehFill:'Inserisci marca e modello',
 voiceHint:'Per una voce più naturale su iPhone: Impostazioni → Accessibilità → Contenuto letto → Voci e scarica una voce «Migliorata». Poi sceglila qui.'},
-de:{voiceT:'Beifahrer-Stimme',voiceIntro:'Wähle, wie der Aufschrieb angesagt wird. Du kannst deine eigene Beifahrer-Stimme aufnehmen – mit Helm-/Intercom-Effekt wie bei Rallye-Onboards.',vModeL:'Stimme',vModeTts:'Handy-Stimme',vModeRec:'Aufgenommener Beifahrer',voiceStyle:'Sprechstil',styleRally:'Rallye',styleNormal:'Normal',fxL:'Helm-/Intercom-Effekt',fxOn:'An',fxOff:'Aus',recorded:'{n} von {t} Wörtern aufgenommen',testPhrase:'Testen',recHint:'Tippe auf Aufnehmen, sprich das Wort wie ein Beifahrer und tippe auf Stopp (stoppt nach 3 s von selbst). An einem ruhigen Ort aufnehmen.',vMissing:'Es fehlen Wörter: bis dahin wird die Handy-Stimme verwendet.',recBtn:'Aufnehmen',stopRec:'Stopp',gGrades:'Grade',gDir:'Richtung',gMods:'Details',gDist:'Distanzen',gOther:'Sonstiges',micErr:'Mikrofon nicht verfügbar. Berechtigungen prüfen.',headUp:'Fahrtrichtung',awakeL:'Bildschirm immer an',on1:'An',off1:'Aus',northUp:'Norden oben',mapOrient:'Kartenausrichtung',userOrEmail:'Benutzername oder E-Mail',noMailUser:'Dieser Benutzer hat keine E-Mail. Füge im Profil eine echte E-Mail hinzu, um das Passwort wiederherstellen zu können.',act1:'Aktiv',h1a:'Jede Kurve,',h1b:'angesagt',h1c:'pünktlich.',heroSub:'Aufschrieb per Sprache und Navigation. Fahr allein, als hättest du einen Beifahrer.',mf1:'Sprachansagen',mf2:'Navigation',mf3:'Deine Prüfungen',enter:'Los',install:'Auf dem iPhone: Teilen → „Zum Home-Bildschirm“',
+de:{voiceT:'Beifahrer-Stimme',voiceIntro:'Wähle, wie der Aufschrieb angesagt wird. Du kannst deine eigene Beifahrer-Stimme aufnehmen – mit Helm-/Intercom-Effekt wie bei Rallye-Onboards.',vModeL:'Stimme',vModeTts:'Handy-Stimme',vModeRec:'Aufgenommener Beifahrer',voiceStyle:'Sprechstil',styleRally:'Rallye',styleNormal:'Normal',fxL:'Helm-/Intercom-Effekt',fxOn:'An',fxOff:'Aus',recorded:'{n} von {t} Wörtern aufgenommen',testPhrase:'Testen',recHint:'Tippe auf Aufnehmen, sprich das Wort wie ein Beifahrer und tippe auf Stopp (stoppt nach 3 s von selbst). An einem ruhigen Ort aufnehmen.',vMissing:'Es fehlen Wörter: bis dahin wird die Handy-Stimme verwendet.',recBtn:'Aufnehmen',stopRec:'Stopp',gGrades:'Grade',gDir:'Richtung',gMods:'Details',gDist:'Distanzen',gOther:'Sonstiges',micErr:'Mikrofon nicht verfügbar. Berechtigungen prüfen.',headUp:'Fahrtrichtung',library:'Berühmte Strecken',libD:'Legendäre Straßen und Rennstrecken in Spanien und Europa, bereit zum Mitfahren.',roads:'Straßen',circuits:'Rennstrecken',spain:'Spanien',europe:'Europa',loadingRoute:'Strecke wird berechnet…',circuitErr:'Streckenverlauf konnte nicht geladen werden. Später erneut versuchen.',reverse:'Richtung umkehren',goStart:'Zum Start',srccircuit:'Rennstrecke',circuitNote:'Auf Rennstrecken nur bei genehmigten Fahrten oder Trackdays nutzen. Ist die Richtung nicht die Rennrichtung, tippe auf „Richtung umkehren“.',awakeL:'Bildschirm immer an',on1:'An',off1:'Aus',northUp:'Norden oben',mapOrient:'Kartenausrichtung',userOrEmail:'Benutzername oder E-Mail',noMailUser:'Dieser Benutzer hat keine E-Mail. Füge im Profil eine echte E-Mail hinzu, um das Passwort wiederherstellen zu können.',act1:'Aktiv',h1a:'Jede Kurve,',h1b:'angesagt',h1c:'pünktlich.',heroSub:'Aufschrieb per Sprache und Navigation. Fahr allein, als hättest du einen Beifahrer.',mf1:'Sprachansagen',mf2:'Navigation',mf3:'Deine Prüfungen',enter:'Los',install:'Auf dem iPhone: Teilen → „Zum Home-Bildschirm“',
 loginKick:'Anmeldung',loginH:'Melde dich an',loginSub:'Nutze die E-Mail und das Passwort vom Administrator.',hi:'Hallo,',tMap:'Prüfung',tRec:'Aufzeichnen',seeAll:'Alle',navD:'Ziel wählen – Wtracks sagt jede Kurve an',
 tabHome:'Start',tabNav:'Navi',tabStages:'Prüfungen',tabProfile:'Profil',tabPanel:'Panel',tabPilots:'Fahrer',
 profile:'Profil',phone:'Telefon',vehicles:'Fahrzeuge',vehName:'Marke und Modell',vehType:'Typ',car:'Auto',moto:'Motorrad',otherV:'Andere',plate:'Kennzeichen',addVehicle:'Fahrzeug hinzufügen',noVehicles:'Noch keine Fahrzeuge',changePhoto:'Foto ändern',saveProfile:'Profil speichern',profileSaved:'Profil gespeichert',
@@ -1054,7 +1073,7 @@ function buildRoute(rawPts,source){
   }
   const last=P[P.length-1];if(carry>STEP*0.4){X.push(last[0]);Y.push(last[1]);}
   const n=X.length;
-  const w=(source==='map'||source==='nav')?1:2;
+  const w=(source==='map'||source==='nav'||source==='circuit')?1:2;
   let Xs=X.slice(),Ys=Y.slice();
   for(let pass=0;pass<2;pass++){
     const nx=[],ny=[];
@@ -1225,6 +1244,7 @@ function applyLang(){
   if(curScr==='scr-stage'&&ST)renderStage(false);
   if(curScr==='scr-editor')Ed.info();
   if(curScr==='scr-nav')Nav.info();
+  if(curScr==='scr-library')renderLibrary();
   if(curScr==='scr-record')Rec.ui();
   if(['scr-panel','scr-pilots','scr-allstages'].includes(curScr))renderAdmin();
   if(Drive.on)Drive.update();
@@ -1252,6 +1272,7 @@ function show(id){
   if(id==='scr-stages')renderStages();
   if(id==='scr-profile')Profile.render();
   if(id==='scr-nav')Nav.init();
+  if(id==='scr-library')renderLibrary();
   if(['scr-panel','scr-pilots','scr-allstages'].includes(id))renderAdmin();
 }
 const homeScr=()=>isAdmin()?'scr-panel':'scr-home';
@@ -1449,6 +1470,124 @@ $('#nvSim').onclick=()=>{if(Nav.res)Drive.open('navsim',Nav.data());};
 $('#nvSave').onclick=()=>{if(Nav.res)newStage(Nav.label||t('stageName')+' '+new Date().toLocaleDateString(VLANG[cfg.lang]),'map',Nav.res.pts);};
 
 /* =========================================================
+   RUTAS FAMOSAS — carreteras míticas y circuitos
+   Carreteras: puntos de paso → ruta calculada (OSRM)
+   Circuitos: trazado de OpenStreetMap (highway=raceway, vía Overpass)
+   ========================================================= */
+const LIB=[
+ // ---- Carreteras España ----
+ {id:'palomas',t:'road',r:'es',cc:'ES',n:'Puerto de las Palomas',d:'Cádiz · CA-9104 · Grazalema – Zahara',w:[[36.7605,-5.3680],[36.7898,-5.3933],[36.8395,-5.3905]]},
+ {id:'elbosque',t:'road',r:'es',cc:'ES',n:'Grazalema – El Bosque',d:'Cádiz · A-372',w:[[36.7605,-5.3680],[36.7590,-5.5050]]},
+ {id:'a397',t:'road',r:'es',cc:'ES',n:'Ronda – San Pedro',d:'Málaga · A-397',w:[[36.7300,-5.1600],[36.4930,-4.9900]]},
+ {id:'calobra',t:'road',r:'es',cc:'ES',n:'Sa Calobra',d:'Mallorca · MA-2141',w:[[39.8227,2.8848],[39.8505,2.8019]]},
+ {id:'formentor',t:'road',r:'es',cc:'ES',n:'Cap de Formentor',d:'Mallorca · MA-2210',w:[[39.9080,3.0830],[39.9615,3.2120]]},
+ {id:'covadonga',t:'road',r:'es',cc:'ES',n:'Lagos de Covadonga',d:'Asturias · CO-4',w:[[43.3510,-5.1290],[43.2722,-5.0160]]},
+ {id:'hermida',t:'road',r:'es',cc:'ES',n:'Desfiladero de La Hermida',d:'Cantabria · N-621',w:[[43.3260,-4.5800],[43.1540,-4.6230]]},
+ {id:'bonaigua',t:'road',r:'es',cc:'ES',n:'Port de la Bonaigua',d:'Lleida · C-28',w:[[42.7020,0.7950],[42.6633,0.9813],[42.6290,1.1250]]},
+ {id:'snevada',t:'road',r:'es',cc:'ES',n:'Sierra Nevada',d:'Granada · A-395',w:[[37.1600,-3.5400],[37.0950,-3.3960]]},
+ {id:'montseny',t:'road',r:'es',cc:'ES',n:'Montseny',d:'Barcelona · BV-5114',w:[[41.6890,2.4900],[41.7740,2.4630],[41.8380,2.2830]]},
+ {id:'navacerrada',t:'road',r:'es',cc:'ES',n:'Puerto de Navacerrada',d:'Madrid · M-601',w:[[40.7290,-4.0150],[40.7880,-4.0050],[40.8790,-4.0130]]},
+ {id:'teide',t:'road',r:'es',cc:'ES',n:'Cañadas del Teide',d:'Tenerife · TF-21',w:[[28.3900,-16.5230],[28.2230,-16.6380]]},
+ // ---- Carreteras Europa ----
+ {id:'turini',t:'road',r:'eu',cc:'FR',n:'Col de Turini',d:'Alpes-Maritimes · D2566 · Rallye Monte-Carlo',w:[[43.9430,7.4060],[43.9770,7.3910],[43.9930,7.3330]]},
+ {id:'stelvio',t:'road',r:'eu',cc:'IT',n:'Passo dello Stelvio',d:'Lombardia · SS38',w:[[46.4670,10.3720],[46.5285,10.4530],[46.6190,10.5920]]},
+ {id:'transfagarasan',t:'road',r:'eu',cc:'RO',n:'Transfăgărășan',d:'România · DN7C',w:[[45.3650,24.6340],[45.6040,24.6170],[45.7140,24.5730]]},
+ {id:'glockner',t:'road',r:'eu',cc:'AT',n:'Großglockner Hochalpenstraße',d:'Österreich · B107',w:[[47.2210,12.8250],[47.0820,12.8420],[47.0400,12.8430]]},
+ {id:'galibier',t:'road',r:'eu',cc:'FR',n:'Col du Galibier',d:'Savoie · D902',w:[[45.1650,6.4290],[45.0640,6.4080],[45.0350,6.4040]]},
+ {id:'bonette',t:'road',r:'eu',cc:'FR',n:'Col de la Bonette',d:'Alpes · D64',w:[[44.4180,6.7290],[44.3260,6.8070],[44.2570,6.9240]]},
+ {id:'furka',t:'road',r:'eu',cc:'CH',n:'Furkapass',d:'Schweiz · Furkastrasse',w:[[46.5630,8.3600],[46.5725,8.4150],[46.5980,8.5030]]},
+ {id:'trollstigen',t:'road',r:'eu',cc:'NO',n:'Trollstigen',d:'Norge · Fv63',w:[[62.5670,7.6870],[62.4560,7.6700],[62.2990,7.2620]]},
+ {id:'amalfi',t:'road',r:'eu',cc:'IT',n:'Costiera Amalfitana',d:'Campania · SS163',w:[[40.6280,14.4840],[40.6340,14.6020]]},
+ {id:'piana',t:'road',r:'eu',cc:'FR',n:'Calanques de Piana',d:'Corse · D81 · Tour de Corse',w:[[42.2660,8.7030],[42.2370,8.6360]]},
+ {id:'b500',t:'road',r:'eu',cc:'DE',n:'Schwarzwaldhochstraße',d:'Baden-Württemberg · B500',w:[[48.7580,8.2410],[48.5980,8.2010],[48.4630,8.4110]]},
+ // ---- Circuitos España ----
+ {id:'c_jerez',t:'circuit',r:'es',cc:'ES',n:'Circuito de Jerez – Ángel Nieto',d:'Jerez de la Frontera · Cádiz',c:[36.7085,-6.0340],m:1500},
+ {id:'c_montmelo',t:'circuit',r:'es',cc:'ES',n:'Circuit de Barcelona-Catalunya',d:'Montmeló · Barcelona',c:[41.5700,2.2610],m:1500},
+ {id:'c_valencia',t:'circuit',r:'es',cc:'ES',n:'Circuit Ricardo Tormo',d:'Cheste · Valencia',c:[39.4890,-0.6280],m:1200},
+ {id:'c_aragon',t:'circuit',r:'es',cc:'ES',n:'MotorLand Aragón',d:'Alcañiz · Teruel',c:[41.0790,-0.2030],m:1800},
+ {id:'c_jarama',t:'circuit',r:'es',cc:'ES',n:'Circuito del Jarama',d:'San Sebastián de los Reyes · Madrid',c:[40.6170,-3.5850],m:1200},
+ {id:'c_navarra',t:'circuit',r:'es',cc:'ES',n:'Circuito de Navarra',d:'Los Arcos · Navarra',c:[42.5590,-2.1690],m:1500},
+ {id:'c_monteblanco',t:'circuit',r:'es',cc:'ES',n:'Circuito de Monteblanco',d:'La Palma del Condado · Huelva',c:[37.3590,-6.5690],m:1200},
+ {id:'c_calafat',t:'circuit',r:'es',cc:'ES',n:'Circuit de Calafat',d:"L'Ametlla de Mar · Tarragona",c:[40.9300,0.8380],m:1000},
+ // ---- Circuitos Europa ----
+ {id:'c_spa',t:'circuit',r:'eu',cc:'BE',n:'Spa-Francorchamps',d:'Belgique',c:[50.4372,5.9714],m:2600},
+ {id:'c_monza',t:'circuit',r:'eu',cc:'IT',n:'Autodromo di Monza',d:'Lombardia',c:[45.6156,9.2811],m:2000},
+ {id:'c_mugello',t:'circuit',r:'eu',cc:'IT',n:'Mugello',d:'Toscana',c:[43.9975,11.3719],m:1500},
+ {id:'c_imola',t:'circuit',r:'eu',cc:'IT',n:'Imola – Enzo e Dino Ferrari',d:'Emilia-Romagna',c:[44.3439,11.7167],m:1500},
+ {id:'c_misano',t:'circuit',r:'eu',cc:'IT',n:'Misano World Circuit',d:'Emilia-Romagna',c:[43.9614,12.6833],m:1200},
+ {id:'c_silverstone',t:'circuit',r:'eu',cc:'GB',n:'Silverstone',d:'England',c:[52.0786,-1.0169],m:2000},
+ {id:'c_brands',t:'circuit',r:'eu',cc:'GB',n:'Brands Hatch',d:'England',c:[51.3569,0.2631],m:1200},
+ {id:'c_nring',t:'circuit',r:'eu',cc:'DE',n:'Nürburgring GP',d:'Deutschland',c:[50.3356,6.9475],m:1200},
+ {id:'c_hockenheim',t:'circuit',r:'eu',cc:'DE',n:'Hockenheimring',d:'Deutschland',c:[49.3278,8.5656],m:1500},
+ {id:'c_redbull',t:'circuit',r:'eu',cc:'AT',n:'Red Bull Ring',d:'Österreich',c:[47.2197,14.7647],m:1500},
+ {id:'c_zandvoort',t:'circuit',r:'eu',cc:'NL',n:'Zandvoort',d:'Nederland',c:[52.3888,4.5409],m:1200},
+ {id:'c_assen',t:'circuit',r:'eu',cc:'NL',n:'TT Circuit Assen',d:'Nederland',c:[52.9617,6.5236],m:1500},
+ {id:'c_ricard',t:'circuit',r:'eu',cc:'FR',n:'Circuit Paul Ricard',d:'Le Castellet · France',c:[43.2506,5.7917],m:1800},
+ {id:'c_hungaroring',t:'circuit',r:'eu',cc:'HU',n:'Hungaroring',d:'Magyarország',c:[47.5789,19.2486],m:1500},
+ {id:'c_brno',t:'circuit',r:'eu',cc:'CZ',n:'Automotodrom Brno',d:'Česko',c:[49.2030,16.4440],m:2000},
+ {id:'c_portimao',t:'circuit',r:'eu',cc:'PT',n:'Autódromo do Algarve',d:'Portimão · Portugal',c:[37.2270,-8.6267],m:1500},
+ {id:'c_estoril',t:'circuit',r:'eu',cc:'PT',n:'Circuito do Estoril',d:'Portugal',c:[38.7506,-9.3942],m:1200}
+];
+let libType='road',libReg='es';
+function renderLibrary(){
+  $$('#libType button').forEach(b=>{b.classList.toggle('on',b.dataset.v===libType);b.onclick=()=>{libType=b.dataset.v;renderLibrary();};});
+  $$('#libReg button').forEach(b=>{b.classList.toggle('on',b.dataset.v===libReg);b.onclick=()=>{libReg=b.dataset.v;renderLibrary();};});
+  $('#libCircNote').classList.toggle('hidden',libType!=='circuit');
+  const list=LIB.filter(x=>x.t===libType&&x.r===libReg);
+  $('#libList').innerHTML=list.map(x=>{const cached=!!localStorage.getItem('wt_lib_'+x.id);return `<div class="stage" data-lib="${x.id}"><span class="cc">${x.cc}</span><div class="t"><b>${esc(x.n)}</b><span>${esc(x.d)}${cached?' · ✓':''}</span></div><span class="chev">${ic(x.t==='circuit'?'flag':'next')}</span></div>`;}).join('');
+  $$('#libList [data-lib]').forEach(el=>el.onclick=()=>openLib(LIB.find(x=>x.id===el.dataset.lib)));
+}
+let libBusy=false;
+async function openLib(x){
+  if(libBusy)return;libBusy=true;
+  const key='wt_lib_'+x.id;
+  try{
+    let pts=null;const c=localStorage.getItem(key);
+    if(c)pts=decodePoly(c);
+    else{
+      toast(t('loadingRoute'));
+      pts=x.t==='road'?(await osrm(x.w,false)).pts:await circuitTrack(x);
+      try{localStorage.setItem(key,encodePoly(pts));}catch(e){}
+    }
+    newStage(x.n,x.t==='circuit'?'circuit':'map',pts);
+    if(ST)ST.from='scr-library';
+  }catch(e){toast(x.t==='circuit'?t('circuitErr'):(e.message||t('routeErr')),'bad');}
+  libBusy=false;
+}
+async function circuitTrack(x){
+  const q=`[out:json][timeout:25];way["highway"="raceway"](around:${x.m},${x.c[0]},${x.c[1]});out geom;`;
+  const r=await fetch('https://overpass-api.de/api/interpreter',{method:'POST',body:'data='+encodeURIComponent(q),headers:{'Content-Type':'application/x-www-form-urlencoded'}});
+  const j=await r.json();
+  const bad=/pit|box|paddock|kart|drift|skid|test|offroad|motocross|supermoto|cross|slalom|fahrsicherheit/i;
+  const K=p=>p[0].toFixed(6)+','+p[1].toFixed(6);
+  let ways=(j.elements||[]).filter(e=>e.type==='way'&&e.geometry&&e.geometry.length>1&&(e.tags||{}).area!=='yes'&&!bad.test([(e.tags||{}).name,(e.tags||{}).raceway,(e.tags||{}).description,(e.tags||{}).service].join(' ')))
+    .map(e=>({id:e.id,g:e.geometry.map(p=>[p.lat,p.lon])}))
+    .filter(w=>w.g.filter(p=>hav(p,x.c)<=x.m*1.15).length>=w.g.length*0.7);
+  ways.forEach(w=>{w.len=0;for(let i=1;i<w.g.length;i++)w.len+=hav(w.g[i-1],w.g[i]);w.a=K(w.g[0]);w.b=K(w.g[w.g.length-1]);});
+  if(!ways.length)throw new Error('empty');
+  ways.sort((a,b)=>b.len-a.len);
+  const first=ways[0];
+  if(first.a===first.b&&first.len>1200)return first.g;
+  const brg=(a,b)=>Math.atan2((b[1]-a[1])*Math.cos(a[0]*D2R),b[0]-a[0]);
+  const path=first.g.slice(),start=first.a,used=new Set([first.id]);let end=first.b,len=first.len;
+  for(let k=0;k<120&&end!==start;k++){
+    const dir=brg(path[path.length-2],path[path.length-1]);let best=null,bd=1e9,rev=false;
+    for(const w of ways){
+      if(used.has(w.id))continue;let rv;
+      if(w.a===end)rv=false;else if(w.b===end)rv=true;else continue;
+      const g=rv?w.g.slice().reverse():w.g,d2=brg(g[0],g[1]);
+      const da=Math.abs(((d2-dir+3*Math.PI)%(2*Math.PI))-Math.PI);
+      if(da<bd){bd=da;best=w;rev=rv;}
+    }
+    if(!best)break;
+    used.add(best.id);const g=rev?best.g.slice().reverse():best.g;path.push(...g.slice(1));end=rev?best.a:best.b;len+=best.len;
+  }
+  if(len<1000)throw new Error('short');
+  if(end!==start)path.push(path[0]);
+  return path;
+}
+
+/* =========================================================
    EDITOR EN MAPA
    ========================================================= */
 const Ed={wps:[],markers:[],line:null,geom:null,busy:false,seq:0,
@@ -1593,6 +1732,8 @@ $('#stGpx').onclick=()=>{
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([gpx],{type:'application/gpx+xml'}));a.download=(ST.name||'wtracks').replace(/[^\w\- ]+/g,'')+'.gpx';a.click();
 };
 const stData=()=>({rt:ST.rt,pts:ST.pts,notes:ST.notes,mans:[],name:ST.name});
+$('#stRev').onclick=()=>{const pts=ST.pts.slice().reverse();const rt=buildRoute(pts,ST.source);ST.pts=rt.pts;ST.rt=rt;ST.notes=computeNotes(rt);ST.dirty=true;selNote=-1;renderStage(true);toast(t('detected',{n:ST.notes.length}),'ok');};
+$('#stStart').onclick=()=>{const p=ST.pts[0],nm=ST.name;show('scr-nav');setTimeout(()=>Nav.setDest(p,nm),150);};
 $('#stDrive').onclick=()=>Drive.open('gps',stData());
 $('#stSim').onclick=()=>Drive.open('sim',stData());
 
